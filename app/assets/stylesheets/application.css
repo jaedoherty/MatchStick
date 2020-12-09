@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+#root {
+    font-family: Raleway, sans-serif;
+    display: flex;
+    /* justify-content: flex-start; */
+    color: darkorchid;
+    font-size: 25px;
+    margin-left: 30px;
+}
+@import "./components/session_form.scss";
+@import "./components/greeting.scss";
