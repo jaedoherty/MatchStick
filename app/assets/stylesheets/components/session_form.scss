@@ -5,12 +5,15 @@
     color:black;
     // font-size: 30px;
     border-radius: 10px;
-    // padding-right: 10%;
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
 
 }
 
-.login-form-box {
-    padding: 20%;
+.login-form {
+    display: flex;flex-direction: column;
+    align-items: center;
 }
 
 .session-submit {
@@ -24,6 +27,7 @@
     padding-bottom:15px; 
     padding-left: 53px;
     padding-right: 50px;
+    margin: 10px;
 }
 
 .login-input {
@@ -51,16 +55,17 @@
     border-radius: 50px;
     font-size: 18px;
     color: gainsboro;
-    margin: 5%;
 }
 
 .formType {
     font-style: italic;
     font-size: 30px;
+    padding: 5px;
 }
 
 .infofield {
     font-size: 20px;
+    padding: 10px;
 }
 
 #demo-user {
@@ -72,5 +77,6 @@
     padding-bottom: 15px; 
     padding-left: 43px;
     padding-right: 43px;
+    margin: 5px;
 
 }

@@ -10,7 +10,7 @@ const App = () => (
     <div id="bigdiv">
         <Modal />
         <header>
-            <Link to="/" className="header-link"></Link>
+            {/* <Link to="/" className="header-link"></Link> */}
             <GreetingContainer />
         </header>
         {/* <Switch>
