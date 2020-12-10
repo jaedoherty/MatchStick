@@ -17,10 +17,9 @@ class SessionForm extends React.Component {
             [field]: e.currentTarget.value
         });
     }
-
-    // componentDidMount() {
-    //     this.props.removeErrors();
-    // }
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
 
     demoUser(e) {
         e.preventDefault();
@@ -54,7 +53,6 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        // if (this.props.formType === 'Get Started')
         return (
             <div className="login-form-container">
                 <div id="close-x">
