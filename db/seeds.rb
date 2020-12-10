@@ -9,11 +9,7 @@
 User.delete_all
 
 u1 = User.create!(
-  username: 'guest',
-  password: 'password'
+  username: 'demo_user',
+  password: 'demouser'
 )
 
-u2 = User.create!(
-  username: 'username',
-  password: 'password'
-)
