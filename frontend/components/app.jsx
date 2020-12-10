@@ -11,7 +11,6 @@ const App = () => (
         <Modal />
         <header>
             <Link to="/" className="header-link"></Link>
-            <h1>MatchStick</h1>
             <GreetingContainer />
         </header>
         {/* <Switch>
