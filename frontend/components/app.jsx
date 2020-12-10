@@ -13,10 +13,7 @@ const App = () => (
             {/* <Link to="/" className="header-link"></Link> */}
             <GreetingContainer />
         </header>
-        {/* <Switch>
-            <AuthRoute exact path="/login" component={LogInFormContainer} />
-            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-        </Switch> */}
+
     </div>
 );
 

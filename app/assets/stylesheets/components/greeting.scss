@@ -9,11 +9,12 @@
     background: image-url('splash_medium.jpg');
     position: relative;
 }
-.sign-up { 
 
-    position: absolute;
-    top: 25%;
-    left: 23%; 
+.sign-up {
+   display: flex;
+   flex-direction: column; 
+   align-items: center;
+
 }
 
 #tagline {
@@ -28,10 +29,26 @@
     display: flex;
     justify-content: flex-start;
     position: relative;
+
     
 
 }
 
+.header-group {
+    font-family: Raleway, sans-serif;
+}
+.header-button {
+    border: none;
+
+}
+
+.header-name {
+    padding: 0px 30px;
+}
+
+#splash-head {
+    color: white;
+}
 
 .li-button {
     position: absolute;
@@ -50,6 +67,7 @@
     padding-right: 22px;
     margin-top: 30px;
     margin-right: 30px;
+    cursor: pointer;
 }
 
 .su-button {
@@ -63,6 +81,6 @@
     padding-bottom: 20px; 
     padding-left: 70px;
     padding-right: 70px;
-    margin-left: 40%;
+    cursor: pointer;
 
 }

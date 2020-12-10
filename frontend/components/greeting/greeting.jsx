@@ -8,7 +8,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         <div className="login-signup">
             {/* <img src={window.splashURL}/> */}
             <nav className="login">
-                <Link to='/' className="header-link">
+                <Link to='/' id='splash-head'>
                     <h1 className="ms_head">MatchStick</h1>
                 </Link>
 
@@ -23,7 +23,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     const personalGreeting = () => (
         
         <hgroup className="header-group">
-            <Link to='/' className="header-link">
+            <Link to='/' id="home-head">
                     <h1 className="ms_head">MatchStick</h1>
             </Link>            
             <h2 className="header-name">Hi, {currentUser.username}!</h2>
