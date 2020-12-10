@@ -14,6 +14,7 @@ const App = () => (
             {/* <GreetingContainer /> */}
         </header>
     <Route path="/" component={GreetingContainer}/>
+    {/* <Route path="/home" render */}
 
     </div>
 );
