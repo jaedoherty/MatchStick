@@ -6,13 +6,15 @@ import { Link } from 'react-router-dom';
 const Greeting = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
         <div className="login-signup">
-        <nav className="login">
-        <h1 className="ms_head">MatchStick</h1>
-            <button className="li-button"onClick={() => openModal('login')}>LOG IN</button>
-        </nav>
-        <nav className="sign-up">
-            <button className="su-button" onClick={() => openModal('signup')}>SIGN UP</button>
-        </nav>
+            {/* <img src={window.splashURL}/> */}
+            <nav className="login">
+                <h1 className="ms_head">MatchStick</h1>
+                <button className="li-button"onClick={() => openModal('login')}>LOG IN</button>
+            </nav>
+            <nav className="sign-up">
+                <h1 id="tagline">Looking for Love?</h1>
+                <button className="su-button" onClick={() => openModal('signup')}>SIGN UP</button>
+            </nav>
         </div>
         );
     const personalGreeting = () => (

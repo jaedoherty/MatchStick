@@ -7,7 +7,7 @@ import {AuthRoute} from '../util/route_util';
 import{ Switch, Link } from 'react-router-dom';
 
 const App = () => (
-    <div>
+    <div id="bigdiv">
         <Modal />
         <header>
             <Link to="/" className="header-link"></Link>

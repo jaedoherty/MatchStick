@@ -1,39 +1,37 @@
-// .login-signup {
-//     font-family: Raleway, sans-serif;
-//     // display: flex;
-//     // justify-content: center;
-//     font-size: 16px;
-    
-// }
 
-#root {
+.login-signup {
     font-family: Raleway, sans-serif;
-    // display: flex;
-    // justify-content: center; 
-    color: darkorchid;
+    height: 100vh;
+    min-height: 100vh;
+    color:white;
     font-size: 25px;
-    margin-left: 30px;
+    margin: 0;
+    background: image-url('splash_medium.jpg');
+    position: relative;
 }
-.sign-up {
-    // flex-direction: column;
-    // border: none;
-  
-    // padding: 30px 47px;
-    display: flex;
-    justify-content: center;
-    // align-items: flex-end;
-    // size: 30px; 
+.sign-up { 
+
+    position: absolute;
+    top: 30%;
+    left: 30%; 
+}
+
+#tagline {
+    font-size: 90px;
 }
 
 .ms_head {
     text-align: left;
+    margin: 30px;
 }
 .login {
     display: flex;
     justify-content: flex-start;
     position: relative;
+    
 
 }
+
 
 .li-button {
     position: absolute;
@@ -44,26 +42,27 @@
     font-size: 15px;
     font-family: Raleway, sans-serif;
     border-radius: 10px;
-    background-color:plum;
+    background-color:white;
     color: darkorchid;
     padding-top: 15px;
     padding-bottom: 12px; 
     padding-left: 22px;
     padding-right: 22px;
     margin-top: 30px;
+    margin-right: 30px;
 }
 
 .su-button {
     border: none;
     outline: none;
-    font-size: 15px;
-    font-family: Raleway, sans-serif;
+    font-size: 20px;;
     border-radius: 30px;
-    background-color:plum;
-    color: darkorchid;
-    padding-top: 17px;
-    padding-bottom: 17px; 
-    padding-left: 50px;
-    padding-right: 50px;
- 
+    background-color: darkorchid;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-left: 35%;
+
 }
