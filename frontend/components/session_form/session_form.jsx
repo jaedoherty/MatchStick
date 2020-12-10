@@ -17,6 +17,19 @@ class SessionForm extends React.Component {
         });
     }
 
+    demoUser(e) {
+        e.preventDefault();
+            this.setState({
+            ['username']: 'demo_user',
+            ['password']: 'demouser'
+        });
+        setTimeout(() => {
+            const user = Object.assign({}, this.state);
+            this.props.processForm(user).then(this.props.closeModal)
+        }, 1000);
+    }
+
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
@@ -38,18 +51,20 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className="login-form-container">
+                    <div id="close-x">
+                        <button onClick={this.props.closeModal} id="closebutton">X</button>
+                    </div>
                 
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <button onClick={this.props.closeModal} className="close-x">X</button>
-                    <br />
-                    Welcome to MatchStick!
                 <br />
-                <br />
+                <div className="formType">
                 {this.props.formType}
+                </div>
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
-                        <label>Username 
+                        <label className="infofield">Username 
+                            <br />
               <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
@@ -58,7 +73,7 @@ class SessionForm extends React.Component {
                         </label>
                         <br />
                         <br />
-                        <label>Password: 
+                        <label className="infofield">Password 
               <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
@@ -67,7 +82,11 @@ class SessionForm extends React.Component {
                         </label>
                         <br />
                         <br />
+                        < br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
+                        < br/>
+                        <br />
+                        <span onClick={this.demoUser} id="demo-user">  Demo User  </span>
                     </div>
                 </form>
             </div>

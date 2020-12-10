@@ -1,23 +1,76 @@
 .login-form-container {
     font-family: Raleway, sans-serif; 
     text-align: center;
-    background-color:plum;
-    color: white;
-    font-size: 30px;
-    // margin-left: 700px;
-    // margin-right: 700px;
-    // margin-top: 150px;
-    // margin-bottom: 150px;
+    background-color: white;
+    color:black;
+    // font-size: 30px;
+    border-radius: 10px;
+    // padding-right: 10%;
 
 }
 
-.login-form-container img {
-    width: 1720px;
-    height: 1080px;
+.login-form-box {
+    padding: 20%;
 }
 
 .session-submit {
-    color:white;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: white;
     background-color: darkorchid; 
-    font-size: 16px;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom:15px; 
+    padding-left: 53px;
+    padding-right: 50px;
+}
+
+.login-input {
+    border: gainsboro solid;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 3%;
+}
+
+.login-input:focus {
+    border: gray solid;
+    border-radius: 20px;;
+    outline: none;
+}
+
+#close-x {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#closebutton {
+    border: gainsboro solid;;   
+    background-color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    color: gainsboro;
+    margin: 5%;
+}
+
+.formType {
+    font-style: italic;
+    font-size: 30px;
+}
+
+.infofield {
+    font-size: 20px;
+}
+
+#demo-user {
+    border-radius: 30px;
+    color: white;
+    background-color: darkorchid; 
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px; 
+    padding-left: 43px;
+    padding-right: 43px;
+
 }
