@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
         });
         setTimeout(() => {
             const user = Object.assign({}, this.state);
-            this.props.processForm(user).then(this.props.closeModal)
+            this.props.login(user).then(this.props.closeModal)
         }, 1000);
     }
 
@@ -50,6 +50,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        // if (this.props.formType === 'Get Started')
         return (
             <div className="login-form-container">
                 <div id="close-x">

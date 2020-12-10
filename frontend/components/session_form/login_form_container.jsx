@@ -25,6 +25,7 @@ import React from 'react';
 import { login } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
+;
 
 const mapStateToProps = ({ errors }) => {
     return {
@@ -41,7 +42,8 @@ const mapDispatchToProps = dispatch => {
                 Signup
             </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        login: (user) => dispatch(login(user))
     };
 };
 
