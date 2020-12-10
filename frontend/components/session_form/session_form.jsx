@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUser = this.demoUser.bind(this);
     }
 
     update(field) {
@@ -19,7 +20,7 @@ class SessionForm extends React.Component {
 
     demoUser(e) {
         e.preventDefault();
-            this.setState({
+        this.setState({
             ['username']: 'demo_user',
             ['password']: 'demouser'
         });
@@ -51,21 +52,21 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className="login-form-container">
-                    <div id="close-x">
-                        <button onClick={this.props.closeModal} id="closebutton">X</button>
-                    </div>
-                
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                <br />
-                <div className="formType">
-                {this.props.formType}
+                <div id="close-x">
+                    <button onClick={this.props.closeModal} id="closebutton">X</button>
                 </div>
+
+                <form onSubmit={this.handleSubmit} className="login-form-box">
+                    <br />
+                    <div className="formType">
+                        {this.props.formType}
+                    </div>
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
-                        <label className="infofield">Username 
+                        <label className="infofield">Username
                             <br />
-              <input type="text"
+                            <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 className="login-input"
@@ -73,7 +74,7 @@ class SessionForm extends React.Component {
                         </label>
                         <br />
                         <br />
-                        <label className="infofield">Password 
+                        <label className="infofield">Password
               <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
@@ -84,7 +85,7 @@ class SessionForm extends React.Component {
                         <br />
                         < br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
-                        < br/>
+                        < br />
                         <br />
                         <span onClick={this.demoUser} id="demo-user">  Demo User  </span>
                     </div>
