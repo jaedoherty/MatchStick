@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
     demoUser(e) {
         e.preventDefault();
         this.setState({
-            ['username']: 'demo_user',
+            ['username']: 'demo-user',
             ['password']: 'demouser'
         });
         setTimeout(() => {

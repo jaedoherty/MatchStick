@@ -1,4 +1,9 @@
 class Api::ProfilesController < ApplicationController
+
+    def index
+        @profiles = Profile.all
+    end
+
    def create
     @profile = Profile.new(profile_params) 
     if @profile.save

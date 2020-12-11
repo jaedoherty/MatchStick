@@ -9,6 +9,10 @@
 User.delete_all
 Profile.delete_all
 
+demo = User.create!(
+  username: 'demo-user',
+  password: 'demouser'
+)
 u1 = User.create!(
   username: 'tia',
   password: 'tia_password'
