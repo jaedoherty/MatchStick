@@ -7,9 +7,36 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
+Profile.delete_all
 
 u1 = User.create!(
-  username: 'demo_user',
-  password: 'demouser'
+  username: 'tia',
+  password: 'tia_password'
+)
+
+u2 = User.create!(
+  username: 'will_s',
+  password: 'will_password'
+)
+
+
+p1 = Profile.create!(
+  first_name: "Tia",
+  zip_code: 90210,
+  gender: 'F',
+  description: "Foodie. Will swipe for dogs.",
+  match_preferences: ["hook up", "M or F"],
+  quiz_results: "Pisces",
+  user_id: u1.id,
+)
+
+p2 = Profile.create!(
+  first_name: "Will",
+  zip_code: 80014,
+  description: "Looking for life long romance. Will only respond with thumbs up reactions. Would rather be hiking.",
+  gender: "M",
+  match_preferences: ["long-term relationship", "F"],
+  quiz_results: "Capricorn", 
+  user_id: u2.id
 )
 
