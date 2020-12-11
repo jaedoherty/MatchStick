@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import HomePage from '../home_page/home_page'
 
 
 const Greeting = ({ currentUser, logout, openModal }) => {
@@ -21,14 +21,18 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         </div>
         );
     const personalGreeting = () => (
-        
+        <div> 
         <hgroup className="header-group">
-            <Link to='/' id="home-head">
-                    <h1 className="ms_head">MatchStick</h1>
-            </Link>            
+                <nav className="li-head">
+                    {/* <Link to='/' id="home-head">
+                            <h1 className="ms_head">MatchStick</h1>
+                    </Link>             */}
+                    <button className="header-button" onClick={logout}>Log Out</button>
+                </nav>
             <h2 className="header-name">Hi, {currentUser.username}!</h2>
-            <button className="header-button" onClick={logout}>Log Out</button>
         </hgroup>
+        <HomePage />
+        </div>
     );
 
     return currentUser ? personalGreeting() : sessionLinks();

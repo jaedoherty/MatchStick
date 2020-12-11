@@ -1,1 +1,1 @@
-json.extract! profile, :first_name, :zip_code, :gender, :description, :match_preferences, :quiz_results
+json.extract! profile, :id, :first_name, :zip_code, :gender, :description, :match_preferences, :quiz_results, :user_id 
