@@ -23,7 +23,10 @@ class ProfileShow extends React.Component {
                 </Link>
                 <div id="profilewrapper">
                     <div className="profbio" id="bio"> About Me
-                        <li>{this.props.profile.description}</li>
+                        <div id="biotext">
+
+                            <li>{this.props.profile.description}</li>
+                        </div>
                     </div>
                     <div className="profile">
 

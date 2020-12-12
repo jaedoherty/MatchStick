@@ -12,11 +12,7 @@ class NavBar extends React.Component {
     }
 
     render() {
-        if ( this.state === {}) {
-            const name = '';
-        } else {
-            const name = this.state.first_name
-        }
+        const name = this.props.user[this.props.session.id].username
         if (!this.props.session.id) {
             return null;
         } else { 
@@ -29,7 +25,7 @@ class NavBar extends React.Component {
                 <Link>Questions</Link>
                 <Link>Likes</Link>
                 <Link>Messages</Link> */}
-                <li>{this.state.first_name}</li>
+                <li>{name}</li>
                 <button>Log Out</button>
             </nav>
         );

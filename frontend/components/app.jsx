@@ -16,7 +16,7 @@ const App = () => (
             <Link to="/" className="header-link"></Link>
             <GreetingContainer />
         </header> */}
-        {/* <NavBarContainer /> */}
+        <NavBarContainer />
         <Switch>
             <Route exact path="/profiles/:profileId" component={ProfileShowContainer}/>
             {/* <Route exact path="/profile-hub/:profileId" component={HomePage}/>" */}
