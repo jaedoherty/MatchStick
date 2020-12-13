@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+* {
+    font-family: Raleway, sans-serif;
+}
 
 @import "./components/session_form.scss";
 @import "./components/greeting.scss";

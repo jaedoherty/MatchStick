@@ -1,10 +1,4 @@
-// .home-head {
-//     background-color: black;
-//     color: white;
-//     // border: purple solid;
 
-
-// }
 
 .profile-show-container {
    display: flex; 
@@ -103,7 +97,7 @@
 #info-bar {
     color: white;
     background-color: black;
-    height: 20vh;
+    height: 32vh;
     display: flex;
     padding-left: 25%;
     // border: white solid;
@@ -148,4 +142,8 @@
 
 .al {
     margin-right: 20px;
+}
+
+Link {
+    color: white;
 }

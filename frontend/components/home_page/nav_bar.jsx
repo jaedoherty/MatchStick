@@ -18,16 +18,14 @@ class NavBar extends React.Component {
         } else {
             return (
                 <nav id="nav-bar">
-                    <Link to='/' id="home-head">
-                        <h1 className="title-header">MatchStick</h1>
-                    </Link>
-                    {/* <Link>DoubleTake</Link>
-                <Link>Questions</Link>
-                <Link>Likes</Link>
-                <Link>Messages</Link> */}
-                    {/* <li>{this.props.user[this.props.session.id].username}</li> */}
-                    <Link id="prof-link" to={`/profiles/${this.props.user.id}`}>My Profile</Link>
-                    {/* <button className="header-button" onClick={logout}>Log Out</button> */}
+                   
+                    <button className="head-button" id="home-link"><Link to='/'> MatchStick </Link></button>
+                    <button className="head-button" id="double-take">DoubleTake</button>
+                    <button className="head-button" id="questions">Questions</button>
+                    <button className="head-button" id="likes">Likes</button>
+                    <button className="head-button" id="messages">Messages</button>
+                    <button className="head-button" id="my-profile"> My Profile</button>
+                    <button className="head-button" id="nav-logout">Log Out</button>
                 </nav>
             );
         }

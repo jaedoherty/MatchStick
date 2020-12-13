@@ -1,10 +1,59 @@
+a {
+    text-decoration-line: none;
+
+}
+
+a:visited {
+    color: unset;
+}
+
 #nav-bar {
     background-color: black;
     color: white;
     font-family: Raleway, sans-serif;
     display: flex;
+    // padding: 10px;
+    padding-left: 10%;
+    // border: 1px solid orange;
+    align-items: center;
+}
+
+.head-button {
+    border: none;
+    outline: none;
+    background-color: black;
+    color: gainsboro;
+    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 65px;
+    width: 112px;
+}
+
+.head-button:hover {
+    background-color: rgb(56, 54, 54);
 }
 
 .title-header {
     color: white;
+    margin: 10px;
+}
+
+#nav-logout {
+    font-size: 14px;
+    font-family: Raleway, sans-serif;
+    font-weight: 700; 
+    border-radius: 2px;
+    color: white;
+    background-color: darkorchid;
+    height: 40px;
+ 
+    // padding-top: 15px;
+    // padding-bottom: 12px; 
+    // padding-left: 22px;
+    // padding-right: 22px
+}
+
+#nav-logout:hover {
+    background-color: mediumorchid
 }
