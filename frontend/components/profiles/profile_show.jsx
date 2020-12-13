@@ -22,7 +22,7 @@ class ProfileShow extends React.Component {
                     <h1 className="home-head">MatchStick</h1>
                 </Link> */}
                 <div id="info-bar">
-                    <div>Photo Placeholder</div>
+                    <div id="photo-placeholder">Photo Placeholder</div>
                     <div id="name-age">
                         <p id="name">{this.props.profile.first_name}</p>
                         <div id="age-location">
@@ -36,19 +36,22 @@ class ProfileShow extends React.Component {
                 </div>
 
                 <div id="profilewrapper">
-                    <div className="profbio" id="bio"> About Me
-                        <div id="biotext">
+                    <div className="description"> 
+                    <p className="field-title">About Me</p>
+                        <div className="field-text">
 
-                            <p>{this.props.profile.description}</p>
+                            <p className="ftxt">{this.props.profile.description}</p>
                         </div>
                     </div>
                     <div className="profile">
                         <div className="profshow" id="edit-profile">
-                            <p>COMPLETE YOUR PROFILE<br/>and be seen by more people.</p>
+                            <p id="line1">COMPLETE YOUR PROFILE</p>
+                            <p id="line2">and be seen by more people.</p>
                         </div>
                         <div className="profshow" id="gender"> 
                         <p>{this.props.profile.gender}</p>
                         </div>
+                        {/* {this.props.profile.match_preferences.map(pref => (<p className="profshow" id="matchPrefs">{pref}</p>))} */}
                         <div className="profshow" id="matchPrefs">
                             <p>{this.props.profile.match_preferences}</p>
                         </div>
