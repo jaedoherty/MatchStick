@@ -18,9 +18,9 @@ class ProfileShow extends React.Component {
         } else {
         return (
             <div className="profile-show-container">
-                <Link className="homeLink" to='/'>
+                {/* <Link className="homeLink" to='/'>
                     <h1 className="home-head">MatchStick</h1>
-                </Link>
+                </Link> */}
                 <div id="profilewrapper">
                     <div className="profbio" id="bio"> About Me
                         <div id="biotext">

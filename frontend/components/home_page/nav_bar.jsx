@@ -17,16 +17,17 @@ class NavBar extends React.Component {
             return null;
         } else {
             return (
-                <nav>
+                <nav id="nav-bar">
                     <Link to='/' id="home-head">
-                        <h1 className="ms_head">MatchStick</h1>
+                        <h1 className="title-header">MatchStick</h1>
                     </Link>
                     {/* <Link>DoubleTake</Link>
                 <Link>Questions</Link>
                 <Link>Likes</Link>
                 <Link>Messages</Link> */}
-                    <li>{this.props.user[this.props.session.id].username}</li>
-                    <button>Log Out</button>
+                    {/* <li>{this.props.user[this.props.session.id].username}</li> */}
+                    <Link id="prof-link" to={`/profiles/${this.props.user.id}`}>My Profile</Link>
+                    {/* <button className="header-button" onClick={logout}>Log Out</button> */}
                 </nav>
             );
         }
