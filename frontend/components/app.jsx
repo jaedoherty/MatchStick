@@ -8,7 +8,8 @@ import {ProtectedRoute} from '../util/route_util';
 import{ Route, Switch, Link } from 'react-router-dom';
 import HomePageContainer from './home_page/home_page_container';
 // import ProfileFormContainer from './profiles/create_form_profile_container'
-import NavBarContainer from './home_page/nav_bar_container'
+import NavBarContainer from './home_page/nav_bar_container';
+import NewProfile from './profiles/create_form_profile_container';
 
 const App = () => (
     <div id="bigdiv">
@@ -21,6 +22,7 @@ const App = () => (
         <Switch>
             <Route exact path="/profiles/:profileId" component={ProfileShowContainer}/>
             <Route exact path="/home" component={HomePageContainer}/>"
+            <Route exact path="/newProfile/" component={NewProfile} />
             {/* <Route exact path="/:userId/profiles" component={ProfileFormContainer} /> */}
             {/* <Route path="/" component={HomePageContainer}/> */}
         </Switch>

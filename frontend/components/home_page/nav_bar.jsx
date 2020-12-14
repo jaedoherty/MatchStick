@@ -7,9 +7,9 @@ class NavBar extends React.Component {
         this.state = this.props.profiles[this.props.user]
     }
 
-    componentDidMount() {
-        this.props.fetchProfile[this.props.user.id]
-    }
+    // componentDidMount() {
+    //     this.props.fetchProfile[this.props.user.id]
+    // }
 
     handleClick(e){
         e.preventDefault();
@@ -19,13 +19,13 @@ class NavBar extends React.Component {
     }
 
     render() {
-        if (!this.props.session.id) {
+        if (!this.props.session.id ) {
             return null;
         } else {
             return (
                 <nav id="nav-bar">
                    
-                    <button className="head-button" id="home-link"><Link to='/'> MatchStick </Link></button>
+                    <button className="head-button" id="home-link"><Link to='/home'> MatchStick </Link></button>
                     <button className="head-button" id="double-take">DoubleTake</button>
                     <button className="head-button" id="questions">Questions</button>
                     <button className="head-button" id="likes">Likes</button>

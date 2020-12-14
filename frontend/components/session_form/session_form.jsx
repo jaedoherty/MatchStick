@@ -18,9 +18,6 @@ class SessionForm extends React.Component {
         });
     }
 
-    componentDidMount() {
-
-    }
 
     componentWillUnmount() {
         this.props.removeErrors();
@@ -42,9 +39,15 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        if (this.props.formType === 'Get Started') {
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.history.push("/home"));
         this.props.closeModal();
+        } else {
+            const user = Object.assign({}, this.state);
+            this.props.processForm(user).then(this.props.history.push("/newProfile"));
+            this.props.closeModal(); 
+        }
     }
 
     renderErrors() {
