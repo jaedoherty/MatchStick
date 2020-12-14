@@ -12,7 +12,6 @@ class NavBar extends React.Component {
     }
 
     render() {
-        // const name = this.props.user[this.p??rops.session.id].username
         if (!this.props.session.id) {
             return null;
         } else {
@@ -25,7 +24,7 @@ class NavBar extends React.Component {
                     <button className="head-button" id="likes">Likes</button>
                     <button className="head-button" id="messages">Messages</button>
                     <button className="head-button" id="my-profile"> My Profile</button>
-                    <button className="head-button" id="nav-logout">Log Out</button>
+                    <button className="head-button" id="nav-logout" onClick={this.props.logout}>Log Out</button>
                 </nav>
             );
         }

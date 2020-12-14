@@ -27,20 +27,24 @@ u2 = User.create!(
 p1 = Profile.create!(
   first_name: "Tia",
   zip_code: 90210,
+  location: "Los Angeles, CA",
+  age: 24,
   gender: 'F',
   description: "Foodie. Will swipe for dogs.",
   match_preferences: ["hook up", "M or F"],
-  quiz_results: "Pisces",
+  quiz_results: ["Pisces"],
   user_id: u1.id,
 )
 
 p2 = Profile.create!(
   first_name: "Will",
   zip_code: 80014,
+  location: "Denver, CO",
+  age: 24,
   description: "Looking for life long romance. Will only respond with thumbs up reactions. Would rather be hiking.",
   gender: "M",
   match_preferences: ["long-term relationship", "F"],
-  quiz_results: "Capricorn", 
+  quiz_results: ["Capricorn"], 
   user_id: u2.id
 )
 

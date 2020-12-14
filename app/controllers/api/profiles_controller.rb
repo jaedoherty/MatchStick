@@ -1,9 +1,8 @@
 class Api::ProfilesController < ApplicationController
-
-    def index
+    def index 
         @profiles = Profile.all
+        render :index
     end
-
    def create
     @profile = Profile.new(profile_params) 
     if @profile.save
@@ -36,7 +35,8 @@ class Api::ProfilesController < ApplicationController
                                         :description,
                                         :gender, 
                                         :match_preferences, 
-                                        :quiz_results
+                                        :quiz_results,
+                                        :user_id
                                         )
 
 

@@ -27,7 +27,9 @@ a:visited {
     margin-top: 0px;
     margin-bottom: 0px;
     height: 65px;
-    width: 112px;
+    padding-left: 16px;
+    padding-right: 16px;
+    // width: 112px;
 }
 
 .head-button:hover {
@@ -39,6 +41,12 @@ a:visited {
     margin: 10px;
 }
 
+#home-link {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+}
+
 #nav-logout {
     font-size: 14px;
     font-family: Raleway, sans-serif;
@@ -47,7 +55,6 @@ a:visited {
     color: white;
     background-color: darkorchid;
     height: 40px;
- 
     // padding-top: 15px;
     // padding-bottom: 12px; 
     // padding-left: 22px;
@@ -57,3 +64,4 @@ a:visited {
 #nav-logout:hover {
     background-color: mediumorchid
 }
+

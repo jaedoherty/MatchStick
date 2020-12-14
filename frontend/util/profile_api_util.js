@@ -1,3 +1,9 @@
+export const fetchProfiles = () => {
+    return $.ajax ({
+        url: `api/profiles` 
+    })
+}
+
 export const fetchProfile = profileId => {
     return $.ajax({
         url: `api/profiles/${profileId}`

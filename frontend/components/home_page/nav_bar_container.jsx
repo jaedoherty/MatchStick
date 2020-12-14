@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NavBar from './nav_bar';
-// import { logout } from '../../actions/session_actions';
+import { logout } from '../../actions/session_actions';
 import {fetchProfile} from '../../actions/profile_actions';
 
 const msp = (state) => {
@@ -15,7 +15,7 @@ const mdp = (dispatch) => {
     // debugger
     return({
         fetchProfile: (profileId) => dispatch(fetchProfile(profileId)),
-        // logout: () => dispatch(logout())
+        logout: () => dispatch(logout())
     })
 }
 

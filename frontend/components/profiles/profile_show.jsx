@@ -18,16 +18,13 @@ class ProfileShow extends React.Component {
         } else {
         return (
             <div className="profile-show-container">
-                {/* <Link className="homeLink" to='/'>
-                    <h1 className="home-head">MatchStick</h1>
-                </Link> */}
                 <div id="info-bar">
                     <div id="photo-placeholder">Photo Placeholder</div>
                     <div id="name-age">
                         <p id="name">{this.props.profile.first_name}</p>
                         <div id="age-location">
-                            <p className="al">Age</p>
-                            <p className="al">{this.props.profile.zip_code}</p>
+                            <p className="al">{this.props.profile.age}</p>
+                            <p className="al">{this.props.profile.location}</p>
                         </div>
 
                     </div>
@@ -49,11 +46,11 @@ class ProfileShow extends React.Component {
                             <p id="line2">and be seen by more people.</p>
                         </div>
                         <div className="profshow" id="gender"> 
-                        <p>{this.props.profile.gender}</p>
+                        <p>Gender: {this.props.profile.gender}</p>
                         </div>
                         {/* {this.props.profile.match_preferences.map(pref => (<p className="profshow" id="matchPrefs">{pref}</p>))} */}
                         <div className="profshow" id="matchPrefs">
-                            <p>{this.props.profile.match_preferences}</p>
+                            {this.props.profile.match_preferences.map()}
                         </div>
                         <div className="profshow" id="quiz">
                             <p>{this.props.profile.quiz_results}</p>
