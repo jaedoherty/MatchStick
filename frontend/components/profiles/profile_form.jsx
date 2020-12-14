@@ -3,21 +3,27 @@ import React from 'react';
 class ProfileForm extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     question: 0
-        // };
+        this.state = {
+            question: 0
+        }
+        this.handleClick = this.handleClick.bind(this); 
     }
 
     update(field) {
         return e => this.setState( { [field]: e.currentTarget.value });
     }
 
-    handleClick() {
-        e.preventDefault;
+    handleClick(e) {
+        e.preventDefault();
+        const profile = Object.assign({}, this.state);
+        this.setState((previousState) => ({
+            question: previousState.question + 1
+        }))
 
     }
 
     render () {
+        debugger
         const questionZero = () => (
             <div className="create-profile">
 
@@ -32,11 +38,11 @@ class ProfileForm extends React.Component {
                     <img className="onboarding-stepIntro-image" src={window.newprof0} />
                 </div>
             </div>
-                <button className="onboarding-stepIntro-button">NEXT</button>
+                <button className="onboarding-stepIntro-button" onClick={this.handleClick}>NEXT</button>
             </div>
         ) 
 
-        if (this.props.question === 0) {
+        if (this.state.question === 0) {
             return questionZero();
         } else {
             return (<h1>form not working</h1>);

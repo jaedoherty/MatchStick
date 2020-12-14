@@ -7,9 +7,9 @@ class NavBar extends React.Component {
         this.state = this.props.profiles[this.props.user]
     }
 
-    // componentDidMount() {
-    //     this.props.fetchProfile[this.props.user.id]
-    // }
+    componentDidMount() {
+        this.props.fetchProfiles();
+    }
 
     handleClick(e){
         e.preventDefault();
@@ -22,6 +22,7 @@ class NavBar extends React.Component {
         if (!this.props.session.id ) {
             return null;
         } else {
+            debugger
             return (
                 <nav id="nav-bar">
                    
@@ -30,8 +31,11 @@ class NavBar extends React.Component {
                     <button className="head-button" id="questions">Questions</button>
                     <button className="head-button" id="likes">Likes</button>
                     <button className="head-button" id="messages">Messages</button>
-                    <Link to={`/profiles/${this.props.profileId}`}><button className="head-button" id="my-profile">My Profile </button></Link>
-                    <button className="head-button" id="nav-logout" onClick={this.props.logout}>Log Out</button>
+                    <div id="profile-logout">
+
+                        <Link to={`/profiles/${this.props.profileId}`}><button className="head-button" id="my-profile">My Profile </button></Link>
+                        <button className="head-button" id="nav-logout" onClick={this.props.logout}>Log Out</button>
+                    </div>
                 </nav>
             );
         }

@@ -14,7 +14,7 @@ const msp = (state, ownProps) => ({
         location: '',
         zip_code: '' 
    },
-   question: 0
+//    question: 0
 })
 
 

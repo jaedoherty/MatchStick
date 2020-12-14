@@ -1,8 +1,10 @@
 export const getProfile = (state) => {
-   const profileId = Object.values(state.entities.profiles).map(profile => {
+    let profileId;
+   Object.values(state.entities.profiles).forEach(profile => {
        if (profile.user_id === state.session.id) {
-           return profile.id
-       }
-   })
-    return profileId[0]; 
+        profileId = profile.id
+        }
+    })
+    // debugger
+    return profileId; 
 }

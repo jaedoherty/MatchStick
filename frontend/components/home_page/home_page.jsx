@@ -14,7 +14,10 @@ class HomePage extends React.Component {
             return null;
         } else {
         return (
-            <h1>Home Page</h1>
+            <div id="home-page">
+                
+                <h1 id="home-header">Home Page</h1>
+            </div>
         )
         }
     }
