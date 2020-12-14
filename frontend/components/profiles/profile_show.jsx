@@ -38,6 +38,11 @@ class ProfileShow extends React.Component {
                         <div className="field-text">
 
                             <p className="ftxt">{this.props.profile.description}</p>
+
+                        </div>
+                        <div className="field-text">
+                            {Object.values(this.props.profile.quiz_results).map(result => (<p className="ftxt">{result}</p>))}
+
                         </div>
                     </div>
                     <div className="profile">
@@ -49,12 +54,9 @@ class ProfileShow extends React.Component {
                         <p>Gender: {this.props.profile.gender}</p>
                         </div>
                         {/* {this.props.profile.match_preferences.map(pref => (<p className="profshow" id="matchPrefs">{pref}</p>))} */}
-                        <div className="profshow" id="matchPrefs">
-                            {this.props.profile.match_preferences}
-                        </div>
-                        <div className="profshow" id="quiz">
-                            <p>{this.props.profile.quiz_results}</p>
-                        </div>
+
+                            {Object.values(this.props.profile.match_preferences.map(pref => (<div className="profshow">{pref}</div>)))}
+
                     </div>
 
                 </div>

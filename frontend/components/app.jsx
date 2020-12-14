@@ -20,8 +20,8 @@ const App = () => (
         <GreetingContainer />
         <Switch>
             <Route exact path="/profiles/:profileId" component={ProfileShowContainer}/>
-            {/* <Route exact path="/profile-hub/:profileId" component={HomePage}/>" */}
-            {/* <Route exact path="/:userId" component={ProfileFormContainer} /> */}
+            <Route exact path="/home" component={HomePageContainer}/>"
+            {/* <Route exact path="/:userId/profiles" component={ProfileFormContainer} /> */}
             {/* <Route path="/" component={HomePageContainer}/> */}
         </Switch>
 

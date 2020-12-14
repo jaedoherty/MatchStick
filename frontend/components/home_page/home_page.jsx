@@ -10,7 +10,7 @@ class HomePage extends React.Component {
         this.props.fetchProfiles();
     }
     render() {
-        if (!this.props.profiles) {
+        if (!this.props.session.id) {
             return null;
         } else {
         return (

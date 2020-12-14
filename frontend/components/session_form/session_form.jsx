@@ -17,6 +17,11 @@ class SessionForm extends React.Component {
             [field]: e.currentTarget.value
         });
     }
+
+    componentDidMount() {
+
+    }
+
     componentWillUnmount() {
         this.props.removeErrors();
     }
@@ -29,15 +34,17 @@ class SessionForm extends React.Component {
         });
         setTimeout(() => {
             const user = Object.assign({}, this.state);
-            this.props.login(user).then(this.props.closeModal)
-        }, 1000);
+            this.props.login(user).then(this.props.history.push("/home"));
+            this.props.closeModal();
+             }, 1000);
     }
 
 
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.closeModal);
+        this.props.processForm(user).then(this.props.history.push("/home"));
+        this.props.closeModal();
     }
 
     renderErrors() {

@@ -4,7 +4,9 @@ import { fetchProfiles } from '../../actions/profile_actions';
 import  HomePage  from './home_page';
 
 const msp = (state) => ({
-    profiles: state.entities.profiles
+    profiles: state.entities.profiles,
+    users: state.entities.users,
+    session: state.session
 })
 
 const mdp = (dispatch) => ({

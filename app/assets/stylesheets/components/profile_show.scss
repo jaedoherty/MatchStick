@@ -15,6 +15,8 @@
     // align-items: space-between;
     width: 35vh;
     padding: 10px;
+    display: flex;
+    align-items: center;
     
 }
 
@@ -91,6 +93,9 @@
     background-color: darkorchid;
     color: white;
     box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     // margin-top: -10px;
 }
 

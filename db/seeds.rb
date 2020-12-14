@@ -48,3 +48,15 @@ p2 = Profile.create!(
   user_id: u2.id
 )
 
+p3 = Profile.create!(
+  first_name: "Demo",
+  zip_code: 94107,
+  location: "San Francisco, CA",
+  age: 21,
+  description: "Not looking for anything serious.",
+  gender: "M",
+  match_preferences: ["short-term relationship", "M"],
+  quiz_results: ["Scorpio"], 
+  user_id: demo.id
+)
+
