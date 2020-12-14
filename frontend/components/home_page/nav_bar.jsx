@@ -11,6 +11,8 @@ class NavBar extends React.Component {
         this.props.fetchProfile[this.props.user.id]
     }
 
+
+
     render() {
         if (!this.props.session.id) {
             return null;
@@ -23,7 +25,7 @@ class NavBar extends React.Component {
                     <button className="head-button" id="questions">Questions</button>
                     <button className="head-button" id="likes">Likes</button>
                     <button className="head-button" id="messages">Messages</button>
-                    <button className="head-button" id="my-profile"> My Profile</button>
+                    <Link to={`/profiles/`}><button className="head-button" id="my-profile">My Profile </button></Link>
                     <button className="head-button" id="nav-logout" onClick={this.props.logout}>Log Out</button>
                 </nav>
             );

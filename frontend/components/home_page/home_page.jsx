@@ -10,14 +10,15 @@ class HomePage extends React.Component {
         this.props.fetchProfiles();
     }
     render() {
-        // if (!this.props.profile) {
-        //     return null;
-        // } else {
+        if (!this.props.profiles) {
+            return null;
+        } else {
         return (
             <h1>Home Page</h1>
         )
         }
     }
+}
 
 
 export default HomePage;

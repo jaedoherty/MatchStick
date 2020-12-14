@@ -50,7 +50,7 @@ class ProfileShow extends React.Component {
                         </div>
                         {/* {this.props.profile.match_preferences.map(pref => (<p className="profshow" id="matchPrefs">{pref}</p>))} */}
                         <div className="profshow" id="matchPrefs">
-                            {this.props.profile.match_preferences.map()}
+                            {this.props.profile.match_preferences}
                         </div>
                         <div className="profshow" id="quiz">
                             <p>{this.props.profile.quiz_results}</p>

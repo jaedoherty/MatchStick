@@ -22,7 +22,7 @@ class Api::ProfilesController < ApplicationController
        if @profile.update(profile_params)
             render :show
        else
-        render json @profile.errors.full_messages, staus: 422 
+        render json @profile.errors.full_messages, status: 422 
        end
    end
 
@@ -36,7 +36,9 @@ class Api::ProfilesController < ApplicationController
                                         :gender, 
                                         :match_preferences, 
                                         :quiz_results,
-                                        :user_id
+                                        :user_id,
+                                        :age,
+                                        :location
                                         )
 
 
