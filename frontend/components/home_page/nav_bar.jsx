@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
@@ -15,14 +16,14 @@ class NavBar extends React.Component {
         e.preventDefault();
         this.props.logout();
         this.setState({users: {}});
-        this.props.history.replace('/');
+        // this.props.history.replace('/');
     }
 
     render() {
         if (!this.props.session.id ) {
             return null;
         } else {
-            debugger
+            // debugger
             return (
                 <nav id="nav-bar">
                    

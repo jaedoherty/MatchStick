@@ -23,7 +23,7 @@ class ProfileForm extends React.Component {
     }
 
     render () {
-        debugger
+        
         const questionZero = () => (
             <div className="create-profile">
 
@@ -38,12 +38,30 @@ class ProfileForm extends React.Component {
                     <img className="onboarding-stepIntro-image" src={window.newprof0} />
                 </div>
             </div>
-                <button className="onboarding-stepIntro-button" onClick={this.handleClick}>NEXT</button>
+                <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
             </div>
         ) 
 
+        const questionOne = () => (
+            <div className="create-profile">
+
+                <div className="profile-1" id="page1">
+                    <h1 className="onboarding-title">MatchStick</h1>
+                    <div className="title-container">
+
+                        <h3 className="onboarding-name-title">About you</h3>
+                        <div className="onboarding-name-subtitle">What's your first name?</div>
+                    </div>
+                 
+                </div>
+                <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+            </div> 
+        )
+
         if (this.state.question === 0) {
             return questionZero();
+        } else if (this.state.question === 1) {
+            return questionOne();
         } else {
             return (<h1>form not working</h1>);
         } 
