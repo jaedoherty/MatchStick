@@ -1,0 +1,29 @@
+
+.profile-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#prof1-spacing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 544px;
+}
+
+.profile-name-input {
+    border: none;
+    font-size: 17px;
+    height: 56px;
+    width: 200px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.profile-name-input:active {
+    border: none;
+    outline: none;
+    // box-shadow: 2px 2px 5px gray;
+}

@@ -17,10 +17,13 @@ class ProfileForm extends React.Component {
         e.preventDefault();
         const profile = Object.assign({}, this.state);
         this.setState((previousState) => ({
+            profile: this.props.profile,
             question: previousState.question + 1
         }))
 
     }
+
+
 
     render () {
         
@@ -48,11 +51,16 @@ class ProfileForm extends React.Component {
                 <div className="profile-1" id="page1">
                     <h1 className="onboarding-title">MatchStick</h1>
                     <div className="title-container">
+                        <span><span className="onboarding-header-description">About you</span></span>
+                        <div>
 
-                        <h3 className="onboarding-name-title">About you</h3>
-                        <div className="onboarding-name-subtitle">What's your first name?</div>
-                    </div>
-                 
+                            <h3 className="profileDetails-field-prompt">What’s your first name?</h3>
+                            </div>
+                            <div className="profile-input">
+                                <input type="text" className="profile-name-input" value={this.state.title} onChange={this.update('first_name')}></input>
+                            </div>    
+                        </div>
+
                 </div>
                 <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
             </div> 
