@@ -1,0 +1,42 @@
+#personality {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    background-color: gainsboro;
+    height: 100vh;
+}
+
+// .personality-title {
+//     position: absolute;
+//     top: 30px;
+// }
+
+.personality-form {
+    display: flex;
+    justify-content: space-around;
+
+}
+.personality-container {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.personality-question {
+    display: grid;
+    grid-gap: 15px; 
+}
+
+.personality-input {
+    width: 320px;
+    height: 128px;
+    resize: none;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+
+.personality-input:focus {
+    border: none;
+    outline: none; 
+}
