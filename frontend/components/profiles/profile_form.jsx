@@ -1,4 +1,5 @@
 import React from 'react';
+import PersonalityForm from '../personality/personality_form';
 
 class ProfileForm extends React.Component {
     constructor(props) {
@@ -393,9 +394,8 @@ class ProfileForm extends React.Component {
         } else if (this.state.question === 12) {
             return questionTwelve();
         } else {
-            return(<h1>form not working</h1>)
+            return <PersonalityForm />
         }
-
     }
 }
 
