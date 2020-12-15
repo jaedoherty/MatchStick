@@ -1,14 +1,15 @@
 import React from 'react';
-import PersonalityForm from '../personality/personality_form';
+import PersonalityFormContainer from '../personality/personality_form_container';
 
 class ProfileForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            profile: this.props.profile,
             question: 0
         }
         this.handleClick = this.handleClick.bind(this); 
-        // this.updateArrays = this.updateArrays.bind(this);
+        this.updateArrays = this.updateArrays.bind(this);
         // this.handleBack = this.handleBack.bind(this);
     }
 
@@ -16,11 +17,11 @@ class ProfileForm extends React.Component {
         return e => this.setState( { [field]: e.currentTarget.value });
     }
 
-    // updateArrays(e, field) {
-    //     return e => (this.setState((previousState) => ({
-    //        [field]: previousState.field.push()
-    //     }))); 
-    // }
+    updateArrays(e) {
+        return e => (this.setState((previousState) => ({
+           [match_preferences]: previousState.match_preferences.push(e.currentTarget.value)
+        }))); 
+    }
 
     handleClick(e) {
         e.preventDefault();
@@ -337,7 +338,7 @@ class ProfileForm extends React.Component {
 
                     <span><span className="onboarding-header-description">About you</span></span>
 
-                    <h3 className="profileDetails-field-prompt">Introduce youself</h3>
+                    <h3 className="profileDetails-field-prompt">Introduce yourself</h3>
                     <div className="profile-input">
                         <textarea className="profile-name-input" id="text-input" onChange={this.update('description')}></textarea>
                     </div>
@@ -394,7 +395,7 @@ class ProfileForm extends React.Component {
         } else if (this.state.question === 12) {
             return questionTwelve();
         } else {
-            return <PersonalityForm />
+            return <PersonalityFormContainer profile={this.state}/>
         }
     }
 }

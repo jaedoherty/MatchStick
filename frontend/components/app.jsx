@@ -18,13 +18,13 @@ const App = () => (
             <Link to="/" className="header-link"></Link>
             <GreetingContainer />
         </header> */}
-        <GreetingContainer />
+        {/* <GreetingContainer /> */}
         <Switch>
             <Route exact path="/profiles/:profileId" component={ProfileShowContainer}/>
             <Route exact path="/home" component={HomePageContainer}/>"
             <Route exact path="/newProfile/" component={NewProfile} />
             {/* <Route exact path="/:userId/profiles" component={ProfileFormContainer} /> */}
-            {/* <Route path="/" component={HomePageContainer}/> */}
+            <Route path="/" component={GreetingContainer}/>
         </Switch>
 
 

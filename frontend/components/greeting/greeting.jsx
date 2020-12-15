@@ -31,16 +31,16 @@ class Greeting extends React.Component {
                 </nav>
             </div>
         );
-        const personalGreeting = () => (
+        // const personalGreeting = () => (
     
-                <div>
-                    <NavBarContainer /> 
-                     {/* <button className="header-button" onClick={logout}>Log Out</button> */}
+        //         <div>
+        //             <NavBarContainer /> 
+        //              {/* <button className="header-button" onClick={logout}>Log Out</button> */}
     
-                </div>
-        );
+        //         </div>
+        // );
         
-       return this.props.currentUser ? personalGreeting() : sessionLinks();
+       return this.props.currentUser ? null : sessionLinks();
     }
 };
 

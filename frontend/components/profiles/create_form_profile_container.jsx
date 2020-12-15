@@ -5,14 +5,14 @@ import { createProfile } from '../../actions/profile_actions';
 const msp = (state, ownProps) => ({
    profile: {
         description: '',
-        first_name: 'First Name',
+        first_name: '',
         gender: '',
         user_id: ownProps.match.params.userId,
         match_preferences: [],
         quiz_results: [], 
         age: '',
-        location: 'City, State',
-        zip_code: 'ex. 12345' 
+        location: '',
+        zip_code: '' 
    },
 //    question: 0
 })
