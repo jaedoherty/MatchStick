@@ -7,11 +7,19 @@ class ProfileForm extends React.Component {
             question: 0
         }
         this.handleClick = this.handleClick.bind(this); 
+        // this.updateArrays = this.updateArrays.bind(this);
+        // this.handleBack = this.handleBack.bind(this);
     }
 
     update(field) {
         return e => this.setState( { [field]: e.currentTarget.value });
     }
+
+    // updateArrays(e, field) {
+    //     return e => (this.setState((previousState) => ({
+    //        [field]: previousState.field.push()
+    //     }))); 
+    // }
 
     handleClick(e) {
         e.preventDefault();
@@ -19,6 +27,16 @@ class ProfileForm extends React.Component {
         this.setState((previousState) => ({
             profile: this.props.profile,
             question: previousState.question + 1
+        }))
+
+    }
+
+    handleBack(e) {
+        e.preventDefault();
+        const profile = Object.assign({}, this.state);
+        this.setState((previousState) => ({
+            profile: this.props.profile,
+            question: previousState.question - 1
         }))
 
     }
@@ -154,6 +172,199 @@ class ProfileForm extends React.Component {
                     </div>
                 </div>
             )
+            const questionFive = () => (
+                <div className="create-profile">
+
+                    <div className="profile-0" >
+                        <h1 className="onboarding-title">MatchStick</h1>
+                        <div className="title-container">
+
+                            <h3 className="onboarding-stepIntro-title">Who are you looking for?</h3>
+                            <div className="onboarding-stepIntro-subtitle">To see the right people, tell us who you're into.</div>
+                        </div>
+                        <div className="img-container">
+                            <img className="onboarding-stepIntro-image" src={window.magnify} />
+                        </div>
+                    </div>
+                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+                </div>
+            ) 
+
+        const questionSix = () => (
+            <div className="create-profile">
+
+                <h1 className="onboarding-title">MatchStick</h1>
+                <div className="profile-1" id="page1">
+
+                    <span><span className="onboarding-header-description">Ideal person</span></span>
+
+                    <h3 className="profileDetails-field-prompt">What connections are you looking for?</h3>
+                    <div className="pick-many-buttons">
+                        <button className="pick-button">
+                            <label>Hookups</label>
+                            <input type="checkbox"/>
+                        </button>
+                        <button className="pick-button">
+                            <label>New friends</label>
+                            <input type="checkbox" />
+                        </button>
+                        <button className="pick-button">
+                            <label>Short-term dating</label>
+                            <input type="checkbox" />
+                        </button>
+                        <button className="pick-button">
+                            <label>Long-term dating</label>
+                            <input type="checkbox" />
+                        </button>
+                    </div>
+                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+                </div>
+            </div>
+        )
+
+
+        const questionSeven = () => (
+            <div className="create-profile">
+
+                <h1 className="onboarding-title">MatchStick</h1>
+                <div className="profile-1" id="page1">
+                    <span><span className="onboarding-header-description">Relationship type</span></span>
+
+                    <h3 className="profileDetails-field-prompt">I am...</h3>
+                    <div className="profile-dropdown-2">
+                        <select name="monogamy" className="dropdown">
+                            <option className="drop-option" value="please_select" selected disabled>Please Select</option>
+                            <option className="drop-option" value="monogamous">Monogamous</option>
+                            <option className="drop-option" value="nonmonogamous">Non-monogamous</option>
+                            <option className="drop-option" value="open">Open to either</option>
+                        </select>
+                    </div>
+                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+
+                </div>
+            </div>
+        )
+
+        const questionEight = () => (
+            <div className="create-profile">
+
+                <h1 className="onboarding-title">MatchStick</h1>
+                <div className="profile-1" id="page1">
+                    <span><span className="onboarding-header-description">Ideal person</span></span>
+
+                    <h3 className="profileDetails-field-prompt">I am looking for...</h3>
+                    <div className="pick-many-buttons">
+                        <button className="pick-button">
+                            <label>Men</label>
+                            <input type="checkbox" />
+                        </button>
+                        <button className="pick-button">
+                            <label>Women</label>
+                            <input type="checkbox" />
+                        </button>
+                        <button className="pick-button">
+                            <label>Nonbinary</label>
+                            <input type="checkbox" />
+                        </button>
+                        <button className="pick-button">
+                            <label>Other</label>
+                            <input type="checkbox" />
+                        </button>
+                    </div>
+                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+                </div>
+
+            </div>
+    
+        )
+
+        const questionNine = () => {
+            const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step));
+            const age = range(18, 99, 1);
+
+            return (
+                <div className="create-profile">
+
+                    <h1 className="onboarding-title">MatchStick</h1>
+                    <div className="profile-1" id="page1">
+                        <span><span className="onboarding-header-description">Ideal person</span></span>
+
+                        <h3 className="profileDetails-field-prompt">How old should they be?</h3>
+                        <div className="profile-dropdown-3" id="age-range">
+
+                            <select name="minAge" className="dropdown">
+                                <option className="drop-option" id="minAge" value="minAge" selected disabled>Min Age</option>
+                                {age.map(age => (<option className="dropdown">{age}</option>))}
+                            </select>
+                            <p>—</p>
+                            <select name="maxAge" className="dropdown">
+                                <option className="drop-option" id="maxAge" value="maxAge" selected disabled>Max Age</option>
+                                {age.map(age => (<option className="dropdown">{age}</option>))}
+                            </select>
+
+                        </div>
+                        <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+
+                    </div>
+                </div>
+            )
+        }
+
+        const questionTen = () => (
+            <div className="create-profile">
+
+                <div className="profile-0" id="page0">
+                    <h1 className="onboarding-title">MatchStick</h1>
+                    <div className="title-container">
+
+                        <h3 className="onboarding-stepIntro-title">Tell us about yourself</h3>
+                        <div className="onboarding-stepIntro-subtitle">So we can find people who like you for you</div>
+                    </div>
+                    <div className="img-container">
+                        <img className="onboarding-stepIntro-image" src={window.book} />
+                    </div>
+                </div>
+                <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+            </div>
+        ) 
+
+        const questionEleven = () => (
+            <div className="create-profile">
+
+                <h1 className="onboarding-title">MatchStick</h1>
+                <div className="profile-1" id="page1">
+
+                    <span><span className="onboarding-header-description">About you</span></span>
+
+                    <h3 className="profileDetails-field-prompt">Introduce youself</h3>
+                    <div className="profile-input">
+                        <textarea className="profile-name-input" id="text-input" onChange={this.update('description')}></textarea>
+                    </div>
+                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+
+                </div>
+            </div>
+        )
+
+        const questionTwelve = () => (
+            <div className="create-profile">
+
+                <div className="profile-0" id="page0">
+                    <h1 className="onboarding-title">MatchStick</h1>
+                    <div className="title-container">
+
+                        <h3 className="onboarding-stepIntro-title">Answer some questions</h3>
+                        <div className="onboarding-stepIntro-subtitle">So we can calculate your best matches</div>
+                    </div>
+                    <div className="img-container">
+                        <img className="onboarding-stepIntro-image" src={window.question} />
+                    </div>
+                </div>
+                <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+            </div>
+        ) 
+
+        
 
         if (this.state.question === 0) {
             return questionZero();
@@ -165,10 +376,28 @@ class ProfileForm extends React.Component {
             return questionThree();
         } else if (this.state.question === 4) {
             return questionFour();
+        } else if (this.state.question === 5) {
+            return questionFive();
+        } else if (this.state.question === 6) {
+            return questionSix();
+        } else if (this.state.question === 7) {
+            return questionSeven();
+        } else if (this.state.question === 8) {
+            return questionEight();
+        } else if (this.state.question === 9) {
+            return questionNine();
+        } else if (this.state.question === 10) {
+            return questionTen();
+        } else if (this.state.question === 11) {
+            return questionEleven();
+        } else if (this.state.question === 12) {
+            return questionTwelve();
         } else {
-            return (<h1>form not working</h1>);
-        } 
+            return(<h1>form not working</h1>)
+        }
+
     }
 }
 
 export default ProfileForm;
+
