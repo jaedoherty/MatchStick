@@ -21,10 +21,11 @@ export const fetchProfile = profileId => dispatch => (
     APIUtil.fetchProfile(profileId).then((profile) => dispatch(receiveProfile(profile)))
 )
 
-export const createProfile = profile => dispatch => (
-    APIUtil.createProfile(profile).then((profile) => dispatch(createProfile(profile)))
-)
+export const createProfile = profile => dispatch => {
+    // debugger;
+   return  APIUtil.createProfile(profile).then((profile) => dispatch(receiveProfile(profile)));
+}
 
 export const updateProfile = profile => dispatch => (
-    APIUtil.updateProfile(profile).then((profile) => dispatch(updateProfile(profile)))
+    APIUtil.updateProfile(profile).then((profile) => dispatch(receiveProfile(profile)))
 )

@@ -5,7 +5,8 @@ class Api::ProfilesController < ApplicationController
     end
    def create
     @profile = Profile.new(profile_params) 
-    if @profile.save
+    # debugger
+    if @profile.save!
         render :show
     else
         render json: ['Please fill out all fields'], status: 422 
@@ -34,11 +35,12 @@ class Api::ProfilesController < ApplicationController
                                         :zip_code, 
                                         :description,
                                         :gender, 
-                                        :match_preferences, 
-                                        :quiz_results,
                                         :user_id,
                                         :age,
-                                        :location
+                                        :location,
+                                        quiz_results: [],
+                                        match_preferences: [] 
+
                                         )
 
 

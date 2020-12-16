@@ -33,17 +33,24 @@ class ProfileShow extends React.Component {
                 </div>
 
                 <div id="profilewrapper">
-                    <div className="description"> 
-                    <p className="field-title">About Me</p>
-                        <div className="field-text">
+                    <div id="bio-quiz">
 
-                            <p className="ftxt">{this.props.profile.description}</p>
+                        <div className="description"> 
+                            <p className="field-title">About Me</p>
+                            <div className="field-text">
 
+                                <p className="ftxt">{this.props.profile.description}</p>
+
+                            </div>
                         </div>
-                        <div className="field-text">
-                            {Object.values(this.props.profile.quiz_results).map(result => (<p className="ftxt">{result}</p>))}
+                                {Object.values(this.props.profile.quiz_results).map(result => (
+                                    <div className="description">
 
-                        </div>
+                                        <div className="field-text">
+                                                <p className="ftxt">{result}</p>
+                                        </div>
+                                    </div>
+                                ))}
                     </div>
                     <div className="profile">
                         <div className="profshow" id="edit-profile">
