@@ -33,7 +33,7 @@ p1 = Profile.create!(
   gender: 'F',
   description:"Foodie. Will swipe for dogs.",
    match_preferences:['{I am looking for..:Men and Women},{I am...:Non-monogamous},{What connections are you looking for?:Hookups},{ How old should they be?:25}'],
-  quiz_results: ['{Dogs or cats (and do you have any)?:no dogs but I want one!!!},{How do you feel about pineapple on pizza?:don’t have a preference},{If you were a Kardashian, which one would you be?:kourtney},{What is your astrological sign?:pisces},{What is your favorite Ariana Grande song?:7 rings},{What is your favorite Disney movie?:tangled},{What is your favorite Pokémon?:Eevee},{What is your go to cocktail?:espresso martini},{What is your ideal first date?:anything food related},{Which house would the sorting hat place you in?:ravenclaw},{Which member of BlackPink would you be?:Jennie}'],
+  quiz_results: ["{Dogs or cats (and do you have any)?:I don't have a dog but I want one!!},{How do you feel about pineapple on pizza?:don’t have a preference},{If you were a Kardashian, which one would you be?:kourtney},{What is your astrological sign?:pisces},{What is your favorite Ariana Grande song?:7 rings},{What is your favorite Disney movie?:tangled},{What is your favorite Pokémon?:Eevee},{What is your go to cocktail?:espresso martini},{What is your ideal first date?:anything food related},{Which house would the sorting hat place you in?:ravenclaw},{Which member of BlackPink would you be?:Jennie}"],
   user_id: u1.id,
 )
 

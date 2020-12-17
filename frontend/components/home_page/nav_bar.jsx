@@ -19,6 +19,10 @@ class NavBar extends React.Component {
         this.props.history.push('/');
     }
 
+    // logout() {
+    //     this.props.logout.then(this.props.history.push('/home'))
+    // }
+
     render() {
         if (!this.props.session.id ) {
             return null;

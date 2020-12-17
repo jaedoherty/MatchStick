@@ -37,7 +37,7 @@ class ProfileShow extends React.Component {
                         if (!unpermittedChars.includes(ele)) {
                             toAdd += ele
                         } else {
-                            if (toAdd.length > 1 && toAdd[0] !== "," && toAdd[0] !== "n") formattedMatches.push(toAdd);
+                            if (toAdd.length > 1 && toAdd[0] !== "," && (toAdd[0] !== "n")) formattedMatches.push(toAdd);
                             toAdd = ""
                         }
  
