@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import NavBarContainer from './nav_bar_container'
-import ProfileShowContainer from '../profiles/profile_show_container'
+import OtherProfileShow from '../profiles/other_profile_show_container'
 import ProfileShow from '../profiles/profile_show';
 
 class HomePage extends React.Component {
@@ -25,8 +25,11 @@ class HomePage extends React.Component {
             const getIndex = () => {
 
 
-                    const profileIds = Object.keys(this.props.profiles)
+                    const ids = Object.keys(this.props.profiles)
                     
+                    let profileIds = [];
+                    ids.forEach( (id) => {if (id !== (this.props.profile)) profileIds.push(id)})
+                     
                     const min = Math.min(...profileIds)
                     const max = Math.max(...profileIds)
                     const randomIndex = Math.floor(Math.random() * (max - min) + min)
@@ -34,16 +37,9 @@ class HomePage extends React.Component {
              
             }
 
-         
-            const profile = [this.props.profiles[getIndex()]]
-            console.log("function", profile)
-
-            // const element = profile.map((ele) => {
-            //     // return <p>{ele['location']}</p> 
-            //     // debugger
-            //     console.log("in map", ele)
-            // })
-            // console.log("ele", element)
+            let index = getIndex() 
+            const profile = [this.props.profiles[index]]
+            console.log(index)
 
             return (
                 <div id="home-page">
@@ -51,7 +47,22 @@ class HomePage extends React.Component {
                     
                     {profile.map((ele) => {
                         // debugger
-                        return <ProfileShowContainer profile={ele}/> 
+                        return (
+                            <div id="profile-info">
+                                <div>image placeholder</div>
+                                <p>Name: {ele.first_name}</p>
+                                <p>Age: {ele.age}</p>
+                                <p>Bio: {ele.description}</p>
+                                <p>Gender: {ele.gender}</p>
+                                <p>Location: {ele.location}</p>
+                                {/* <p>{ele.zip_code}</p> */}
+                                
+                                <Link to={`/seeProfile/${index}`}><button>See their profile</button></Link>
+                                <div><button>Like</button> <button>Pass</button></div>
+
+                            </div>
+                        )
+                        // return <ProfileShowContainer profile={ele}/> 
                     })}
                 </div>
             )

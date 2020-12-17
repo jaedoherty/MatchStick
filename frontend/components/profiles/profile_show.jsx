@@ -28,6 +28,25 @@ class ProfileShow extends React.Component {
     }
 
     render() {
+        const editPersonalityButton = () => {
+            if (this.props.profile === this.props.session) {
+                return (
+                    <button id="edit-quiz" onClick={this.editPersonality()}>edit</button> 
+                )
+            } else {
+                return <p> </p>
+            }
+        }
+
+        // const editProfileButton = () => {
+        //     if (this.props.profile === this.props.session) {
+        //         return (
+        //             <button id="edit-quiz" onClick={this.editPersonality()}>edit</button>
+        //         )
+        //     } else {
+        //         return <p> </p>
+        //     }
+        // }
         if (!this.props.profile) {
             return null;
         } else {

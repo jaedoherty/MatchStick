@@ -7,12 +7,15 @@ const msp = (state, ownProps) =>{
     // const profileId
     if (ownProps.profile) {
        return ({
-          profile: ownProps.profile
+          profile: ownProps.profile,
+          session: state.entities.session
+
        })
     } else {
 
         return({
-        profile: state.entities.profiles[ownProps.match.params.profileId]
+        profile: state.entities.profiles[ownProps.match.params.profileId],
+        session: state.entities.session
        });
     }
 }

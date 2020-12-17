@@ -423,6 +423,7 @@ class ProfileForm extends React.Component {
                         <img className="smash-img" src={window.yoshi} />
                     </div> 
                 </div>
+                <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
             </div>
         )
 
