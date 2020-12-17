@@ -29,3 +29,11 @@ export const createProfile = profile => dispatch => {
 export const updateProfile = profile => dispatch => (
     APIUtil.updateProfile(profile).then((profile) => dispatch(receiveProfile(profile)))
 )
+
+export const likeUser = profileId => dispatch => {
+    return APIUtil.addLikeToProfile(profileId).then((profile) => dispatch(receiveProfile))
+}
+
+export const unlikeProfile = profileId => dispatch => {
+    return APIUtil.deleteLikeFromProfile(profileId).then(profile => dispatch(receiveProfile(profile)))
+}

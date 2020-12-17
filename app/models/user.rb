@@ -9,6 +9,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Profile 
 
+    has_many :likes,
+    foreign_key: :liker_id,
+    class_name: :Like
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil unless user
