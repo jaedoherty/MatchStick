@@ -49,16 +49,36 @@ class HomePage extends React.Component {
                         // debugger
                         return (
                             <div id="profile-info">
-                                <div>image placeholder</div>
-                                <p>Name: {ele.first_name}</p>
-                                <p>Age: {ele.age}</p>
-                                <p>Bio: {ele.description}</p>
-                                <p>Gender: {ele.gender}</p>
-                                <p>Location: {ele.location}</p>
-                                {/* <p>{ele.zip_code}</p> */}
-                                
-                                <Link to={`/seeProfile/${index}`}><button>See their profile</button></Link>
-                                <div><button>Like</button> <button>Pass</button></div>
+                                <div className="smash-img" id="home-image">
+                                    <img id="resize-smash"src={window.bowser}/>
+                                    <div id="basic-info">
+                                        <label className="basic-id"> Name
+                                        <p className="basic-value">{ele.first_name}</p> 
+                                        </label>
+                                        <label className="basic-id"> Age
+
+                                        <p className="basic-value">{ele.age}</p> 
+                                        </label>
+                                    </div>
+                                    <div id="profile-button">
+                                        <Link to={`/seeProfile/${index}`}><button className="home-button">See their profile</button></Link>
+                                    </div>
+                                </div>
+        
+                                <label className="home-label"> About me
+                                    <p className="home-value">{ele.description}</p>
+                                </label>
+                                <label className="home-label"> Gender
+                                    <p className="home-value">{ele.gender}</p>
+                                </label>
+                                <label className="home-label"> Location
+                                    <p className="home-value">{ele.location}</p>
+                                </label>
+   
+                                <div id="home-buttons">
+
+                                    <div id="like-buttons">< button className="home-button">Like</button> <button className="home-button">Pass</button></div>
+                                </div> 
 
                             </div>
                         )
