@@ -29,7 +29,7 @@ class ProfileShow extends React.Component {
             // debugger
             const allMatchAnswers = (field) => {
                     const matches =  this.props.profile[field]
-                    const unpermittedChars = ["=", ">", '"', "", ] 
+                    const unpermittedChars = ["=", ">", '"', "", '[', '{', ']', '}', ':', '\\'] 
                     const formattedMatches = [] 
                     let toAdd = ""
                     for (let index = 0; index < matches.length; index++) {
