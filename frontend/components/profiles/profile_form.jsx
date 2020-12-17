@@ -7,7 +7,7 @@ class ProfileForm extends React.Component {
         this.state = {
             profile: this.props.profile,
             question: this.props.question,
-            new_preferences: {},
+            new_preferences: new Map(),
             // users
         }
         // debugger
@@ -53,7 +53,7 @@ class ProfileForm extends React.Component {
 
     updateMatches () {
         const profile = {...this.state.profile};
-        const match_preferences = [this.state.new_preferences];
+        const match_preferences = this.state.new_preferences;
         profile.match_preferences = match_preferences;
         return profile;
     }

@@ -18,11 +18,69 @@ class ProfileShow extends React.Component {
         return () => this.props.history.push('/editProfile')
     }
 
+    editPersonality() {
+        return () => this.props.history.push('/editPersonalityQuiz') 
+    }
+
     render() {
         if (!this.props.profile) {
             return null;
         } else {
             // debugger
+            const allMatchAnswers = (field) => {
+                    const matches =  this.props.profile[field]
+                    const unpermittedChars = ["=", ">", '"', "", ] 
+                    const formattedMatches = [] 
+                    let toAdd = ""
+                    for (let index = 0; index < matches.length; index++) {
+                        const ele = matches[index]
+                        if (!unpermittedChars.includes(ele)) {
+                            toAdd += ele
+                        } else {
+                            if (toAdd.length > 1 && toAdd[0] !== ",") formattedMatches.push(toAdd);
+                            toAdd = ""
+                        }
+ 
+                        
+                    }
+                    if (field === "match_preferences"){
+                        
+                        return formattedMatches.map((str, i) => {
+                            if (i % 2 === 0) {
+                            return (
+                                <div className="profshow">
+                                <label> {str}
+                                        <p>{formattedMatches[i+1]}</p>
+                                </label>
+                                    </div>
+    
+                            )
+    
+                        }
+                        
+                    }
+                        )
+                    } else {
+                        return formattedMatches.map((str, i) => {
+                            if (i % 2 === 0) {
+                                return (
+                                    <div className="description">
+                                        <p className="field-title">{str}</p>
+                                        <div className="field-text">
+
+                                            <p className="ftxt">{formattedMatches[i + 1]} <button id="edit-quiz" onClick={this.editPersonality()}>edit</button></p>
+                                            
+                                        </div>
+                                    </div>
+
+                                )
+                    }
+                    }
+                        )}}
+   
+
+
+
         return (
             <div className="profile-show-container">
                 {/* <NavBarContainer/> */}
@@ -47,18 +105,14 @@ class ProfileShow extends React.Component {
                             <p className="field-title">About Me</p>
                             <div className="field-text">
 
-                                <p className="ftxt">{this.props.profile.description}</p>
-
+                                <p className="ftxt">{this.props.profile.description} <button id="edit-quiz" onClick={this.editPersonality()}>edit</button> </p>
                             </div>
+                                
                         </div>
-                            {(this.props.profile.quiz_results).map(result => (
-                                <div className="description">
+                            {allMatchAnswers("quiz_results")}
+                    <div>
 
-                                    <div className="field-text">
-                                            <p className="ftxt">{result}</p>
-                                    </div>
-                                </div>
-                            ))}
+                    </div>
                     </div>
                     <div className="profile">
                         <div className="profshow" id="edit-profile">
@@ -73,12 +127,14 @@ class ProfileShow extends React.Component {
                             <button id='edit-button'onClick={this.handleClick()}> 	&#62;</button>
                         </div>
                         <div className="profshow" id="gender"> 
-                        <p>Gender: {this.props.profile.gender}</p>
+                        <label>Gender:
+
+                        <p>{this.props.profile.gender}</p>
+                        </label>
                         </div>
-                        {/* {this.props.profile.match_preferences.map(pref => (<p className="profshow" id="matchPrefs">{pref}</p>))} */}
-
-                            {Object.values(this.props.profile.match_preferences.map(pref => (<div className="profshow">{pref}</div>)))}
-
+    
+                        {allMatchAnswers("match_preferences")}
+                                
                     </div>
 
                 </div>

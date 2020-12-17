@@ -11,6 +11,7 @@ import HomePageContainer from './home_page/home_page_container';
 import NavBarContainer from './home_page/nav_bar_container';
 import NewProfile from './profiles/create_form_profile_container';
 import EditProfile from './profiles/edit_form_profile_container'
+import EditPersonality from './personality/edit_personality_form_container'
 
 const App = () => (
     <div id="bigdiv">
@@ -25,6 +26,7 @@ const App = () => (
             <Route exact path="/home" component={HomePageContainer}/>"
             <Route exact path="/newProfile/" component={NewProfile} />
             <Route exact path="/editProfile" component={EditProfile} />
+            <Route exact path="/editPersonalityQuiz" component={EditPersonality} />
             {/* <Route exact path="/:userId/profiles" component={ProfileFormContainer} /> */}
         <Redirect from="/" to="/home"/>
         </Switch>
