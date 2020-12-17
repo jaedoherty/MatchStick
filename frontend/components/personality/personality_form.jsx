@@ -34,6 +34,7 @@ class PersonalityForm extends React.Component {
         const profile = { ...this.state.profile };
         const questions = [this.state.questions];
         profile.quiz_results = questions;
+        profile.user_id = this.props.sessionId;
         return profile;
     }
     

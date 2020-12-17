@@ -8,7 +8,8 @@ const msp = (state) => ({
     // profileId: getProfile(state),
     // currentUser: state.entities.users[state.session.id],
     // profile: {},
-    questions: new Map()
+    questions: new Map(),
+    sessionId: state.session.id
 })
 
 const mdp = (dispatch) => ({
