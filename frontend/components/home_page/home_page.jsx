@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import NavBarContainer from './nav_bar_container'
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class HomePage extends React.Component {
         } else {
         return (
             <div id="home-page">
-                
+                {/* <NavBarContainer/>  */}
                 <h1 id="home-header">Home Page</h1>
             </div>
         )

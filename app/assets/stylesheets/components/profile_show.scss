@@ -1,10 +1,10 @@
 
 
 .profile-show-container {
-   display: flex; 
+   display: grid; 
 //    align-items: center;
     height: 100vh;
-    flex-direction: column;
+    // flex-direction: column;
     font-family: Raleway, sans-serif;
     background-color: gainsboro;
 }
@@ -30,8 +30,8 @@
 }
 
 .profile {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    // flex-direction: column;
     flex-grow: 1;
     height: 50vh;
     width:340px;
@@ -45,8 +45,10 @@
 
 #profilewrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 50px;
+    width: 100%;
+    margin-left: 25%;
     // justify-content: space-between;
 }
 
@@ -63,7 +65,7 @@
     display: flex;
     flex-direction: column;
     // align-items: flex-end;
-    margin-left: 25%;
+    // margin-left: 25%;
     // border: black solid;
     // justify-content: flex-end;
     background-color: white;
@@ -101,7 +103,8 @@
     color: white;
     box-shadow: none;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;;
+    // flex-direction: column;
     align-items: flex-start;
     // margin-top: -10px;
 }
@@ -158,4 +161,17 @@
 
 Link {
     color: white;
+}
+
+#edit-button {
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 700;
+    background-color: darkorchid;
+    font-size: 20px;
+}
+
+#edit-button:hover {
+    background-color: mediumorchid;
 }

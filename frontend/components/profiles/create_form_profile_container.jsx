@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProfileForm from './profile_form';
-import { createProfile } from '../../actions/profile_actions';
+import { createProfile, receiveCurrentUser } from '../../actions/profile_actions';
+// import {login} from '../../actions/session_actions'
 
 const msp = (state) => {
     // let user_id = null;
@@ -16,7 +17,9 @@ const msp = (state) => {
      age: '',
      location: '',
      zip_code: '',
-    }}
+    },
+    question: 0
+}
 } 
        
     // match_preferences: {},
@@ -26,7 +29,9 @@ const msp = (state) => {
 
 
 const mdp = (dispatch) => ({
-    action: (profile) => dispatch(createProfile(profile))
+    action: (profile) => dispatch(createProfile(profile)),
+    receiveCurrentUser: (user) => dispatch(receiveCurrentUser(user))
+    
 })
 
 export default connect(msp, mdp)(ProfileForm);

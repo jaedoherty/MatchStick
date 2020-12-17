@@ -5,9 +5,9 @@ class ProfileForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            ...this.props.profile,
-            question: 0,
-            match_preferences: {},
+            profile: this.props.profile,
+            question: this.props.question,
+            new_preferences: {},
             // users
         }
         // debugger
@@ -28,46 +28,83 @@ class ProfileForm extends React.Component {
         // debugger
         // return e => this.setState( {profile:{ [field]: e.currentTarget.value }});
         // console.log(this.state.profile);
-        return (e) => {
+        return ((e) => {
             const profile = { ...this.state.profile };
             profile[field] = e.currentTarget.value;
             this.setState({ profile });
 
-        } 
+        }); 
     }
 
     updateArrays(preference) {
         // console.log("in update arrays")
         return (e) => {
-            const preferences = this.state.match_preferences ;
-            // console.log("before change", preferences)
+            // const profile = {...this.state.profile}
+            const preferences = this.state.new_preferences ;
+            console.log("before change", preferences)
+            
             preferences[preference] = e.target.value;
-            // console.log("preferences", preferences)
-            this.setState({match_preferences: preferences});
+            // profile.match_preferences = Array.from(preferences);
+            // console.log("profile", profile, "state", this.state)
+            this.setState({new_preferences: preferences})
+            debugger;
         }
     }
+
+    updateMatches () {
+        const profile = {...this.state.profile};
+        const match_preferences = [this.state.new_preferences];
+        profile.match_preferences = match_preferences;
+        return profile;
+    }
+
     handleChange(field) {
         return (e) => {
             const profile = { ...this.state.profile };
             profile[field] = e.currentTarget.value;
             this.setState({ profile });
 
-        }
-    }
+        
+    }}
+    // updateArrays(e) {
+    //     const profile = { ...this.state.profile };
+    //     profile.match_preferences.push(e.currentTarget.value);
+    //     this.setState({ profile });
+    // }
 
     handleClick(e) {
-        e.preventDefault();
-        // console.log(this.state.profile);
-        const profile = {...this.state.profile};
-        // console.log("before change", profile)
-        profile.match_preferences = Object.values(this.state.match_preferences);
-        // console.log("after change", profile)
-        this.setState((previousState) => ({
-            profile,
-            question: previousState.question + 1
-        }))
 
+        if (this.state.question < 13) {
+
+            e.preventDefault();
+            // console.log(this.state.profile);
+            const profile = {...this.state.profile};
+            // console.log("before change", profile)
+            // const keys = Object.keys(this.state.match_preferences)
+            // const k = keys[keys.length - 1]
+            // const values = Object.values(this.state.match_preferences)
+            // const v = values[values.length - 1]
+            // if (!this.state.match_preferences === 0) profile.match_preferences.push({k: v})
+            // console.log("after change", profile)
+            this.setState((previousState) => ({
+                profile,
+                question: previousState.question + 1
+            }))
+        } else {
+            e.preventDefault();
+            // console.log(this.state.profile);
+            const profile = { ...this.state.profile }; 
+            // const matches = profile.match_preferemnce;
+            profile.match_preferences = this.state.new_preferences;
+            this.setState((previousState) => ({
+                profile,
+                question: previousState.question + 1
+            }))
+        }
     }
+     
+
+    
 
     handleBack(e) {
         e.preventDefault();
@@ -82,12 +119,12 @@ class ProfileForm extends React.Component {
 
 
     render () {
-       console.log("props", this.props.profile, "state", this.state)
+    //    console.log("props", this.props.profile, "state", this.state)
         const questionZero = () => (
             <div className="create-profile">
 
             <div className="profile-0" id="page0">
-                <h1 className="onboarding-title">MatchStick</h1>
+                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="title-container">
                     
                     <h3 className="onboarding-stepIntro-title">Let's start with the basics</h3>
@@ -104,7 +141,7 @@ class ProfileForm extends React.Component {
         const questionOne = () => (
             <div className="create-profile">
 
-                <h1 className="onboarding-title">MatchStick</h1>
+                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -125,7 +162,7 @@ class ProfileForm extends React.Component {
         const questionTwo = () => (
             <div className="create-profile">
 
-                <h1 className="onboarding-title">MatchStick</h1>
+                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -152,7 +189,7 @@ class ProfileForm extends React.Component {
         const questionThree = () => (
             <div className="create-profile">
 
-                <h1 className="onboarding-title">MatchStick</h1>
+                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -173,7 +210,7 @@ class ProfileForm extends React.Component {
             const questionFour = () => (
                 <div className="create-profile">
 
-                    <h1 className="onboarding-title">MatchStick</h1>
+                    {/* <h1 className="onboarding-title">MatchStick</h1> */}
                     <div className="profile-1" id="page1">
                         <div className="header-container">
 
@@ -197,7 +234,7 @@ class ProfileForm extends React.Component {
                 <div className="create-profile">
 
                     <div className="profile-0" >
-                        <h1 className="onboarding-title">MatchStick</h1>
+                        {/* <h1 className="onboarding-title">MatchStick</h1> */}
                         <div className="title-container">
                             <div className="header-container">
 
@@ -217,7 +254,7 @@ class ProfileForm extends React.Component {
         const questionSix = () => (
             <div className="create-profile">
 
-                <h1 className="onboarding-title">MatchStick</h1>
+                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -226,25 +263,18 @@ class ProfileForm extends React.Component {
                     <span><span className="onboarding-header-description">Ideal person</span></span>
 
                     <h3 className="profileDetails-field-prompt">What connections are you looking for?</h3>
-                    <div className="pick-many-buttons" onChange={this.updateArrays("connections")}>
-                        <button className="pick-button">
-                            <label>Hookups</label>
-                            <input type="checkbox" value="Hookups"/>
-                        </button>
-                        <button className="pick-button">
-                            <label>New friends</label>
-                            <input type="checkbox" value="New friends" />
-                        </button>
-                        <button className="pick-button">
-                            <label>Short-term dating</label>
-                            <input type="checkbox" value="Short-term dating"/>
-                        </button>
-                        <button className="pick-button">
-                            <label>Long-term dating</label>
-                            <input type="checkbox" value="Long-term dating"/>
-                        </button>
+
+                    <div className="profile-dropdown-2">
+                        <select name="connections" className="dropdown" onChange={this.updateArrays("What connections are you looking for?")}>
+                            <option className="drop-option" value="please_select" selected disabled>Please Select</option>
+                            <option className="drop-option" value="Hookups">Hookups</option>
+                            <option className="drop-option" value="New friends">New friends</option>
+                            <option className="drop-option" value="Short-term dating">Short-term dating</option>
+                            <option className="drop-option" value="Long-term dating">Long-term dating</option>
+                        </select>
                     </div>
                     <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+
                 </div>
             </div>
         )
@@ -253,7 +283,7 @@ class ProfileForm extends React.Component {
         const questionSeven = () => (
             <div className="create-profile">
 
-                <h1 className="onboarding-title">MatchStick</h1>
+                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -263,11 +293,12 @@ class ProfileForm extends React.Component {
 
                     <h3 className="profileDetails-field-prompt">I am...</h3>
                     <div className="profile-dropdown-2">
-                        <select name="monogamy" className="dropdown" onChange={this.updateArrays("monogamous")}>
+                        <select name="connections" className="dropdown" onChange={this.updateArrays("I am...")}>
                             <option className="drop-option" value="please_select" selected disabled>Please Select</option>
-                            <option className="drop-option" value="monogamous">Monogamous</option>
-                            <option className="drop-option" value="nonmonogamous">Non-monogamous</option>
-                            <option className="drop-option" value="open">Open to either</option>
+                            <option className="drop-option" value="Monogamous">Monogamous</option>
+                            <option className="drop-option" value="Non-monogamous">Non-monogamous</option>
+                            <option className="drop-option" value="Open to monogamy and non-monogamy">Open to monogamy and non-monogamy</option>
+    
                         </select>
                     </div>
                     <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
@@ -279,7 +310,7 @@ class ProfileForm extends React.Component {
         const questionEight = () => (
             <div className="create-profile">
 
-                <h1 className="onboarding-title">MatchStick</h1>
+                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -288,24 +319,14 @@ class ProfileForm extends React.Component {
                     <span><span className="onboarding-header-description">Ideal person</span></span>
                     
                     <h3 className="profileDetails-field-prompt">I am looking for...</h3>
-                    <div className="pick-many-buttons" onChange={this.updateArrays("gender")}>
-                        <button className="pick-button">
-                            <label>Men</label>
-                            <input type="checkbox" />
-                        </button>
-                        <button className="pick-button">
-                            <label>Women</label>
-                            <input type="checkbox" />
-                        </button>
-                        <button className="pick-button">
-                            <label>Nonbinary</label>
-                            <input type="checkbox" />
-                        </button>
-                        <button className="pick-button">
-                            <label>Other</label>
-                            <input type="checkbox" />
-                        </button>
-                    </div>
+                    <select name="connections" className="dropdown" onChange={this.updateArrays("I am looking for..")}>
+                        <option className="drop-option" value="please_select" selected disabled>Please Select</option>
+                        <option className="drop-option" value="Men">Men</option>
+                        <option className="drop-option" value="Women">Women</option>
+                        <option className="drop-option" value="Men and Women">Men and Women</option>
+                        <option className="drop-option" value="Nonbinary">Nonbinary</option>
+                        <option className="drop-option" value="Other">Other</option>
+                    </select>
                     <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
                 </div>
 
@@ -314,13 +335,13 @@ class ProfileForm extends React.Component {
         )
 
         const questionNine = () => {
-            const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step));
-            const age = range(18, 99, 1);
+            // const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step));
+            // const age = range(18, 99, 1);
 
             return (
                 <div className="create-profile">
 
-                    <h1 className="onboarding-title">MatchStick</h1>
+                    {/* <h1 className="onboarding-title">MatchStick</h1> */}
                     <div className="profile-1" id="page1">
                         <div className="header-container">
 
@@ -330,8 +351,8 @@ class ProfileForm extends React.Component {
 
                         <h3 className="profileDetails-field-prompt">How old should they be?</h3>
                         <div className="profile-dropdown-3" id="age-range">
-
-                            <select name="minAge" className="dropdown" onChange={this.updateArrays("age")}>
+                            <input type="text" className="profile-name-input" onChange={this.updateArrays('How old should they be?')}></input>
+                            {/* <select name="minAge" className="dropdown" onChange={this.updateArrays("age")}>
                                 <option className="drop-option" id="minAge" value="minAge" selected disabled>Min Age</option>
                                 {age.map(age => (<option className="dropdown">{age}</option>))}
                             </select>
@@ -339,7 +360,7 @@ class ProfileForm extends React.Component {
                             <select name="maxAge" className="dropdown">
                                 <option className="drop-option" id="maxAge" value="maxAge" selected disabled>Max Age</option>
                                 {age.map(age => (<option className="dropdown">{age}</option>))}
-                            </select>
+                            </select> */}
 
                         </div>
                         <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
@@ -353,7 +374,7 @@ class ProfileForm extends React.Component {
             <div className="create-profile">
 
                 <div className="profile-0" id="page0">
-                    <h1 className="onboarding-title">MatchStick</h1>
+                    {/* <h1 className="onboarding-title">MatchStick</h1> */}
                     <div className="title-container">
                         <div className="header-container">
 
@@ -373,7 +394,7 @@ class ProfileForm extends React.Component {
         const questionEleven = () => (
             <div className="create-profile">
 
-                <h1 className="onboarding-title">MatchStick</h1>
+                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -395,7 +416,7 @@ class ProfileForm extends React.Component {
             <div className="create-profile">
 
                 <div className="profile-0" id="page0">
-                    <h1 className="onboarding-title">MatchStick</h1>
+                    {/* <h1 className="onboarding-title">MatchStick</h1> */}
                     <div className="title-container">
 
                         <div className="header-container">
@@ -442,7 +463,8 @@ class ProfileForm extends React.Component {
         } else if (this.state.question === 12) {
             return questionTwelve();
         } else {
-            return <PersonalityFormContainer profile={this.state}/>
+            
+            return <PersonalityFormContainer profile={this.updateMatches()}/>
         }
     }
 }

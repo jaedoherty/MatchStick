@@ -5,6 +5,8 @@ class Api::ProfilesController < ApplicationController
     end
    def create
     @profile = Profile.new(profile_params) 
+    @profile.match_preferences = params[:profile][:match_preferences]
+    @profile.quiz_results = params[:profile][:quiz_results]
     # debugger
     if @profile.save!
         render :show
@@ -38,9 +40,6 @@ class Api::ProfilesController < ApplicationController
                                         :user_id,
                                         :age,
                                         :location,
-                                        quiz_results: [],
-                                        match_preferences: [] 
-
                                         )
 
 

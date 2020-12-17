@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
         profileId: getProfile(state),
-        profile: {}
+        profile: {},
+        session: state.session
     };
 };
 
