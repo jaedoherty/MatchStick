@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { login, removeErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { fetchProfile } from '../../actions/profile_actions'
 import SessionForm from './session_form';
 ;
 
@@ -16,14 +17,10 @@ const mapStateToProps = ({ errors }) => {
 const mapDispatchToProps = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
-        otherForm: (
-            <button onClick={() => dispatch(openModal('signup'))}>
-                Signup
-            </button>
-        ),
         closeModal: () => dispatch(closeModal()),
         login: (user) => dispatch(login(user)),
-        removeErrors: () => dispatch(removeErrors())
+        removeErrors: () => dispatch(removeErrors()),
+        fetchProfile: (profileId) => dispatch(fetchProfile(profileId))
     };
 };
 
