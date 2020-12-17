@@ -32,7 +32,7 @@ class PersonalityForm extends React.Component {
 
     updateQuiz () {
         const profile = { ...this.state.profile };
-        const questions = [this.state.questions];
+        const questions = [JSON.stringify(this.state.questions)];
         profile.quiz_results = questions;
         profile.user_id = this.props.sessionId;
         return profile;

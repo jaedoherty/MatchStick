@@ -17,9 +17,11 @@ class HomePage extends React.Component {
 
     
     render() {
-        if (!this.props.profiles) {
+        if (Object.values(this.props.profiles).length === 0) {
+            console.log("null")
             return null;
         } else {
+            console.log("else")
             const getIndex = () => {
 
 
@@ -31,16 +33,26 @@ class HomePage extends React.Component {
                     return randomIndex
              
             }
+
          
-            const profile = this.props.profiles[getIndex()]
+            const profile = [this.props.profiles[getIndex()]]
             console.log("function", profile)
+
+            // const element = profile.map((ele) => {
+            //     // return <p>{ele['location']}</p> 
+            //     // debugger
+            //     console.log("in map", ele)
+            // })
+            // console.log("ele", element)
+
             return (
                 <div id="home-page">
                     <h1 id="home-header">Recommended Just For You</h1>
-            
-                    {/* {profile.map((ele) => {
-                    <p>{ele}</p> 
-                    })} */}
+                    
+                    {profile.map((ele) => {
+                        // debugger
+                        return <ProfileShowContainer profile={ele}/> 
+                    })}
                 </div>
             )
         }

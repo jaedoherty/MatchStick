@@ -11,7 +11,12 @@ class ProfileShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchProfile(this.props.match.params.profileId)
+        if (this.props.match.params.profileId === undefined) {
+            this.props.fetchProfile(this.props.profile.id)
+        } else {
+
+            this.props.fetchProfile(this.props.match.params.profileId)
+        }
     }
 
     handleClick() {

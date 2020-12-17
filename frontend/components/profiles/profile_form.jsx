@@ -45,7 +45,7 @@ class ProfileForm extends React.Component {
     updateMatches () {
         const profile = {...this.state.profile};
         const match_preferences = this.state.new_preferences;
-        profile.match_preferences = match_preferences;
+        profile.match_preferences = [JSON.stringify(match_preferences)];
         return profile;
     }
 
@@ -399,7 +399,7 @@ class ProfileForm extends React.Component {
                 <div className="choose-img">
 
                     <div className="smash-img-container">
-                        <img className="smash-img" src={window.bowser} />
+                        <button></button><img className="smash-img" src={window.bowser} />
                     </div> 
                     <div className="smash-img-container">
                         <img className="smash-img" src={window.ice_climbers} />
