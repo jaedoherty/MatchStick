@@ -29,9 +29,10 @@ const App = () => (
             <Route exact path="/editProfile" component={EditProfile} />
             <Route exact path="/editPersonalityQuiz" component={EditPersonality} />
             <Route exact path="/seeProfile/:profileId" component={OtherProfileShow} />
+            {/* <Route path="/"> */}
             <Redirect from="/nextProfile" to="/home"/> 
             {/* <Route exact path="/:userId/profiles" component={ProfileFormContainer} /> */}
-        <Redirect from="/" to="/home"/>
+        {/* <Redirect from="/" to="/home"/> */}
         </Switch>
 
 
