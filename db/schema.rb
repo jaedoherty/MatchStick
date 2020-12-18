@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_17_045857) do
+ActiveRecord::Schema.define(version: 2020_12_17_220433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,10 +18,8 @@ ActiveRecord::Schema.define(version: 2020_12_17_045857) do
   create_table "likes", force: :cascade do |t|
     t.integer "liker_id", null: false
     t.integer "liked_profile_id", null: false
-    t.boolean "already_liked?", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["already_liked?"], name: "index_likes_on_already_liked?"
     t.index ["liked_profile_id"], name: "index_likes_on_liked_profile_id"
     t.index ["liker_id"], name: "index_likes_on_liker_id"
   end
@@ -38,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_12_17_045857) do
     t.integer "user_id"
     t.text "match_preferences"
     t.text "quiz_results"
+    t.string "img_name"
     t.index ["first_name"], name: "index_profiles_on_first_name"
     t.index ["gender"], name: "index_profiles_on_gender"
     t.index ["user_id"], name: "index_profiles_on_user_id"

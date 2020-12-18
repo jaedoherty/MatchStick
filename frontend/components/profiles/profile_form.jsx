@@ -38,7 +38,7 @@ class ProfileForm extends React.Component {
             preferences[preference] = e.target.value;
  
             this.setState({new_preferences: preferences})
-            debugger;
+            // debugger;
         }
     }
 
@@ -48,6 +48,18 @@ class ProfileForm extends React.Component {
         profile.match_preferences = [JSON.stringify(match_preferences)];
         return profile;
     }
+
+    passAction () {
+        if (this.props.edit) {
+            console.log("in pass action if", this.props.edit)
+            return this.props.edit
+        } else {
+            console.log("in pass action if", this.props.create)
+            return this.props.create
+        }
+    }
+
+
 
     handleChange(field) {
         return (e) => {
@@ -398,30 +410,30 @@ class ProfileForm extends React.Component {
                 <h3>Pick a photo</h3>
                 <div className="choose-img">
 
-                    <div className="smash-img-container">
-                        <button></button><img className="smash-img" src={window.bowser} />
-                    </div> 
-                    <div className="smash-img-container">
+                    <button className="smash-img-container" value="bowser" onClick={this.update("img_name")}>
+                        <img className="smash-img" src={window.bowser} />
+                    </button> 
+                    <button className="smash-img-container" value="ice_climbers" onClick={this.update("img_name")}>
                         <img className="smash-img" src={window.ice_climbers} />
-                    </div> 
-                    <div className="smash-img-container">
+                    </button> 
+                    <button className="smash-img-container" value="incineroar" onClick={this.update("img_name")}>
                         <img className="smash-img" src={window.incineroar} />
-                    </div> 
-                    <div className="smash-img-container">
+                    </button> 
+                    <button className="smash-img-container" value="kirby" onClick={this.update("img_name")}>
                         <img className="smash-img" src={window.kirby} />
-                    </div> 
-                    <div className="smash-img-container">
+                    </button> 
+                    <button className="smash-img-container" value="pichu" onClick={this.update("img_name")}>
                         <img className="smash-img" src={window.pichu} />
-                    </div> 
-                    <div className="smash-img-container">
+                    </button> 
+                    <button className="smash-img-container" value="mewtwo" onClick={this.update("img_name")}>
                         <img className="smash-img" src={window.mewtwo} />
-                    </div> 
-                    <div className="smash-img-container">
+                    </button> 
+                    <button className="smash-img-container" value="peach" onClick={this.update("img_name")}>
                         <img className="smash-img" src={window.peach} />
-                    </div> 
-                    <div className="smash-img-container">
+                    </button> 
+                    <button className="smash-img-container" value="yoshi" onClick={this.update("img_name")}>
                         <img className="smash-img" src={window.yoshi} />
-                    </div> 
+                    </button> 
                 </div>
                 <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
             </div>
@@ -481,7 +493,7 @@ class ProfileForm extends React.Component {
             return questionThirteen(); 
         } else {
             
-            return <PersonalityFormContainer profile={this.updateMatches()}/>
+            return <PersonalityFormContainer profile={this.updateMatches()} action={this.passAction()} />
         }
     }
 }

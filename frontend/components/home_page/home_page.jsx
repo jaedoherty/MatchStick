@@ -8,6 +8,7 @@ class HomePage extends React.Component {
     constructor(props) {
         super(props);
         console.log(props)
+        this.handleClick = this.handleClick.bind(this)
         // this.generateProfile = this.generateProfile.bind(this)
     }
     componentDidMount() {
@@ -15,7 +16,9 @@ class HomePage extends React.Component {
     }
     
 
-    
+    handleClick () {
+        this.props.history.push('/nextProfile')
+    } 
     render() {
         if (Object.values(this.props.profiles).length === 0) {
             console.log("null")
@@ -40,7 +43,7 @@ class HomePage extends React.Component {
             let index = getIndex() 
             const profile = [this.props.profiles[index]]
             console.log(index)
-
+            console.log("img_name", profile.img_name)
             return (
                 <div id="home-page">
                     <h1 id="home-header">Recommended Just For You</h1>
@@ -50,7 +53,7 @@ class HomePage extends React.Component {
                         return (
                             <div id="profile-info">
                                 <div className="smash-img" id="home-image">
-                                    <img id="resize-smash"src={window.bowser}/>
+                                    <img id="resize-smash" src={window[ele.img_name]}/>
                                     <div id="basic-info">
                                         <label className="basic-id"> Name
                                         <p className="basic-value">{ele.first_name}</p> 
@@ -77,7 +80,7 @@ class HomePage extends React.Component {
    
                                 <div id="home-buttons">
 
-                                    <div id="like-buttons">< button className="home-button">Like</button> <button className="home-button">Pass</button></div>
+                                    <div id="like-buttons">< button className="home-button" onClick={this.handleClick}>Like</button> <button className="home-button" onClick={this.handleClick}>Pass</button></div>
                                 </div> 
 
                             </div>

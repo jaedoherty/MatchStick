@@ -38,15 +38,6 @@ class ProfileShow extends React.Component {
             }
         }
 
-        // const editProfileButton = () => {
-        //     if (this.props.profile === this.props.session) {
-        //         return (
-        //             <button id="edit-quiz" onClick={this.editPersonality()}>edit</button>
-        //         )
-        //     } else {
-        //         return <p> </p>
-        //     }
-        // }
         if (!this.props.profile) {
             return null;
         } else {
@@ -109,7 +100,7 @@ class ProfileShow extends React.Component {
             <div className="profile-show-container">
                 {/* <NavBarContainer/> */}
                 <div id="info-bar">
-                    <div id="photo-placeholder">Photo Placeholder</div>
+            <div id="photo-placeholder"><img id="resize-smash" src={window[this.props.profile.img_name]}/></div>
                     <div id="name-age">
                         <p id="name">{this.props.profile.first_name}</p>
                         <div id="age-location">

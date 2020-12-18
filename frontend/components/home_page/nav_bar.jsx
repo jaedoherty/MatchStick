@@ -19,9 +19,7 @@ class NavBar extends React.Component {
         this.props.history.push('/');
     }
 
-    // logout() {
-    //     this.props.logout.then(this.props.history.push('/home'))
-    // }
+
 
     render() {
         if (!this.props.session.id ) {
@@ -32,10 +30,10 @@ class NavBar extends React.Component {
                 <nav id="nav-bar">
                    
                     <button className="head-button" id="home-link"><Link to='/home'> MatchStick </Link></button>
-                    <button className="head-button" id="double-take">DoubleTake</button>
-                    <button className="head-button" id="questions">Questions</button>
-                    <button className="head-button" id="likes">Likes</button>
-                    <button className="head-button" id="messages">Messages</button>
+                    <button className="head-button" id="double-take"><Link to='/home'> DoubleTake </Link></button>
+                    <button className="head-button" id="questions"><Link to='/editPersonalityQuiz'> Questions </Link></button>
+                    {/* <button className="head-button" id="likes">Likes</button> */}
+                    {/* <button className="head-button" id="messages">Messages</button> */}
                     <div id="profile-logout">
 
                         <Link to={`/profiles/${this.props.profileId}`}><button className="head-button" id="my-profile">My Profile </button></Link>

@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchProfiles } from '../../actions/profile_actions';
+import { fetchProfiles,  } from '../../actions/profile_actions';
 import  HomePage  from './home_page';
 import {withRouter} from 'react-router-dom'
 import { getProfile } from '../../reducers/selectors';
+import { likeProfile} from '../../actions/profile_actions';
 
 const msp = (state) => ({
     profiles: state.entities.profiles,
@@ -13,7 +14,8 @@ const msp = (state) => ({
 })
 
 const mdp = (dispatch) => ({
-    fetchProfiles: () => dispatch(fetchProfiles())
+    fetchProfiles: () => dispatch(fetchProfiles()),
+    likeProfile: (profileId) => dispatch(likeProfile(profileId))
 })
 
 export default withRouter(connect(msp, mdp)(HomePage));
