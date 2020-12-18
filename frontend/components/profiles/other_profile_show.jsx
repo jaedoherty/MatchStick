@@ -91,7 +91,7 @@ class ProfileShow extends React.Component {
             return (
                 <div className="profile-show-container">
                     <div id="info-bar">
-                        <div id="photo-placeholder">Photo Placeholder</div>
+                        <div id="photo-placeholder"><img id="resize-smash" src={window[this.props.profile.img_name]} /></div>
                         <div id="name-age">
                             <p id="name">{this.props.profile.first_name}</p>
                             <div id="age-location">
