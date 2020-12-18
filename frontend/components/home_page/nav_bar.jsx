@@ -6,6 +6,7 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.profiles[this.props.user]
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
@@ -19,7 +20,9 @@ class NavBar extends React.Component {
         this.props.history.push('/');
     }
 
-
+    // newLogout() {
+    //    this.prop 
+    // }
 
     render() {
         if (!this.props.session.id ) {
@@ -37,7 +40,7 @@ class NavBar extends React.Component {
                     <div id="profile-logout">
 
                         <Link to={`/profiles/${this.props.profileId}`}><button className="head-button" id="my-profile">My Profile </button></Link>
-                        <button className="head-button" id="nav-logout" onClick={this.props.logout}>Log Out</button>
+                        <button className="head-button" id="nav-logout" onClick={this.handleClick}>Log Out</button>
                     </div>
                 </nav>
             );
