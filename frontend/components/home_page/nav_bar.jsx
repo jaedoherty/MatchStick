@@ -35,8 +35,8 @@ class NavBar extends React.Component {
                     <button className="head-button" id="home-link"><Link to='/home'> MatchStick </Link></button>
                     <button className="head-button" id="double-take"><Link to='/home'> DoubleTake </Link></button>
                     <button className="head-button" id="questions"><Link to='/editPersonalityQuiz'> Questions </Link></button>
-                    {/* <button className="head-button" id="likes">Likes</button> */}
-                    {/* <button className="head-button" id="messages">Messages</button> */}
+                    <button className="head-button" id="likes"> <a href="https://github.com/jaedoherty/MatchStick">GitHub</a></button>
+                    <button className="head-button" id="messages"><a href="https://www.linkedin.com/in/jae-doherty/">LinkedIn</a></button>
                     <div id="profile-logout">
 
                         <Link to={`/profiles/${this.props.profileId}`}><button className="head-button" id="my-profile">My Profile </button></Link>
