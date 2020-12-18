@@ -1,0 +1,25 @@
+.dropdown {
+    height: 64px;
+    width: 320px;
+    font-size: 17px;
+    border-radius: 3px;
+    background-color: white;
+    border: gray;
+     box-shadow: 2px 2px 5px gray;
+}
+
+.dropdown:active {
+    border: none;
+    outline: gray;
+    background-color: white;
+}
+
+.dropdown:focus {
+    border: none;
+    outline: gray;
+    background-color: white; 
+}
+
+.drop-option:active {
+    background-color: mediumorchid;
+}
