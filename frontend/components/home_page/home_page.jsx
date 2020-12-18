@@ -7,7 +7,7 @@ import ProfileShow from '../profiles/profile_show';
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props)
+        // console.log(props)
         this.handleClick = this.handleClick.bind(this)
         // this.generateProfile = this.generateProfile.bind(this)
     }
@@ -21,10 +21,10 @@ class HomePage extends React.Component {
     } 
     render() {
         if (Object.values(this.props.profiles).length === 0) {
-            console.log("null")
+            // console.log("null")
             return null;
         } else {
-            console.log("else")
+            // console.log("else")
             const getIndex = () => {
 
 
@@ -42,8 +42,8 @@ class HomePage extends React.Component {
 
             let index = getIndex() 
             const profile = [this.props.profiles[index]]
-            console.log(index)
-            console.log("img_name", profile.img_name)
+            // console.log(index)
+            // console.log("img_name", profile.img_name)
             return (
                 <div id="home-page">
                     <h1 id="home-header">Recommended Just For You</h1>
