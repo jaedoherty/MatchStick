@@ -8,26 +8,18 @@ class ProfileForm extends React.Component {
             profile: this.props.profile,
             question: this.props.question,
             new_preferences: new Map(),
-            // users
+           
         }
-        // debugger
+     
         this.handleClick = this.handleClick.bind(this); 
         this.updateArrays = this.updateArrays.bind(this);
         this.handleBack = this.handleBack.bind(this);
     }
 
-    // componentDidMount() {
-    //     debugger
-    //     this.state.profile.user_id = this.props.users.id
-    // }
+
 
     update(field) {
-        // const profile = {...this.state.profile}; 
-        // profile[field] = e.currentTarget.value;
-        // this.setState({ profile });
-        // debugger
-        // return e => this.setState( {profile:{ [field]: e.currentTarget.value }});
-        // console.log(this.state.profile);
+
         return ((e) => {
             const profile = { ...this.state.profile };
             profile[field] = e.currentTarget.value;
@@ -37,26 +29,37 @@ class ProfileForm extends React.Component {
     }
 
     updateArrays(preference) {
-        // console.log("in update arrays")
+       
         return (e) => {
-            // const profile = {...this.state.profile}
+            
             const preferences = this.state.new_preferences ;
             console.log("before change", preferences)
             
             preferences[preference] = e.target.value;
-            // profile.match_preferences = Array.from(preferences);
-            // console.log("profile", profile, "state", this.state)
+ 
             this.setState({new_preferences: preferences})
-            debugger;
+            // debugger;
         }
     }
 
     updateMatches () {
         const profile = {...this.state.profile};
         const match_preferences = this.state.new_preferences;
-        profile.match_preferences = match_preferences;
+        profile.match_preferences = [JSON.stringify(match_preferences)];
         return profile;
     }
+
+    passAction () {
+        if (this.props.edit) {
+            console.log("in pass action if", this.props.edit)
+            return this.props.edit
+        } else {
+            console.log("in pass action if", this.props.create)
+            return this.props.create
+        }
+    }
+
+
 
     handleChange(field) {
         return (e) => {
@@ -66,33 +69,23 @@ class ProfileForm extends React.Component {
 
         
     }}
-    // updateArrays(e) {
-    //     const profile = { ...this.state.profile };
-    //     profile.match_preferences.push(e.currentTarget.value);
-    //     this.setState({ profile });
-    // }
+
 
     handleClick(e) {
 
         if (this.state.question < 13) {
 
             e.preventDefault();
-            // console.log(this.state.profile);
+
             const profile = {...this.state.profile};
-            // console.log("before change", profile)
-            // const keys = Object.keys(this.state.match_preferences)
-            // const k = keys[keys.length - 1]
-            // const values = Object.values(this.state.match_preferences)
-            // const v = values[values.length - 1]
-            // if (!this.state.match_preferences === 0) profile.match_preferences.push({k: v})
-            // console.log("after change", profile)
+
             this.setState((previousState) => ({
                 profile,
                 question: previousState.question + 1
             }))
         } else {
             e.preventDefault();
-            // console.log(this.state.profile);
+
             const profile = { ...this.state.profile }; 
             // const matches = profile.match_preferemnce;
             profile.match_preferences = this.state.new_preferences;
@@ -414,6 +407,40 @@ class ProfileForm extends React.Component {
 
         const questionTwelve = () => (
             <div className="create-profile">
+                <h3>Pick a photo</h3>
+                <div className="choose-img">
+
+                    <button className="smash-img-container" value="bowser" onClick={this.update("img_name")}>
+                        <img className="smash-img" src={window.bowser} />
+                    </button> 
+                    <button className="smash-img-container" value="ice_climbers" onClick={this.update("img_name")}>
+                        <img className="smash-img" src={window.ice_climbers} />
+                    </button> 
+                    <button className="smash-img-container" value="incineroar" onClick={this.update("img_name")}>
+                        <img className="smash-img" src={window.incineroar} />
+                    </button> 
+                    <button className="smash-img-container" value="kirby" onClick={this.update("img_name")}>
+                        <img className="smash-img" src={window.kirby} />
+                    </button> 
+                    <button className="smash-img-container" value="pichu" onClick={this.update("img_name")}>
+                        <img className="smash-img" src={window.pichu} />
+                    </button> 
+                    <button className="smash-img-container" value="mewtwo" onClick={this.update("img_name")}>
+                        <img className="smash-img" src={window.mewtwo} />
+                    </button> 
+                    <button className="smash-img-container" value="peach" onClick={this.update("img_name")}>
+                        <img className="smash-img" src={window.peach} />
+                    </button> 
+                    <button className="smash-img-container" value="yoshi" onClick={this.update("img_name")}>
+                        <img className="smash-img" src={window.yoshi} />
+                    </button> 
+                </div>
+                <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+            </div>
+        )
+
+        const questionThirteen = () => (
+            <div className="create-profile">
 
                 <div className="profile-0" id="page0">
                     {/* <h1 className="onboarding-title">MatchStick</h1> */}
@@ -462,9 +489,11 @@ class ProfileForm extends React.Component {
             return questionEleven();
         } else if (this.state.question === 12) {
             return questionTwelve();
+        } else if (this.state.question === 13) {
+            return questionThirteen(); 
         } else {
             
-            return <PersonalityFormContainer profile={this.updateMatches()}/>
+            return <PersonalityFormContainer profile={this.updateMatches()} action={this.passAction()} />
         }
     }
 }

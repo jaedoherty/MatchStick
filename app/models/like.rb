@@ -1,6 +1,5 @@
 class Like < ApplicationRecord
-    validates :liker_id, :liked_profile_id, :already_liked?, presence: true
-    validates :already_liked?, default: false
+    validates :liker_id, :liked_profile_id, presence: true
 
     belongs_to :user,
     foreign_key: :liker_id,

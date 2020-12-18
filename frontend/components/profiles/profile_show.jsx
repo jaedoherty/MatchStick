@@ -11,7 +11,12 @@ class ProfileShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchProfile(this.props.match.params.profileId)
+        if (this.props.match.params.profileId === undefined) {
+            this.props.fetchProfile(this.props.profile.id)
+        } else {
+
+            this.props.fetchProfile(this.props.match.params.profileId)
+        }
     }
 
     handleClick() {
@@ -23,6 +28,16 @@ class ProfileShow extends React.Component {
     }
 
     render() {
+        const editPersonalityButton = () => {
+            if (this.props.profile === this.props.session) {
+                return (
+                    <button id="edit-quiz" onClick={this.editPersonality()}>edit</button> 
+                )
+            } else {
+                return <p> </p>
+            }
+        }
+
         if (!this.props.profile) {
             return null;
         } else {
@@ -37,7 +52,7 @@ class ProfileShow extends React.Component {
                         if (!unpermittedChars.includes(ele)) {
                             toAdd += ele
                         } else {
-                            if (toAdd.length > 1 && toAdd[0] !== "," && toAdd[0] !== "n") formattedMatches.push(toAdd);
+                            if (toAdd.length > 1 && toAdd[0] !== "," && (toAdd[0] !== "n")) formattedMatches.push(toAdd);
                             toAdd = ""
                         }
  
@@ -85,7 +100,7 @@ class ProfileShow extends React.Component {
             <div className="profile-show-container">
                 {/* <NavBarContainer/> */}
                 <div id="info-bar">
-                    <div id="photo-placeholder">Photo Placeholder</div>
+            <div id="photo-placeholder"><img id="resize-smash" src={window[this.props.profile.img_name]}/></div>
                     <div id="name-age">
                         <p id="name">{this.props.profile.first_name}</p>
                         <div id="age-location">

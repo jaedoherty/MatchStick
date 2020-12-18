@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProfileForm from './profile_form';
-import { createProfile, receiveCurrentUser } from '../../actions/profile_actions';
+import { createProfile } from '../../actions/profile_actions';
+import {receiveCurrentUser} from '../../actions/session_actions'
 // import {login} from '../../actions/session_actions'
 
 const msp = (state) => {
@@ -17,6 +18,7 @@ const msp = (state) => {
      age: '',
      location: '',
      zip_code: '',
+     img_name: ''
     },
     question: 0
 }
@@ -29,7 +31,7 @@ const msp = (state) => {
 
 
 const mdp = (dispatch) => ({
-    action: (profile) => dispatch(createProfile(profile)),
+    create: (profile) => dispatch(createProfile(profile)),
     receiveCurrentUser: (user) => dispatch(receiveCurrentUser(user))
     
 })

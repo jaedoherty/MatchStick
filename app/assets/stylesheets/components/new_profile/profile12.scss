@@ -1,0 +1,28 @@
+.smash-img {
+    height: 200px;
+    width: 200px;
+}
+
+.smash-img-container {
+    border: none; 
+    outline: none;
+    background-color: gainsboro;
+}
+
+.choose-img {
+    display: flex;
+}
+
+.smash-img-container:hover {
+     background-color: white;
+    box-shadow: 2px 2px 5px gray; 
+}
+
+.smash-img-container:focus {
+    background-color: white;
+    box-shadow: 2px 2px 5px gray; 
+}
+
+.choose-img {
+    margin: 10px;
+}
