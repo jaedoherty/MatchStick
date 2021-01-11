@@ -7,10 +7,7 @@ import {getProfile} from '../../reducers/selectors';
 class EditProfileForm extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     ...this.props.profile,
-        //     question
-        // }
+
     }
     componentDidMount () {
         this.props.fetchProfiles();

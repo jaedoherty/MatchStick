@@ -87,7 +87,6 @@ class ProfileForm extends React.Component {
             e.preventDefault();
 
             const profile = { ...this.state.profile }; 
-            // const matches = profile.match_preferemnce;
             profile.match_preferences = this.state.new_preferences;
             this.setState((previousState) => ({
                 profile,
@@ -134,7 +133,6 @@ class ProfileForm extends React.Component {
         const questionOne = () => (
             <div className="create-profile">
 
-                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
