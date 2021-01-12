@@ -37,10 +37,10 @@ export const addLikeToProfile = profileId => {
     })
 }
 
-// export const deleteLikeFromProfile = profileId => {
-//     return $.ajax({
-//         url: 'api/likes',
-//         method: 'DELETE',
-//         data: { profileId }
-//     })
-// }
+export const deleteLikeFromProfile = profileId => {
+    return $.ajax({
+        url: 'api/likes',
+        method: 'DELETE',
+        data: { profileId }
+    })
+}
