@@ -1,8 +1,8 @@
-export const fetchLikedProfiles = liker_id => {
+export const fetchLikedProfiles = likerId => {
     return $.ajax({
         url: `api/likes`,
         method: 'GET',
-        data: {liker_id}
+        data: {likerId}
     }) 
 }
 

@@ -11,12 +11,13 @@ class ProfileShow extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.match.params.profileId === undefined) {
-            this.props.fetchProfile(this.props.profile.id)
-        } else {
-
+        // if (this.props.match.params.profileId === undefined) {
+        //     this.props.fetchProfile(this.props.profile.id)
+        //     this.props.fetchLikedProfiles(this.props.session.id)
+        // } else {
             this.props.fetchProfile(this.props.match.params.profileId)
-        }
+            this.props.fetchLikedProfiles(this.props.session.id)
+        // }
     }
 
     handleClick() {
@@ -85,9 +86,19 @@ class ProfileShow extends React.Component {
                 }
             }
 
+            // const likeButton = () => {
+            //     this.props.likes.keys.includes(this.props.match.params.profileId)
+            //         return (
+            //             <button>Unlike</button>
+            //         )} else {
+            //             return (
+            //                 <button>Like</button>
+            //             )
+            //         }
+            //     }
 
 
-
+            debugger
             return (
                 <div className="profile-show-container">
                     <div id="info-bar">
@@ -132,6 +143,7 @@ class ProfileShow extends React.Component {
                                 </div>
                                 <button id='edit-button' onClick={this.handleClick()}> 	&#62;</button>
                             </div> */}
+                            {Object.keys(this.props.likes).includes(this.props.match.params.profileId) ? <button>Unlike</button> : <button>Like</button>}
                             <div className="profshow" id="gender">
                                 <label>Gender:
 

@@ -19,12 +19,12 @@ export const removeLikedProfile = (profile) => ({
 })
 
 export const fetchLikedProfiles = likerId => dispatch => {
-    return APIUtil.fetchLikedProfiles(liker_id).then((profiles) => receiveLikedProfiles(profiles))
+    return APIUtil.fetchLikedProfiles(likerId).then((profiles) => dispatch(receiveLikedProfiles(profiles)))
 } 
 
 export const likeProfile = profileId => dispatch => {
     // debugger
-    console.log(profileId)
+    // console.log(profileId)
     return APIUtil.addLikeToProfile(profileId).then((profile) => dispatch(receiveLikedProfile(profile)))
 }
 

@@ -1,7 +1,7 @@
 class Api::LikesController < ApplicationController
     def index 
         @likes = current_user.liked_profiles
-        render 'api/profiles/index'
+        render 'api/likes/index'
     end
 
     def create
@@ -21,6 +21,6 @@ class Api::LikesController < ApplicationController
     def destroy
         @like = Like.find(params[:id])
         @like.destroy
-        render 'api/profiles/show'
+        render 'api/likes/show'
     end
 end
