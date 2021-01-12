@@ -22,20 +22,13 @@ export const fetchProfile = profileId => dispatch => (
 )
 
 export const createProfile = profile => dispatch => {
-    // debugger;
    return  APIUtil.createProfile(profile).then((profile) => dispatch(receiveProfile(profile)));
 }
 
 export const updateProfile = profile => dispatch => {
     return  APIUtil.updateProfile(profile).then((profile) => dispatch(receiveProfile(profile)))
 }
-// console.log("actions", updateProfile)
 
-export const likeProfile = profileId => dispatch => {
-    return APIUtil.addLikeToProfile(profileId).then((profile) => dispatch(receiveProfile(profile)))
-}
 
-export const unlikeProfile = profileId => dispatch => {
-    return APIUtil.deleteLikeFromProfile(profileId).then((profile) => dispatch(receiveProfile(profile)))
-}
+
 
