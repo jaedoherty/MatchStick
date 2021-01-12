@@ -31,6 +31,7 @@ const App = () => (
             <Route exact path="/seeProfile/:profileId" component={OtherProfileShow} />
             {/* <Route path="/"> */}
             <Redirect from="/nextProfile" to="/home"/> 
+            <Redirect from="/signout" to="/"/> 
             {/* <Route exact path="/:userId/profiles" component={ProfileFormContainer} /> */}
         {/* <Redirect from="/" to="/home"/> */}
         </Switch>

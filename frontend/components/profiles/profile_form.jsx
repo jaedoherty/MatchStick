@@ -33,7 +33,7 @@ class ProfileForm extends React.Component {
         return (e) => {
             
             const preferences = this.state.new_preferences ;
-            console.log("before change", preferences)
+            // console.log("before change", preferences)
             
             preferences[preference] = e.target.value;
  
@@ -51,10 +51,10 @@ class ProfileForm extends React.Component {
 
     passAction () {
         if (this.props.edit) {
-            console.log("in pass action if", this.props.edit)
+            // console.log("in pass action if", this.props.edit)
             return this.props.edit
         } else {
-            console.log("in pass action if", this.props.create)
+            // console.log("in pass action if", this.props.create)
             return this.props.create
         }
     }
@@ -87,7 +87,6 @@ class ProfileForm extends React.Component {
             e.preventDefault();
 
             const profile = { ...this.state.profile }; 
-            // const matches = profile.match_preferemnce;
             profile.match_preferences = this.state.new_preferences;
             this.setState((previousState) => ({
                 profile,
@@ -134,7 +133,6 @@ class ProfileForm extends React.Component {
         const questionOne = () => (
             <div className="create-profile">
 
-                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
