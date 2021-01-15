@@ -18,7 +18,7 @@ class EditProfileForm extends React.Component {
         // console.log(this.props.edit)
         return (
             <ProfileForm
-            edit={this.props.edit}
+            submit={this.props.submit}
             profile={this.props.profile} 
             question={this.props.question}
             />
@@ -37,7 +37,7 @@ const msp = (state) => {
 const mdp = (dispatch) => {
     console.log("update", updateProfile)
     return ({
-        edit: (profile) => dispatch(updateProfile(profile)),
+        submit: (profile) => dispatch(updateProfile(profile)),
         fetchProfiles: (profiles) => dispatch(fetchProfiles(profiles))
     })
 };

@@ -2,36 +2,46 @@ import { connect } from 'react-redux';
 import ProfileForm from './profile_form';
 import { createProfile } from '../../actions/profile_actions';
 import {receiveCurrentUser} from '../../actions/session_actions'
-// import {login} from '../../actions/session_actions'
+
 
 const msp = (state) => {
-    // let user_id = null;
-    // if (state.session !== {}) user_id = state.session.id
    return{
     profile: {
      description: '',
      first_name: '',
      gender: '',
-     user_id: state.session.id,
-     match_preferences: [],
-     quiz_results: [], 
+     user_id: state.session.id,  
      age: '',
      location: '',
      zip_code: '',
-     img_name: ''
+     img_name: '',
+     connection: '',
+     monogamy: '',
+     gender_search: '',
+     min_age_range: '',
+     max_age_range: '',
+     ideal_date: '',
+     kardashian: '',
+     cocktail: '',
+     pineapple: '',
+     house: '',
+     disney: '',
+     blackpink: '',
+     pets: '',
+     ariana: '',
+     pokemon: '',
+     zodiac: ''
     },
     question: 0
 }
 } 
-       
-    // match_preferences: {},
-    // users: state.entities.users
+
      
 
 
 
 const mdp = (dispatch) => ({
-    create: (profile) => dispatch(createProfile(profile)),
+    submit: (profile) => dispatch(createProfile(profile)),
     receiveCurrentUser: (user) => dispatch(receiveCurrentUser(user))
     
 })

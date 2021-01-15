@@ -32,17 +32,17 @@ class PersonalityForm extends React.Component {
         return profile;
     }
     
-    handleSubmit(e) {
-        e.preventDefault();
+    // handleSubmit(e) {
+    //     e.preventDefault();
 
-        const newProfile = {...this.state.profile}
+    //     const newProfile = {...this.state.profile}
 
-        this.setState({profile: this.updateQuiz()}, () => {
+    //     this.setState({profile: this.updateQuiz()}, () => {
    
-            // debugger
-           return this.props.action(this.state.profile).then(this.props.history.push('/home'))
-        })
-    }
+    //         // debugger
+    //        return this.props.action(this.state.profile).then(this.props.history.push('/home'))
+    //     })
+    // }
 
 
     render() {

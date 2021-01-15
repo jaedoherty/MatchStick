@@ -5,10 +5,7 @@ class Api::ProfilesController < ApplicationController
     end
    def create
     @profile = Profile.new(profile_params) 
-    @profile.match_preferences = params[:profile][:match_preferences]
-    @profile.quiz_results = params[:profile][:quiz_results]
-    # @profile.img_name = params[:profile][:img_name]
-    # debugger
+    debugger
     if @profile.save!
         render :show
     else
@@ -24,11 +21,9 @@ class Api::ProfilesController < ApplicationController
    def update
         
        @profile = Profile.find(params[:id])
-        # @profile.match_preferences = params[:profile][:match_preferences]
-        # @profile.quiz_results = params[:profile][:quiz_results]
-        # @profile.img_name = params[:profile][:img_name]
+
        if @profile.update(profile_params)
-            # debugger
+
             render :show
        else
         render json @profile.errors.full_messages, status: 422 
@@ -47,8 +42,22 @@ class Api::ProfilesController < ApplicationController
                                         :age,
                                         :location,
                                         :img_name,
-                                        quiz_results: [],
-                                        match_preferences: []
+                                        :connection,
+                                        :monogamy,
+                                        :gender_search,
+                                        :min_age_range,
+                                        :max_age_range,
+                                        :ideal_date,
+                                        :kardashian,
+                                        :cocktail,
+                                        :pineapple,
+                                        :house,
+                                        :disney,
+                                        :blackpink,
+                                        :pets,
+                                        :ariana,
+                                        :pokemon, 
+                                        :zodiac 
                                         )
 
 

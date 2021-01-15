@@ -5,9 +5,7 @@ import {withRouter} from 'react-router-dom'
 // import { getProfile } from '../../reducers/selectors';
 
 const msp = (state) => ({
-    // profileId: getProfile(state),
-    // currentUser: state.entities.users[state.session.id],
-    // profile: {},
+
     questions: new Map(),
     sessionId: state.session.id
 })

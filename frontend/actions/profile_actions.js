@@ -22,6 +22,7 @@ export const fetchProfile = profileId => dispatch => (
 )
 
 export const createProfile = profile => dispatch => {
+    debugger
    return  APIUtil.createProfile(profile).then((profile) => dispatch(receiveProfile(profile)));
 }
 

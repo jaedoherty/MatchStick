@@ -7,13 +7,13 @@ class ProfileForm extends React.Component {
         this.state = {
             profile: this.props.profile,
             question: this.props.question,
-            new_preferences: new Map(),
            
         }
      
         this.handleClick = this.handleClick.bind(this); 
         this.updateArrays = this.updateArrays.bind(this);
         this.handleBack = this.handleBack.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
@@ -33,12 +33,12 @@ class ProfileForm extends React.Component {
         return (e) => {
             
             const preferences = this.state.new_preferences ;
-            // console.log("before change", preferences)
+ 
             
             preferences[preference] = e.target.value;
  
             this.setState({new_preferences: preferences})
-            // debugger;
+
         }
     }
 
@@ -93,6 +93,12 @@ class ProfileForm extends React.Component {
                 question: previousState.question + 1
             }))
         }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        debugger
+        this.props.submit(this.state.profile).then(this.props.history.push('/home'))
     }
      
 
@@ -201,7 +207,6 @@ class ProfileForm extends React.Component {
             const questionFour = () => (
                 <div className="create-profile">
 
-                    {/* <h1 className="onboarding-title">MatchStick</h1> */}
                     <div className="profile-1" id="page1">
                         <div className="header-container">
 
@@ -256,7 +261,7 @@ class ProfileForm extends React.Component {
                     <h3 className="profileDetails-field-prompt">What connections are you looking for?</h3>
 
                     <div className="profile-dropdown-2">
-                        <select name="connections" className="dropdown" onChange={this.updateArrays("What connections are you looking for?")}>
+                        <select name="connections" className="dropdown" onChange={this.update("connection")}>
                             <option className="drop-option" value="please_select" selected disabled>Please Select</option>
                             <option className="drop-option" value="Hookups">Hookups</option>
                             <option className="drop-option" value="New friends">New friends</option>
@@ -271,37 +276,39 @@ class ProfileForm extends React.Component {
         )
 
 
-        const questionSeven = () => (
-            <div className="create-profile">
+        const questionSeven = () => {
 
-                {/* <h1 className="onboarding-title">MatchStick</h1> */}
-                <div className="profile-1" id="page1">
-                    <div className="header-container">
+            return(
 
-                        <button className="back-button" onClick={this.handleBack}> &lt; </button>
+                <div className="create-profile">
+
+                    <div className="profile-1" id="page1">
+                        <div className="header-container">
+
+                            <button className="back-button" onClick={this.handleBack}> &lt; </button>
+                        </div>
+                        <span><span className="onboarding-header-description">Relationship type</span></span>
+
+                        <h3 className="profileDetails-field-prompt">I am...</h3>
+                        <div className="profile-dropdown-2">
+                            <select name="connections" className="dropdown" onChange={this.update("monogamy")}>
+                                <option className="drop-option" value="please_select" selected disabled>Please Select</option>
+                                <option className="drop-option" value="Monogamous">Monogamous</option>
+                                <option className="drop-option" value="Non-monogamous">Non-monogamous</option>
+                                <option className="drop-option" value="Open to monogamy and non-monogamy">Open to monogamy and non-monogamy</option>
+        
+                            </select>
+                        </div>
+                        <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+
                     </div>
-                    <span><span className="onboarding-header-description">Relationship type</span></span>
-
-                    <h3 className="profileDetails-field-prompt">I am...</h3>
-                    <div className="profile-dropdown-2">
-                        <select name="connections" className="dropdown" onChange={this.updateArrays("I am...")}>
-                            <option className="drop-option" value="please_select" selected disabled>Please Select</option>
-                            <option className="drop-option" value="Monogamous">Monogamous</option>
-                            <option className="drop-option" value="Non-monogamous">Non-monogamous</option>
-                            <option className="drop-option" value="Open to monogamy and non-monogamy">Open to monogamy and non-monogamy</option>
-    
-                        </select>
-                    </div>
-                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
-
                 </div>
-            </div>
-        )
+            )
+        }
 
         const questionEight = () => (
             <div className="create-profile">
 
-                {/* <h1 className="onboarding-title">MatchStick</h1> */}
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -310,7 +317,7 @@ class ProfileForm extends React.Component {
                     <span><span className="onboarding-header-description">Ideal person</span></span>
                     
                     <h3 className="profileDetails-field-prompt">I am looking for...</h3>
-                    <select name="connections" className="dropdown" onChange={this.updateArrays("I am looking for..")}>
+                    <select name="connections" className="dropdown" onChange={this.update("gender_search")}>
                         <option className="drop-option" value="please_select" selected disabled>Please Select</option>
                         <option className="drop-option" value="Men">Men</option>
                         <option className="drop-option" value="Women">Women</option>
@@ -326,13 +333,12 @@ class ProfileForm extends React.Component {
         )
 
         const questionNine = () => {
-            // const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step));
-            // const age = range(18, 99, 1);
+            const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step));
+            const age = range(18, 99, 1);
 
             return (
                 <div className="create-profile">
 
-                    {/* <h1 className="onboarding-title">MatchStick</h1> */}
                     <div className="profile-1" id="page1">
                         <div className="header-container">
 
@@ -342,16 +348,15 @@ class ProfileForm extends React.Component {
 
                         <h3 className="profileDetails-field-prompt">How old should they be?</h3>
                         <div className="profile-dropdown-3" id="age-range">
-                            <input type="text" className="profile-name-input" onChange={this.updateArrays('How old should they be?')}></input>
-                            {/* <select name="minAge" className="dropdown" onChange={this.updateArrays("age")}>
+                            <select name="minAge" className="dropdown" onChange={this.update("min_age_range")}>
                                 <option className="drop-option" id="minAge" value="minAge" selected disabled>Min Age</option>
                                 {age.map(age => (<option className="dropdown">{age}</option>))}
                             </select>
                             <p>—</p>
-                            <select name="maxAge" className="dropdown">
+                            <select name="maxAge" className="dropdown" onChange={this.update("max_age_range")}>
                                 <option className="drop-option" id="maxAge" value="maxAge" selected disabled>Max Age</option>
                                 {age.map(age => (<option className="dropdown">{age}</option>))}
-                            </select> */}
+                            </select>
 
                         </div>
                         <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
@@ -365,7 +370,6 @@ class ProfileForm extends React.Component {
             <div className="create-profile">
 
                 <div className="profile-0" id="page0">
-                    {/* <h1 className="onboarding-title">MatchStick</h1> */}
                     <div className="title-container">
                         <div className="header-container">
 
@@ -385,7 +389,7 @@ class ProfileForm extends React.Component {
         const questionEleven = () => (
             <div className="create-profile">
 
-                {/* <h1 className="onboarding-title">MatchStick</h1> */}
+
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -441,7 +445,6 @@ class ProfileForm extends React.Component {
             <div className="create-profile">
 
                 <div className="profile-0" id="page0">
-                    {/* <h1 className="onboarding-title">MatchStick</h1> */}
                     <div className="title-container">
 
                         <div className="header-container">
@@ -458,6 +461,68 @@ class ProfileForm extends React.Component {
                 <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
             </div>
         ) 
+
+        const personalityForm = () => {
+            return(
+
+            <div id="personality">
+
+                <h2 className="personality-title">Personality Quiz</h2>
+                <form className="personality-form" onSubmit={this.handleSubmit}>
+                    <div className="personality-container">
+
+                        <label className="personality-question"> What is your ideal first date?
+                            <textarea className="personality-input" onChange={this.update("ideal_date")}></textarea>
+                        </label>
+
+                        <label className="personality-question"> If you were a Kardashian, which one would you be?
+                            <textarea className="personality-input" onChange={this.update("kardashian")}></textarea>
+                        </label >
+
+                        <label className="personality-question"> What is your go to cocktail?
+                            <textarea className="personality-input" onChange={this.update('cocktail')}></textarea>
+                        </label>
+                        <label className="personality-question">How do you feel about pineapple on pizza?
+                            <textarea className="personality-input" onChange={this.update("pineapple")}></textarea>
+                        </label>
+                    </div>
+                    <div className="personality-container">
+                        <label className="personality-question">Which house would the sorting hat place you in?
+                            <textarea className="personality-input" onChange={this.update("house")}></textarea>
+                        </label>
+
+
+                        <label className="personality-question"> What is your favorite Disney movie?
+                            <textarea className="personality-input" onChange={this.update("disney")}></textarea>
+                        </label >
+                        <label className="personality-question"> Which member of BlackPink would you be?
+                            <textarea className="personality-input" onChange={this.update("blackpink")}></textarea>
+                        </label >
+
+                        <label className="personality-question">Dogs or cats (and do you have any)?
+
+                            <textarea className="personality-input" onChange={this.update("pets")}></textarea>
+                        </label>
+                    </div>
+                    <div className="personality-container">
+                        <label className="personality-question"> What is your favorite Ariana Grande song?
+                            <textarea className="personality-input" onChange={this.update("ariana")}></textarea>
+                        </label>
+                        <label className="personality-question"> What is your favorite Pokémon?
+                            <textarea className="personality-input" onChange={this.update("pokemon")}></textarea>
+                        </label>
+                        <label className="personality-question"> What is your astrological sign?
+                            <textarea className="personality-input" onChange={this.update("zodiac")}></textarea>
+
+                        </label>
+                        <button className="onboarding-button" type="submit">Submit</button>
+                    </div>
+                </form>
+
+
+            </div>
+            )
+        }
 
         
 
@@ -491,7 +556,7 @@ class ProfileForm extends React.Component {
             return questionThirteen(); 
         } else {
             
-            return <PersonalityFormContainer profile={this.updateMatches()} action={this.passAction()} />
+            return personalityForm();
         }
     }
 }
