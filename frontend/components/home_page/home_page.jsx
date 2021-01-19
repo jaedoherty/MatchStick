@@ -20,16 +20,12 @@ class HomePage extends React.Component {
         this.props.history.push('/nextProfile')
     } 
 
-    // handleLike() {
-
-    // }
-
     render() {
         if (Object.values(this.props.profiles).length === 0) {
-            // console.log("null")
+
             return null;
         } else {
-            // console.log("else")
+
             const getIndex = () => {
 
 
@@ -47,15 +43,13 @@ class HomePage extends React.Component {
 
             let index = getIndex() 
             const profile = [this.props.profiles[index]]
-            // debugger
-            // console.log(index)
-            // console.log("img_name", profile.img_name)
+
             return (
                 <div id="home-page">
                     <h1 id="home-header">Recommended Just For You</h1>
                     
                     {profile.map((prof_ele) => {
-                        // debugger
+
                         return (
                             <div id="profile-info">
                                 <div className="smash-img" id="home-image">
@@ -90,8 +84,7 @@ class HomePage extends React.Component {
                                 </div> 
 
                             </div>
-                        )
-                        // return <ProfileShowContainer profile={ele}/> 
+                        ) 
                     })}
                 </div>
             )

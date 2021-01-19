@@ -3,7 +3,7 @@ import React from 'react';
 import { signup } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import {login, removeErrors} from '../../actions/session_actions';
-
+import { withRouter } from "react-router-dom";
 import SessionForm from './session_form';
 
 const mapStateToProps = ({ errors }) => {
@@ -27,4 +27,6 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(SessionForm)
+);

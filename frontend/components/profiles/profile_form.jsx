@@ -117,12 +117,12 @@ class ProfileForm extends React.Component {
 
 
     render () {
-    //    console.log("props", this.props.profile, "state", this.state)
+
         const questionZero = () => (
             <div className="create-profile">
 
             <div className="profile-0" id="page0">
-                {/* <h1 className="onboarding-title">MatchStick</h1> */}
+
                 <div className="title-container">
                     
                     <h3 className="onboarding-stepIntro-title">Let's start with the basics</h3>
@@ -159,7 +159,7 @@ class ProfileForm extends React.Component {
         const questionTwo = () => (
             <div className="create-profile">
 
-                {/* <h1 className="onboarding-title">MatchStick</h1> */}
+   
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -186,7 +186,7 @@ class ProfileForm extends React.Component {
         const questionThree = () => (
             <div className="create-profile">
 
-                {/* <h1 className="onboarding-title">MatchStick</h1> */}
+          
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -226,11 +226,11 @@ class ProfileForm extends React.Component {
                     </div>
                 </div>
             )
-            const questionFive = () => (
+            const questionFive = () =>(
                 <div className="create-profile">
 
                     <div className="profile-0" >
-                        {/* <h1 className="onboarding-title">MatchStick</h1> */}
+                       
                         <div className="title-container">
                             <div className="header-container">
 
@@ -250,7 +250,7 @@ class ProfileForm extends React.Component {
         const questionSix = () => (
             <div className="create-profile">
 
-                {/* <h1 className="onboarding-title">MatchStick</h1> */}
+     
                 <div className="profile-1" id="page1">
                     <div className="header-container">
 
@@ -307,30 +307,57 @@ class ProfileForm extends React.Component {
         }
 
         const questionEight = () => (
-            <div className="create-profile">
+          <div className="create-profile">
+            <div className="profile-1" id="page1">
+              <div className="header-container">
+                <button className="back-button" onClick={this.handleBack}>
+                  {" "}
+                  &lt;{" "}
+                </button>
+              </div>
+              <span>
+                <span className="onboarding-header-description">
+                  Ideal person
+                </span>
+              </span>
 
-                <div className="profile-1" id="page1">
-                    <div className="header-container">
-
-                        <button className="back-button" onClick={this.handleBack}> &lt; </button>
-                    </div>
-                    <span><span className="onboarding-header-description">Ideal person</span></span>
-                    
-                    <h3 className="profileDetails-field-prompt">I am looking for...</h3>
-                    <select name="connections" className="dropdown" onChange={this.update("gender_search")}>
-                        <option className="drop-option" value="please_select" selected disabled>Please Select</option>
-                        <option className="drop-option" value="Men">Men</option>
-                        <option className="drop-option" value="Women">Women</option>
-                        <option className="drop-option" value="Men and Women">Men and Women</option>
-                        <option className="drop-option" value="Nonbinary">Nonbinary</option>
-                        <option className="drop-option" value="Other">Other</option>
-                    </select>
-                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
-                </div>
-
+              <h3 className="profileDetails-field-prompt">
+                I am looking for a...
+              </h3>
+              <div className="profile-dropdown-2">
+                <select
+                  name="gender"
+                  className="dropdown"
+                  onChange={this.handleChange("gender")}
+                >
+                  <option
+                    className="drop-option"
+                    value="please_select"
+                    selected
+                    disabled
+                  >
+                    Please Select
+                  </option>
+                  <option className="drop-option" value="man">
+                    Man
+                  </option>
+                  <option className="drop-option" value="woman">
+                    Woman
+                  </option>
+                  <option className="drop-option" value="nonbinary">
+                    Nonbinary
+                  </option>
+                  <option className="drop-option" value="other">
+                    Other
+                  </option>
+                </select>
+              </div>
+              <button className="onboarding-button" onClick={this.handleClick}>
+                NEXT
+              </button>
             </div>
-    
-        )
+          </div>
+        );
 
         const questionNine = () => {
             const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step));

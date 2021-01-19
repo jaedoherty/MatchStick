@@ -43,13 +43,23 @@ class ProfileShow extends React.Component {
                 {Object.keys(this.props.likes).includes(
                   this.props.match.params.profileId
                 ) ? (
-                  <button className="home-button">
-                    {/* <img className="logo" src={window.broken} /> */}
+                  <button
+                    className="home-button"
+                    id="show"
+                    onClick={() =>
+                      this.props.unlikeProfile(this.props.match.params.profileId)
+                    }
+                  >
                     Unlike
                   </button>
                 ) : (
-                  <button className="home-button">
-                    {/* <img className="logo" src={window.heart} /> */}
+                  <button
+                    className="home-button"
+                    id="show"
+                    onClick={() =>
+                      this.props.likeProfile(this.props.match.params.profileId)
+                    }
+                  >
                     Like
                   </button>
                 )}

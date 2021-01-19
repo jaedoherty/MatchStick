@@ -6,6 +6,7 @@ import { receiveCurrentUser } from '../../actions/session_actions';
 import { fetchProfiles } from '../../actions/profile_actions';
 import Greeting from './greeting';
 import {getProfile} from '../../reducers/selectors';
+import {withRouter} from 'react-router-dom'
 
 const mapStateToProps = (state) => {
     return {
@@ -24,7 +25,7 @@ const mapDispatchToProps = dispatch => ({
 
 });
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(Greeting);
+)(Greeting));

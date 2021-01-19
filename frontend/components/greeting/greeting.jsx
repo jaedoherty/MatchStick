@@ -15,7 +15,7 @@ class Greeting extends React.Component {
     }
     render() {
 
-        const sessionLinks = () => (
+       return (
           <div className="login-signup">
             <nav className="login">
               <Link  to="/" id="splash-head">
@@ -41,15 +41,15 @@ class Greeting extends React.Component {
             </nav>
           </div>
         );
-        const personalGreeting = () => (
+        // const personalGreeting = () => (
     
-                <div>
-                    <NavBarContainer /> 
+        //         <div>
+        //             <NavBarContainer /> 
     
-                </div>
-        );
+        //         </div>
+        // );
         
-       return this.props.currentUser ? personalGreeting(): sessionLinks();
+      //  return this.props.currentUser ? personalGreeting(): sessionLinks();
     }
 };
 

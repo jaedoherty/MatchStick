@@ -7,7 +7,6 @@ export const fetchLikedProfiles = likerId => {
 }
 
 export const addLikeToProfile = profileId => {
-    // debugger
     return $.ajax({
         url: 'api/likes',
         method: 'POST',
@@ -17,8 +16,8 @@ export const addLikeToProfile = profileId => {
 
 export const deleteLikeFromProfile = profileId => {
     return $.ajax({
-        url: 'api/likes',
+        url: `api/likes/${profileId}`,
         method: 'DELETE',
-        data: { profileId }
+        data: { liked_profile_id: profileId }
     })
 }

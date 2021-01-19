@@ -41,60 +41,9 @@ class ProfileShow extends React.Component {
     if (!this.props.profile) {
       return null;
     } else {
-      // debugger
-      // const allMatchAnswers = (field) => {
-      //         const matches =  this.props.profile[field]
-      //         const unpermittedChars = ["=", ">", '"', "", '[', '{', ']', '}', ':', '\\']
-      //         const formattedMatches = []
-      //         let toAdd = ""
-      //         for (let index = 0; index < matches.length; index++) {
-      //             const ele = matches[index]
-      //             if (!unpermittedChars.includes(ele)) {
-      //                 toAdd += ele
-      //             } else {
-      //                 if (toAdd.length > 1 && toAdd[0] !== "," && (toAdd[0] !== "n")) formattedMatches.push(toAdd);
-      //                 toAdd = ""
-      //             }
-
-      //         }
-      //         if (field === "match_preferences"){
-
-      //             return formattedMatches.map((str, i) => {
-      //                 if (i % 2 === 0) {
-      //                 return (
-      //                     <div className="profshow">
-      //                     <label> {str}
-      //                             <p>{formattedMatches[i+1]}</p>
-      //                     </label>
-      //                         </div>
-
-      //                 )
-
-      //             }
-
-      //         }
-      //             )
-      //         } else {
-      //             return formattedMatches.map((str, i) => {
-      //                 if (i % 2 === 0) {
-      //                     return (
-      //                         <div className="description">
-      //                             <p className="field-title">{str}</p>
-      //                             <div className="field-text">
-
-      //                                 <p className="ftxt">{formattedMatches[i + 1]} <button id="edit-quiz" onClick={this.editPersonality()}>edit</button></p>
-
-      //                             </div>
-      //                         </div>
-
-      //                     )
-      //         }
-      //         }
-      //             )}}
 
       return (
         <div className="profile-show-container">
-          {/* <NavBarContainer/> */}
           <div id="info-bar">
             <div id="photo-placeholder">
               <img
@@ -110,7 +59,7 @@ class ProfileShow extends React.Component {
               </div>
             </div>
           </div>
-          {/* </div> */}
+
 
           <div id="profilewrapper">
             <div id="bio-quiz">

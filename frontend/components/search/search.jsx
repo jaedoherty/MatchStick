@@ -1,0 +1,197 @@
+import React from "react";
+
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      connection: "",
+      monogamy: "",
+      gender_search: "",
+      min_age_range: "",
+      max_age_range: ""
+    };
+
+  }
+
+  componentDidMount() {
+    this.props.fetchProfiles();
+  }
+
+
+  update(field) {
+    return (e) => {
+
+      this.setState({ [field]: e.target.value });
+      
+    };
+  }
+
+  render() {
+    if (Object.values(this.props.profiles).length === 0) {
+      return null;
+    } else {
+      const range = (start, stop, step) =>
+        Array.from(
+          { length: (stop - start) / step + 1 },
+          (_, i) => start + i * step
+        );
+      const age = range(18, 99, 1);
+      let profiles = Object.values(this.props.profiles);
+
+      return (
+        <div>
+          <h1>Search</h1>
+          <div className="profile-dropdown-2">
+            <h3>Connection: </h3>
+            <select
+              name="connections"
+              className="dropdown"
+              onChange={this.update("connection")}
+            >
+              <option
+                className="drop-option"
+                value=""
+                selected
+              >
+                Please Select
+              </option>
+              <option className="drop-option" value="Hookups">
+                Hookups
+              </option>
+              <option className="drop-option" value="New friends">
+                New friends
+              </option>
+              <option className="drop-option" value="Short-term dating">
+                Short-term dating
+              </option>
+              <option className="drop-option" value="Long-term dating">
+                Long-term dating
+              </option>
+            </select>
+          </div>
+          <div className="profile-dropdown-2">
+            <h3>Relationship Type</h3>
+            <select
+              name="connections"
+              className="dropdown"
+              onChange={this.update("monogamy")}
+            >
+              <option
+                className="drop-option"
+                value=""
+                selected
+                
+              >
+                Please Select
+              </option>
+              <option className="drop-option" value="Monogamous">
+                Monogamous
+              </option>
+              <option className="drop-option" value="Non-monogamous">
+                Non-monogamous
+              </option>
+              <option
+                className="drop-option"
+                value="Open to monogamy and non-monogamy"
+              >
+                Open to monogamy and non-monogamy
+              </option>
+            </select>
+          </div>
+
+          <div className="profile-dropdown-2">
+            <h3>Gender</h3>
+            <select
+              name="connections"
+              className="dropdown"
+              onChange={this.update("gender_search")}
+            >
+              <option
+                className="drop-option"
+                value=""
+                selected
+                
+              >
+                Please Select
+              </option>
+              <option className="drop-option" value="man">
+                Man
+              </option>
+              <option className="drop-option" value="woman">
+                Woman
+              </option>
+              <option className="drop-option" value="nonbinary">
+                Nonbinary
+              </option>
+              <option className="drop-option" value="other">
+                Other
+              </option>
+            </select>
+          </div>
+          <div className="profile-dropdown-3" id="age-range">
+            <h3>Age Range</h3>
+            <select
+              name="minAge"
+              className="dropdown"
+                onChange={this.update("min_age_range")}
+            >
+              <option
+                className="drop-option"
+                id="minAge"
+                value=""
+                selected
+                
+              >
+                Min Age
+              </option>
+              {age.map((age) => (
+                <option className="dropdown">{age}</option>
+              ))}
+            </select>
+            <p>—</p>
+            <select
+              name="maxAge"
+              className="dropdown"
+                onChange={this.update("max_age_range")}
+            >
+              <option
+                className="drop-option"
+                id="maxAge"
+                value=""
+                
+                selected
+                
+              >
+                Max Age
+              </option>
+              {age.map((age) => (
+                <option className="dropdown">{age}</option>
+              ))}
+            </select>
+          </div>
+          {Object.values(profiles).map(profile => {
+              if (
+                (profile.connection === this.state.connection ||
+                  this.state.connection === "") &&
+                (profile.monogamy === this.state.monogamy ||
+                  this.state.monogamy === "") &&
+                (profile.gender === this.state.gender_search ||
+                  this.state.gender_search === "") &&
+                (profile.age >= this.state.min_age_range ||
+                  this.state.min_age_range === "") &&
+                (profile.max_age_range <= this.state.max_age_range ||
+                  this.state.max_age_range === "")
+              ) {
+                return (
+                    <div>
+                    <div>{profile.first_name}</div>
+                    </div>
+                );
+              }})}
+        </div>
+      );
+    }
+  }
+}
+
+export default Search;

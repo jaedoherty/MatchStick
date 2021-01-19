@@ -5,6 +5,7 @@ import { login, removeErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { fetchProfile } from '../../actions/profile_actions'
 import SessionForm from './session_form';
+import {withRouter} from 'react-router-dom'
 ;
 
 const mapStateToProps = ({ errors }) => {
@@ -24,4 +25,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionForm));

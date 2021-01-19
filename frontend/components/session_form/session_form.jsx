@@ -31,8 +31,11 @@ class SessionForm extends React.Component {
         });
         setTimeout(() => {
             const user = Object.assign({}, this.state);
-            this.props.login(user).then(this.props.history.push("/home"));
-            this.props.closeModal();
+            this.props.login(user).then(() => { 
+                this.props.closeModal();
+                debugger
+                this.props.history.push("/home");
+            })
              }, 1000);
     }
 
