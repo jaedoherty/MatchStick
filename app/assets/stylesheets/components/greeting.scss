@@ -8,7 +8,7 @@
     margin: 0;
     background: image-url('splash_medium.jpg');
     position: relative;
-    // border: black solid transparent;
+
 }
 
 .sign-up {
@@ -28,38 +28,24 @@
     text-align: left;
     justify-content: flex-end;
 }
-// .login {
-    // display: flex;
-    // justify-content: flex-start;
-    // position: relative;
 
-    
+.logo {
+   height: 50px;
+   width: 50px; 
+}
 
-// }
 
 .header-group {
     font-family: Raleway, sans-serif;
-    // display: flex;
     border: black solid;
 }
-// .header-button {
-//     border: none;
-//     background-color: darkorchid;
-//     color: white;
-//     // position: absolute;
-//     // display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     // justify-content: center;
 
-// }
-
-// .header-name {
-//     padding: 0px 30px;
-// }
 
 #splash-head {
     color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
 }
 
 .li-button {
@@ -88,8 +74,6 @@
     outline: none;
     font-size: 20px;;
     border-radius: 30px;
-    // background-color: darkorchid;
-    // background:
     background: rgb(153,50,204);
     background: linear-gradient(90deg, rgba(153,50,204,1) 30%, rgba(186,85,211,1) 76%, rgba(255,0,121,1) 100%);
     color: white;

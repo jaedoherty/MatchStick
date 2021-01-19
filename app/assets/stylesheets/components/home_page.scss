@@ -6,9 +6,6 @@
 #home-header {
     padding-top: 20px;
     margin-top: 0px;
-    // margin-bottom: 0px;
-    // background-color: black;
-    // color: white;
 }
 
 #profile-info {
@@ -16,6 +13,12 @@
     grid-gap: 15px;
     justify-items: center;
 }
+
+#name-button {
+    display: flex;
+    align-items: center;
+}
+
 
 .home-label {
     font-weight: bold;

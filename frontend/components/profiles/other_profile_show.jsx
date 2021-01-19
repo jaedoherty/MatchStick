@@ -10,13 +10,10 @@ class ProfileShow extends React.Component {
   }
 
   componentDidMount() {
-    // if (this.props.match.params.profileId === undefined) {
-    //     this.props.fetchProfile(this.props.profile.id)
-    //     this.props.fetchLikedProfiles(this.props.session.id)
-    // } else {
+
     this.props.fetchProfile(this.props.match.params.profileId);
     this.props.fetchLikedProfiles(this.props.session.id);
-    // }
+
   }
 
   handleClick() {
@@ -31,70 +28,6 @@ class ProfileShow extends React.Component {
     if (!this.props.profile) {
       return null;
     } else {
-      // const allMatchAnswers = (field) => {
-      //     const matches = this.props.profile[field]
-      //     const unpermittedChars = ["=", ">", '"', "", '[', '{', ']', '}', ':', '\\']
-      //     const formattedMatches = []
-      //     let toAdd = ""
-      //     for (let index = 0; index < matches.length; index++) {
-      //         const ele = matches[index]
-      //         if (!unpermittedChars.includes(ele)) {
-      //             toAdd += ele
-      //         } else {
-      //             if (toAdd.length > 1 && toAdd[0] !== "," && (toAdd[0] !== "n")) formattedMatches.push(toAdd);
-      //             toAdd = ""
-      //         }
-
-      //     }
-      //     if (field === "match_preferences") {
-
-      //         return formattedMatches.map((str, i) => {
-      //             if (i % 2 === 0) {
-      //                 return (
-      //                     <div className="profshow">
-      //                         <label> {str}
-      //                             <p>{formattedMatches[i + 1]}</p>
-      //                         </label>
-      //                     </div>
-
-      //                 )
-
-      //             }
-
-      //         }
-      //         )
-      //     } else {
-      //         return formattedMatches.map((str, i) => {
-      //             if (i % 2 === 0) {
-      //                 return (
-      //                     <div className="description">
-      //                         <p className="field-title">{str}</p>
-      //                         <div className="field-text">
-
-      //                             <p className="ftxt">{formattedMatches[i + 1]}</p>
-
-      //                         </div>
-      //                     </div>
-
-      //                 )
-      //             }
-      //         }
-      //         )
-      //     }
-      // }
-
-      // const likeButton = () => {
-      //     this.props.likes.keys.includes(this.props.match.params.profileId)
-      //         return (
-      //             <button>Unlike</button>
-      //         )} else {
-      //             return (
-      //                 <button>Like</button>
-      //             )
-      //         }
-      //     }
-
-      debugger;
       return (
         <div className="profile-show-container">
           <div id="info-bar">
@@ -105,7 +38,22 @@ class ProfileShow extends React.Component {
               />
             </div>
             <div id="name-age">
-              <p id="name">{this.props.profile.first_name}</p>
+              <div id="name-button">
+                <p id="name">{this.props.profile.first_name}</p>
+                {Object.keys(this.props.likes).includes(
+                  this.props.match.params.profileId
+                ) ? (
+                  <button className="home-button">
+                    {/* <img className="logo" src={window.broken} /> */}
+                    Unlike
+                  </button>
+                ) : (
+                  <button className="home-button">
+                    {/* <img className="logo" src={window.heart} /> */}
+                    Like
+                  </button>
+                )}
+              </div>
               <div id="age-location">
                 <p className="al">{this.props.profile.age}</p>
                 <p className="al">{this.props.profile.location}</p>
@@ -195,52 +143,43 @@ class ProfileShow extends React.Component {
                 </div>
               </div>
             </div>
-         
-          <div className="profile">
-            {Object.keys(this.props.likes).includes(
-              this.props.match.params.profileId
-            ) ? (
-              <button>Unlike</button>
-            ) : (
-              <button>Like</button>
-            )}
-            <div className="profshow" id="gender">
-              <label>
-                Gender:
-                <p>{this.props.profile.gender}</p>
-              </label>
-            </div>
-            <div className="profshow" id="gender">
-              <label>
-                What connections are you looking for?
-                <p>{this.props.profile.connection}</p>
-              </label>
-            </div>
-            <div className="profshow" id="gender">
-              <label>
-                What relationship type are you interested in?
-                <p>{this.props.profile.connection}</p>
-              </label>
-            </div>
-            <div className="profshow" id="gender">
-              <label>
-                I am looking for...
-                <p>{this.props.profile.gender_search}</p>
-              </label>
-            </div>
-            <div className="profshow" id="gender">
-              <label>
-                How old should they be?
-                <p>
-                  {this.props.profile.min_age_range} -{" "}
-                  {this.props.profile.max_age_range}
-                </p>
-              </label>
-            </div>
 
-            {/* {allMatchAnswers("match_preferences")} */}
+            <div className="profile">
+              <div className="profshow" id="gender">
+                <label>
+                  Gender:
+                  <p>{this.props.profile.gender}</p>
+                </label>
+              </div>
+              <div className="profshow" id="gender">
+                <label>
+                  What connections are you looking for?
+                  <p>{this.props.profile.connection}</p>
+                </label>
+              </div>
+              <div className="profshow" id="gender">
+                <label>
+                  What relationship type are you interested in?
+                  <p>{this.props.profile.connection}</p>
+                </label>
+              </div>
+              <div className="profshow" id="gender">
+                <label>
+                  I am looking for...
+                  <p>{this.props.profile.gender_search}</p>
+                </label>
+              </div>
+              <div className="profshow" id="gender">
+                <label>
+                  How old should they be?
+                  <p>
+                    {this.props.profile.min_age_range} -{" "}
+                    {this.props.profile.max_age_range}
+                  </p>
+                </label>
+              </div>
+            </div>
           </div>
-        </div>
         </div>
       );
     }
