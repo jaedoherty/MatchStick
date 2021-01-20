@@ -12,6 +12,9 @@ class HomePage extends React.Component {
         // this.generateProfile = this.generateProfile.bind(this)
     }
     componentDidMount() {
+        if (!this.props.session.id) {
+            this.props.history.push('/')
+        } 
         this.props.fetchProfiles();
     }
     
