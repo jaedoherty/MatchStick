@@ -20,9 +20,7 @@ class NavBar extends React.Component {
         this.props.history.push('/signout');
     }
 
-    // newLogout() {
-    //    this.prop 
-    // }
+
 
     render() {
         if (!this.props.session.id ) {
@@ -30,11 +28,24 @@ class NavBar extends React.Component {
         } else {
             // debugger
             return (
-                <nav id="nav-bar">
-                   
-                    <button className="head-button" id="home-link"><Link to='/home'> MatchStick </Link></button>
-                    <button className="head-button" id="double-take"><Link to='/home'> DoubleTake </Link></button>
-                    <button className="head-button" id="questions"><Link to='/editPersonalityQuiz'> Questions </Link></button>
+                <nav id="nav-bar" >
+                    <Link to='/home'>
+
+                    <button className="head-button" id="home-link"> MatchStick</button>
+                    </Link>
+                    <Link to='/home'>
+
+                    <button className="head-button" id="double-take"> Home </button>
+                    </Link>
+                    <Link to='/editPersonalityQuiz'>
+
+                    <button className="head-button" id="questions"> Questions </button>
+                    </Link>
+                    <Link to='/search'>
+
+                    <button className="head-button"> Search </button>
+                    </Link>
+
                     <button className="head-button" id="likes"> <a href="https://github.com/jaedoherty/MatchStick">GitHub</a></button>
                     <button className="head-button" id="messages"><a href="https://www.linkedin.com/in/jae-doherty/">LinkedIn</a></button>
                     <div id="profile-logout">

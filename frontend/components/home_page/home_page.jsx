@@ -1,15 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import NavBarContainer from './nav_bar_container'
-import OtherProfileShow from '../profiles/other_profile_show_container'
-import ProfileShow from '../profiles/profile_show';
+
 
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
-        // console.log(props)
         this.handleClick = this.handleClick.bind(this)
-        // this.generateProfile = this.generateProfile.bind(this)
     }
     componentDidMount() {
         if (!this.props.session.id) {

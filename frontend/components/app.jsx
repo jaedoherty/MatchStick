@@ -19,13 +19,13 @@ const App = () => (
         <Modal />
        <NavBarContainer /> 
         <Switch>
-            <ProtectedRoute exact path="/profiles/:profileId" component={ProfileShowContainer}/>
+            <Route exact path="/profiles/:profileId" component={ProfileShowContainer}/>
             <Route exact path="/home" component={HomePageContainer}/>
             <Route exact path="/newProfile/" component={NewProfile} />
-            <ProtectedRoute exact path="/editProfile" component={EditProfile} />
-            <ProtectedRoute exact path="/search" component={Search} />
-            <ProtectedRoute exact path="/editPersonalityQuiz" component={EditPersonality} />
-            <ProtectedRoute exact path="/seeProfile/:profileId" component={OtherProfileShow} />
+            <Route exact path="/editProfile" component={EditProfile} />
+            <Route exact path="/search" component={Search} />
+            <Route exact path="/editPersonalityQuiz" component={EditPersonality} />
+            <Route exact path="/seeProfile/:profileId" component={OtherProfileShow} />
             <Redirect from="/nextProfile" to="/home"/> 
             <Redirect from="/signout" to="/"/> 
             <Route path="/" component={GreetingContainer}/>
