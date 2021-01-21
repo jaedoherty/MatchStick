@@ -36,6 +36,7 @@ const App = () => (
     </Switch>
 
     <a href="https://github.com/jaedoherty">GitHub</a>
+    <a href="https://www.linkedin.com/in/jae-doherty/">LinkedIn</a>
   </div>
 );
 
