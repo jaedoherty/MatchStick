@@ -18,6 +18,18 @@
 
 }
 
+#link-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#splash-link {
+   margin: 10px; 
+}
+
 
 
 #tagline {

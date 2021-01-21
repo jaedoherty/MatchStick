@@ -60,13 +60,24 @@ a:visited {
     color: white;
     background-color: darkorchid;
     height: 40px;
-    // padding-top: 15px;
-    // padding-bottom: 12px; 
-    // padding-left: 22px;
-    // padding-right: 22px
 }
 
 #nav-logout:hover {
     background-color: mediumorchid
 }
+
+#footer {
+    display: flex;
+    background-color: gainsboro;
+    justify-content: center;
+    padding: 20px;
+}
+
+#footer-link {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
 

@@ -5,6 +5,7 @@ import Modal from "./modal/modal";
 // import LogInFormContainer from './session_form/login_form_container';
 import ProfileShowContainer from './profiles/profile_show_container';
 import {ProtectedRoute} from '../util/route_util'; 
+import Footer from './footer/footer_container'
 import{ Route, Switch, Link, Redirect } from 'react-router-dom';
 import HomePageContainer from './home_page/home_page_container';
 import Search from './search/search_container'
@@ -34,9 +35,8 @@ const App = () => (
       <Redirect from="/signout" to="/" />
       <Route path="/" component={GreetingContainer} />
     </Switch>
+    <Footer />
 
-    <a href="https://github.com/jaedoherty">GitHub</a>
-    <a href="https://www.linkedin.com/in/jae-doherty/">LinkedIn</a>
   </div>
 );
 
