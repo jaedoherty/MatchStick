@@ -8,21 +8,17 @@ class Search extends React.Component {
       monogamy: "",
       gender_search: "",
       min_age_range: "",
-      max_age_range: ""
+      max_age_range: "",
     };
-
   }
 
   componentDidMount() {
     this.props.fetchProfiles();
   }
 
-
   update(field) {
     return (e) => {
-
       this.setState({ [field]: e.target.value });
-      
     };
   }
 
@@ -41,135 +37,116 @@ class Search extends React.Component {
       return (
         <div>
           <h1>Search</h1>
-          <div className="profile-dropdown-2">
-            <h3>Connection: </h3>
-            <select
-              name="connections"
-              className="dropdown"
-              onChange={this.update("connection")}
-            >
-              <option
-                className="drop-option"
-                value=""
-                selected
+          <div id="search-bar">
+            <div className="profile-dropdown-2" id="search">
+              <h3>Connection: </h3>
+              <select
+                name="connections"
+                className="dropdown"
+                onChange={this.update("connection")}
               >
-                Please Select
-              </option>
-              <option className="drop-option" value="Hookups">
-                Hookups
-              </option>
-              <option className="drop-option" value="New friends">
-                New friends
-              </option>
-              <option className="drop-option" value="Short-term dating">
-                Short-term dating
-              </option>
-              <option className="drop-option" value="Long-term dating">
-                Long-term dating
-              </option>
-            </select>
-          </div>
-          <div className="profile-dropdown-2">
-            <h3>Relationship Type</h3>
-            <select
-              name="connections"
-              className="dropdown"
-              onChange={this.update("monogamy")}
-            >
-              <option
-                className="drop-option"
-                value=""
-                selected
-                
+                <option className="drop-option" value="" selected>
+                  Please Select
+                </option>
+                <option className="drop-option" value="Hookups">
+                  Hookups
+                </option>
+                <option className="drop-option" value="New friends">
+                  New friends
+                </option>
+                <option className="drop-option" value="Short-term dating">
+                  Short-term dating
+                </option>
+                <option className="drop-option" value="Long-term dating">
+                  Long-term dating
+                </option>
+              </select>
+            </div>
+            <div className="profile-dropdown-2" id="search">
+              <h3>Relationship Type</h3>
+              <select
+                name="connections"
+                className="dropdown"
+                onChange={this.update("monogamy")}
               >
-                Please Select
-              </option>
-              <option className="drop-option" value="Monogamous">
-                Monogamous
-              </option>
-              <option className="drop-option" value="Non-monogamous">
-                Non-monogamous
-              </option>
-              <option
-                className="drop-option"
-                value="Open to monogamy and non-monogamy"
-              >
-                Open to monogamy and non-monogamy
-              </option>
-            </select>
-          </div>
+                <option className="drop-option" value="" selected>
+                  Please Select
+                </option>
+                <option className="drop-option" value="Monogamous">
+                  Monogamous
+                </option>
+                <option className="drop-option" value="Non-monogamous">
+                  Non-monogamous
+                </option>
+                <option
+                  className="drop-option"
+                  value="Open to monogamy and non-monogamy"
+                >
+                  Open to monogamy and non-monogamy
+                </option>
+              </select>
+            </div>
 
-          <div className="profile-dropdown-2">
-            <h3>Gender</h3>
-            <select
-              name="connections"
-              className="dropdown"
-              onChange={this.update("gender_search")}
-            >
-              <option
-                className="drop-option"
-                value=""
-                selected
-                
+            <div className="profile-dropdown-2" id="search">
+              <h3>Gender</h3>
+              <select
+                name="connections"
+                className="dropdown"
+                onChange={this.update("gender_search")}
               >
-                Please Select
-              </option>
-              <option className="drop-option" value="man">
-                Man
-              </option>
-              <option className="drop-option" value="woman">
-                Woman
-              </option>
-              <option className="drop-option" value="nonbinary">
-                Nonbinary
-              </option>
-              <option className="drop-option" value="other">
-                Other
-              </option>
-            </select>
-          </div>
-          <div className="profile-dropdown-3" id="age-range">
-            <h3>Age Range</h3>
-            <select
-              name="minAge"
-              className="dropdown"
+                <option className="drop-option" value="" selected>
+                  Please Select
+                </option>
+                <option className="drop-option" value="man">
+                  Man
+                </option>
+                <option className="drop-option" value="woman">
+                  Woman
+                </option>
+                <option className="drop-option" value="nonbinary">
+                  Nonbinary
+                </option>
+                <option className="drop-option" value="other">
+                  Other
+                </option>
+              </select>
+            </div>
+            <div className="profile-dropdown-2" id="search">
+              <h3>Min Age</h3>
+
+              <select
+                name="minAge"
+                className="dropdown"
+                id="age-dropdown"
                 onChange={this.update("min_age_range")}
-            >
-              <option
-                className="drop-option"
-                id="minAge"
-                value=""
-                selected
-                
               >
-                Min Age
-              </option>
-              {age.map((age) => (
-                <option className="dropdown">{age}</option>
-              ))}
-            </select>
-            <p>—</p>
-            <select
-              name="maxAge"
-              className="dropdown"
-                onChange={this.update("max_age_range")}
-            >
-              <option
-                className="drop-option"
-                id="maxAge"
-                value=""
-                
-                selected
-                
-              >
-                Max Age
-              </option>
-              {age.map((age) => (
-                <option className="dropdown">{age}</option>
-              ))}
-            </select>
-          </div>
-          {Object.values(profiles).map(profile => {
+                <option className="drop-option" id="minAge" value="" selected>
+                  Min Age
+                </option>
+                {age.map((age) => (
+                  <option className="dropdown">{age}</option>
+                ))}
+              </select>
+
+              <div className="profile-dropdown-2" id="search">
+                <h3>Max Age</h3>
+
+                <select
+                  name="maxAge"
+                  className="dropdown"
+                  id="age-dropdown"
+                  onChange={this.update("max_age_range")}
+                >
+                  <option className="drop-option" id="maxAge" value="" selected>
+                    Max Age
+                  </option>
+                  {age.map((age) => (
+                    <option className="dropdown">{age}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            {Object.values(profiles).map((profile) => {
               if (
                 (profile.connection === this.state.connection ||
                   this.state.connection === "") &&
@@ -183,11 +160,13 @@ class Search extends React.Component {
                   this.state.max_age_range === "")
               ) {
                 return (
-                    <div>
+                  <div>
                     <div>{profile.first_name}</div>
-                    </div>
+                  </div>
                 );
-              }})}
+              }
+            })}
+          </div>
         </div>
       );
     }

@@ -26,34 +26,52 @@ class NavBar extends React.Component {
         if (!this.props.session.id ) {
             return null;
         } else {
-            // debugger
             return (
-                <nav id="nav-bar" >
-                    <Link to='/home'>
+              <nav id="nav-bar">
+                <Link to="/home">
+                  <button className="head-button" id="home-link">
+                    {" "}
+                    MatchStick
+                  </button>
+                </Link>
+                <Link to="/home">
+                  <button className="head-button" id="double-take">
+                    {" "}
+                    Home{" "}
+                  </button>
+                </Link>
+                <Link to="/editPersonalityQuiz">
+                  <button className="head-button" id="questions">
+                    {" "}
+                    Questions{" "}
+                  </button>
+                </Link>
+                <Link to="/search">
+                  <button className="head-button"> Search </button>
+                </Link>
 
-                    <button className="head-button" id="home-link"> MatchStick</button>
-                    </Link>
-                    <Link to='/home'>
+                <a href="https://github.com/jaedoherty/MatchStick">
+                  <button className="head-button">GitHub</button>
+                </a>
+                <a href="https://www.linkedin.com/in/jae-doherty/">
+                  <button className="head-button">LinkedIn</button>
+                </a>
 
-                    <button className="head-button" id="double-take"> Home </button>
-                    </Link>
-                    <Link to='/editPersonalityQuiz'>
-
-                    <button className="head-button" id="questions"> Questions </button>
-                    </Link>
-                    <Link to='/search'>
-
-                    <button className="head-button"> Search </button>
-                    </Link>
-
-                    <button className="head-button" id="likes"> <a href="https://github.com/jaedoherty/MatchStick">GitHub</a></button>
-                    <button className="head-button" id="messages"><a href="https://www.linkedin.com/in/jae-doherty/">LinkedIn</a></button>
-                    <div id="profile-logout">
-
-                        <Link to={`/profiles/${this.props.profileId}`}><button className="head-button" id="my-profile">My Profile </button></Link>
-                        <button className="head-button" id="nav-logout" onClick={this.handleClick}>Log Out</button>
-                    </div>
-                </nav>
+                <div id="profile-logout">
+                  <Link to={`/profiles/${this.props.profileId}`}>
+                    <button className="head-button" id="my-profile">
+                      My Profile{" "}
+                    </button>
+                  </Link>
+                  <button
+                    className="head-button"
+                    id="nav-logout"
+                    onClick={this.handleClick}
+                  >
+                    Log Out
+                  </button>
+                </div>
+              </nav>
             );
         }
     }

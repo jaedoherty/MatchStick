@@ -15,25 +15,28 @@ import EditPersonality from './personality/edit_personality_form_container'
 import OtherProfileShow from './profiles/other_profile_show_container'
 
 const App = () => (
-    <div id="bigdiv">
-        <Modal />
-       <NavBarContainer /> 
-        <Switch>
-            <Route exact path="/profiles/:profileId" component={ProfileShowContainer}/>
-            <Route exact path="/home" component={HomePageContainer}/>
-            <Route exact path="/newProfile/" component={NewProfile} />
-            <Route exact path="/editProfile" component={EditProfile} />
-            <Route exact path="/search" component={Search} />
-            <Route exact path="/editPersonalityQuiz" component={EditPersonality} />
-            <Route exact path="/seeProfile/:profileId" component={OtherProfileShow} />
-            <Redirect from="/nextProfile" to="/home"/> 
-            <Redirect from="/signout" to="/"/> 
-            <Route path="/" component={GreetingContainer}/>
+  <div id="bigdiv">
+    <Modal />
+    <NavBarContainer />
+    <Switch>
+      <Route
+        exact
+        path="/profiles/:profileId"
+        component={ProfileShowContainer}
+      />
+      <Route exact path="/home" component={HomePageContainer} />
+      <Route exact path="/newProfile/" component={NewProfile} />
+      <Route exact path="/editProfile" component={EditProfile} />
+      <Route exact path="/search" component={Search} />
+      <Route exact path="/editPersonalityQuiz" component={EditPersonality} />
+      <Route exact path="/seeProfile/:profileId" component={OtherProfileShow} />
+      <Redirect from="/nextProfile" to="/home" />
+      <Redirect from="/signout" to="/" />
+      <Route path="/" component={GreetingContainer} />
+    </Switch>
 
-        </Switch>
-
-
-    </div>
+    <a href="https://github.com/jaedoherty">GitHub</a>
+  </div>
 );
 
 export default App;
