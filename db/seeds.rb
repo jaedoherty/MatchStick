@@ -8,7 +8,7 @@
 
 User.delete_all
 Profile.delete_all
-# Like.delete_all
+Like.delete_all
 
 demo = User.create!(
   username: 'demo-user',
@@ -16,12 +16,37 @@ demo = User.create!(
 )
 u1 = User.create!(
   username: 'tia',
-  password: 'tia_password'
+  password: 'password'
 )
 
 u2 = User.create!(
-  username: 'will_s',
-  password: 'will_password'
+  username: 'will',
+  password: 'password'
+)
+
+u4 = User.create!(
+  username: 'caroline',
+  password: 'password'
+)
+
+u5 = User.create!(
+  username: 'cory',
+  password: 'password'
+)
+
+u6 = User.create!(
+  username: 'maddie',
+  password: 'password'
+)
+
+u7 = User.create!(
+  username: 'william',
+  password: 'password'
+)
+
+u8 = User.create!(
+  username: 'izzi',
+  password: 'password'
 )
 
 
@@ -32,10 +57,24 @@ p1 = Profile.create!(
   age: 24,
   gender: 'woman',
   description:"Foodie. Will swipe for dogs.",
-   match_preferences:['{I am looking for..:Men and Women},{I am...:Non-monogamous},{What connections are you looking for?:Hookups},{ How old should they be?:25}'],
-  quiz_results: ["{Dogs or cats (and do you have any)?:I don't have a dog but I want one!!},{How do you feel about pineapple on pizza?:don’t have a preference},{If you were a Kardashian, which one would you be?:kourtney},{What is your astrological sign?:pisces},{What is your favorite Ariana Grande song?:7 rings},{What is your favorite Disney movie?:tangled},{What is your favorite Pokémon?:Eevee},{What is your go to cocktail?:espresso martini},{What is your ideal first date?:anything food related},{Which house would the sorting hat place you in?:ravenclaw},{Which member of BlackPink would you be?:Jennie}"],
   user_id: u1.id,
-  img_name: "kirby"
+  img_name: "kirby",
+  connection: "New friends",
+  monogamy: "Monogamous",
+  gender_search: "man",
+  min_age_range: 25,
+  max_age_range: 30,
+  ideal_date: "anything food related",
+  kardashian: "kourtney",
+  cocktail: "moscow mule",
+  pineapple: "don’t have a preference",
+  house: "ravenclaw",
+  disney: "tangled",
+  blackpink: "Jennie",
+  pets: "I don't have a dog but I want one!!",
+  ariana: "7 rings",
+  pokemon: "Eevee",
+  zodiac: "pisces"
 )
 
 p2 = Profile.create!(
@@ -45,26 +84,185 @@ p2 = Profile.create!(
   age: 24,
   description: "Looking for life long romance. Will only respond with thumbs up reactions. Would rather be hiking.",
   gender: "man",
-    match_preferences: ['{I am looking for..:Women},{I am...:Monogamous},{What connections are you looking for?:Long-term dating},{How old should they be?:25}'],
-  quiz_results: ['{Dogs or cats (and do you have any)?:dogs, just one},{How do you feel about pineapple on pizza?:love it},{If you were a Kardashian, which one would you be?:kourtney},{What is your astrological sign?:Capricorn},{What is your favorite Ariana Grande song?:I couldn’t name one},{What is your favorite Disney movie?:Hercules},{What is your favorite Pokémon?:squirtle},{What is your go to cocktail?:anything whiskey},{What is your ideal first date?:going on a hike},{Which house would the sorting hat place you in?:gryffindor},{Which member of BlackPink would you be?:... who?}'], 
   user_id: u2.id,
-  img_name: "bowser"
+  img_name: "bowser",
+  connection: "Long-term dating",
+  monogamy: "Monogamous",
+  gender_search: "woman",
+  min_age_range: 25,
+  max_age_range: 30,
+  ideal_date: "going on a hike",
+  kardashian: "scott",
+  cocktail: "anything with whiskey",
+  pineapple: "love it",
+  house: "gryffindor",
+  disney: "hercules",
+  blackpink: "... who?",
+  pets: "dogs, just one",
+  ariana: "I couldn't name one",
+  pokemon: "squirtle",
+  zodiac: "capricorn"
 )
-
-p3 = Profile.create!(
-  first_name: "Demo",
+p2 = Profile.create!(
+  first_name: "Jae",
   zip_code: 94107,
   location: "San Francisco, CA",
-  age: 21,
-  description: "Not looking for anything serious.",
-  gender: "man",
-  match_preferences: ['{I am looking for..:Men and Women},{I am...:Monogamous},{What connections are you looking for?:Short-term dating},{How old should they be?:25}'],
-  quiz_results: ['{Dogs or cats (and do you have any)?:dogs, nope!},{How do you feel about pineapple on pizza?:hard pass},{If you were a Kardashian, which one would you be?:kylie},{What is your astrological sign?:virgo},{What is your favorite Ariana Grande song?:thank u next},{What is your favorite Disney movie?:the lion king},{What is your favorite Pokémon?:charmander},{What is your go to cocktail?:spicy margarita},{What is your ideal first date?:going out to dinner},{Which house would the sorting hat place you in?:slytherin or ravenclaw},{Which member of BlackPink would you be?:rose}'], 
+  age: 23,
+  description: "this is my site!! enjoy :)",
+  gender: "woman",
   user_id: demo.id,
-  img_name: "yoshi"
+  img_name: "yoshi",
+  connection: "Short-term dating",
+  monogamy: "Monogamous",
+  gender_search: "man",
+  min_age_range: 25,
+  max_age_range: 30,
+  ideal_date: "food!!",
+  kardashian: "kylie",
+  cocktail: "espresso martini",
+  pineapple: "could go either way to be honest",
+  house: "i pretend that i'm a ravenclaw but am really a slytherin",
+  disney: "princess and the frog",
+  blackpink: "jennie",
+  pets: "dogs!! i don't have any",
+  ariana: "down",
+  pokemon: "bulbasaur",
+  zodiac: "gemini"
 )
 
-# l1 = Like.create!(
-#   liker_id: demo.id,
-#   liked_profile_id: p1.id,
-# )
+
+
+p4 = Profile.create!(
+  first_name: "Caroline",
+  zip_code: 70115,
+  location: "New Orleans, LA",
+  age: 24,
+  description: "Hi My name is Caroline. I know the girl who made this website she’s pretty cool (no it’s not me!) I like ariana grande, makeup, and sailor moon! I’m a cancer sun, leo moon, and leo rising. I'm down to clown!",
+  gender: "woman",
+  user_id: u4.id,
+  img_name: "pichu",
+  connection: "New friends",
+  monogamy: "Monogamous",
+  gender_search: "man",
+  min_age_range: 24,
+  max_age_range: 27,
+  ideal_date: "Idk somewhere in public so i know you won’t kill me but like not a movie. Something like mini golf",
+  kardashian: "rob lol i don’t leave my house",
+  cocktail: "vodka soda #skinny legend",
+  pineapple: "Sometimes it just hits different",
+  house: "i think im straight up a hufflepuff",
+  disney: "Beauty and the beast",
+  blackpink: "I don’t know them well enough to know. However, my fav member of one direction is either niall or harry.",
+  pets: "None at the moment",
+  ariana: "GOOD QUESTION. HARD QUESTION! either needy, in my head, 34+35, or just like magic",
+  pokemon: "eevee and all of its evolutions except for the leaf and ice ones because they don’t look as cool",
+  zodiac: "Cancer sun! Leo moon! Leo rising! let’s compare birthcharts!"
+)
+
+p5 = Profile.create!(
+  first_name: "Cory",
+  zip_code: 10001,
+  location: "New York, NY",
+  age: 23,
+  description: "NYC resident who loves her dog and coffee more than most things. I often quote the Office in regular conversation.",
+  gender: "woman",
+  user_id: u5.id,
+  img_name: "peach",
+  connection: "Long-term dating",
+  monogamy: "Monogamous",
+  gender_search: "man",
+  min_age_range: 24,
+  max_age_range: 28,
+  ideal_date: "Visiting a museum or exhibit with a stop afterwards at a bakery.",
+  kardashian: "Kim - I'm persistent and could totally see myself going back to school one day.",
+  cocktail: "Spicy margarita",
+  pineapple: "Not cool, man. Not cool.",
+  house: "I could fit in with all four but my gut says Gryffindor.",
+  disney: "Cinderella",
+  blackpink: "Jenny",
+  pets: "Dogs. My family has 2 and I only wish they could live with me!",
+  ariana: "Have to go with a classic - Problem.",
+  pokemon: "Piplup",
+  zodiac: "Libra"
+)
+
+p6 = Profile.create!(
+  first_name: "Cory",
+  zip_code: 10001,
+  location: "Worcester, MA",
+  age: 23,
+  description: "Hi i'm Maddie. I am a medical student that loves hiking and good IPAs.",
+  gender: "woman",
+  user_id: u6.id,
+  img_name: "kirby",
+  connection: "New friends",
+  monogamy: "Monogamous",
+  gender_search: "man",
+  min_age_range: 22,
+  max_age_range: 30,
+  ideal_date: "I like food!.",
+  kardashian: "the mom",
+  cocktail: "Old fashioned",
+  pineapple: "ew no thanks",
+  house: "Gryffindor, with a touch of Ravenclaw!",
+  disney: "Ratatouille",
+  blackpink: "Cory says Lisa!",
+  pets: "I have a cat and I love both",
+  ariana: "Cory says dangerous woman ;)",
+  pokemon: "Umbreon",
+  zodiac: "cancer"
+)
+
+p7 = Profile.create!(
+  first_name: "William",
+  zip_code: 94030,
+  location: "Bay Area, CA",
+  age: 27,
+  description: "My hobbies includes powerlifting, drinking scotch and learning code",
+  gender: "man",
+  user_id: u7.id,
+  img_name: "kirby",
+  connection: "New friends",
+  monogamy: "Open to monogamy and non-monogamy",
+  gender_search: "woman",
+  min_age_range: 21,
+  max_age_range: 30,
+  ideal_date: "Netflix and chill",
+  kardashian: "Kim",
+  cocktail: "old fashion",
+  pineapple: "i dont like it",
+  house: "Gryffindor",
+  disney: "Lion king",
+  blackpink: "the first one",
+  pets: "dogs. no",
+  ariana: "IDFWU",
+  pokemon: "Cyndaquil",
+  zodiac: "taurus"
+)
+
+p7 = Profile.create!(
+  first_name: "Izzi",
+  zip_code: 10001,
+  location: "New York, NY",
+  age: 23,
+  description: "I am going to be the CEO of Glossier someday",
+  gender: "woman",
+  user_id: u8.id,
+  img_name: "ice_climbers",
+  connection: "New friends",
+  monogamy: "Monogamous",
+  gender_search: "other",
+  min_age_range: 25,
+  max_age_range: 30,
+  ideal_date: "going out to dinner",
+  kardashian: "kylie",
+  cocktail: "spicy margarita",
+  pineapple: "hard pass",
+  house: "slytherin or ravenclaw",
+  disney: "the lion king",
+  blackpink: "rose",
+  pets: "dogs, just one",
+  ariana: "thank u next",
+  pokemon: "charmander",
+  zodiac: "virgo"
+)

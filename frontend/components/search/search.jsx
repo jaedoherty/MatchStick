@@ -24,6 +24,10 @@ class Search extends React.Component {
     };
   }
 
+  reset() {
+    
+  }
+
   render() {
     if (Object.values(this.props.profiles).length === 0) {
       return null;
@@ -123,7 +127,7 @@ class Search extends React.Component {
                 onChange={this.update("min_age_range")}
               >
                 <option className="drop-option" id="minAge" value="" selected>
-                  Min Age
+                  Please Select
                 </option>
                 {age.map((age) => (
                   <option className="dropdown">{age}</option>
@@ -141,13 +145,14 @@ class Search extends React.Component {
                   onChange={this.update("max_age_range")}
                 >
                   <option className="drop-option" id="maxAge" value="" selected>
-                    Max Age
+                    Please Select
                   </option>
                   {age.map((age) => (
                     <option className="dropdown">{age}</option>
                   ))}
                 </select>
               </div>
+              <button id="reset">Reset Filters</button>
           </div>
           <div id="search-results">
 
