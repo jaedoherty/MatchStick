@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 class Search extends React.Component {
   constructor(props) {
@@ -35,8 +36,8 @@ class Search extends React.Component {
       let profiles = Object.values(this.props.profiles);
 
       return (
-        <div>
-          <h1>Search</h1>
+        <div id="search-container">
+          <h1 id="search-header">Search</h1>
           <div id="search-bar">
             <div className="profile-dropdown-2" id="search">
               <h3>Connection: </h3>
@@ -128,6 +129,7 @@ class Search extends React.Component {
                 ))}
               </select>
 
+            </div>
               <div className="profile-dropdown-2" id="search">
                 <h3>Max Age</h3>
 
@@ -145,27 +147,37 @@ class Search extends React.Component {
                   ))}
                 </select>
               </div>
-            </div>
-            {Object.values(profiles).map((profile) => {
-              if (
-                (profile.connection === this.state.connection ||
-                  this.state.connection === "") &&
-                (profile.monogamy === this.state.monogamy ||
-                  this.state.monogamy === "") &&
-                (profile.gender === this.state.gender_search ||
-                  this.state.gender_search === "") &&
-                (profile.age >= this.state.min_age_range ||
-                  this.state.min_age_range === "") &&
-                (profile.max_age_range <= this.state.max_age_range ||
-                  this.state.max_age_range === "")
-              ) {
-                return (
-                  <div>
-                    <div>{profile.first_name}</div>
-                  </div>
-                );
-              }
-            })}
+          </div>
+          <div id="search-results">
+
+              {Object.values(profiles).map((profile) => {
+                if (
+                  (profile.connection === this.state.connection ||
+                    this.state.connection === "") &&
+                  (profile.monogamy === this.state.monogamy ||
+                    this.state.monogamy === "") &&
+                  (profile.gender === this.state.gender_search ||
+                    this.state.gender_search === "") &&
+                  (profile.age >= this.state.min_age_range ||
+                    this.state.min_age_range === "") &&
+                  (profile.max_age_range <= this.state.max_age_range ||
+                    this.state.max_age_range === "")
+                ) {
+                  const img = profile.img_name
+                  return (
+                    <Link to={`seeProfile/${profile.id}`} id="search-profs">
+                      <div>{profile.first_name}</div>
+                      <div>{profile.age}</div>
+                      <div>{profile.location}</div>
+                                    <img
+                  id="resize-smash"
+                  src={window[img]}
+                />
+              
+                    </Link>
+                  );
+                }
+              })}
           </div>
         </div>
       );

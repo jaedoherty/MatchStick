@@ -1,4 +1,41 @@
+#search-container {
+    min-height: 86.7%;
+    background-color: gainsboro;
+}
+
 #search-bar {
     display: flex;
     justify-content: space-evenly;
+}
+
+#search-header {
+    margin: 0px;
+    padding: 20px;
+}
+
+#search-results {
+    // display: flex;
+    display: flex;
+    justify-content: center;
+    // min-height: 80%;
+    height: 700px;
+    
+    // margin-top: 100px;
+    // position: absolute;
+    // bottom: 50;
+}
+
+#search-profs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px;
+    // justify-content: space-evenly;
+    max-width: 100%;
+}
+
+
+
+a {
+    text-decoration: none;
 }
