@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import ProfileCard from './profile_card'
 
 class Search extends React.Component {
   constructor(props) {
@@ -163,18 +164,9 @@ class Search extends React.Component {
                   (profile.max_age_range <= this.state.max_age_range ||
                     this.state.max_age_range === "")
                 ) {
-                  const img = profile.img_name
+
                   return (
-                    <Link to={`seeProfile/${profile.id}`} id="search-profs">
-                      <div>{profile.first_name}</div>
-                      <div>{profile.age}</div>
-                      <div>{profile.location}</div>
-                                    <img
-                  id="resize-smash"
-                  src={window[img]}
-                />
-              
-                    </Link>
+                    <ProfileCard profile={profile}/>
                   );
                 }
               })}

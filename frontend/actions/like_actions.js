@@ -23,8 +23,6 @@ export const fetchLikedProfiles = likerId => dispatch => {
 } 
 
 export const likeProfile = profileId => dispatch => {
-    // debugger
-    // console.log(profileId)
     return APIUtil.addLikeToProfile(profileId).then((profile) => dispatch(receiveLikedProfile(profile)))
 }
 

@@ -49,6 +49,9 @@ class NavBar extends React.Component {
                 <Link to="/search">
                   <button className="head-button"> Search </button>
                 </Link>
+                <Link to="/likes">
+                  <button className="head-button"> My Likes </button>
+                </Link>
 
                 <div id="profile-logout">
                   <Link to={`/profiles/${this.props.profileId}`}>
