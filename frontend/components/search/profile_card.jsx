@@ -10,10 +10,22 @@ class ProfileCard extends React.Component {
         return (
           <Link to={`seeProfile/${this.props.profile.id}`} id="search-profs">
             <img id="resize-smash" src={window[this.props.profile.img_name]} />
-            <div>Name: {this.props.profile.first_name}</div>
-            <div>Age: {this.props.profile.age}</div>
-            <div>Location: {this.props.profile.location}</div>
-            <div>Gender: {this.props.profile.gender} </div>
+            <div className="card-info">
+              <h4>Name:</h4>
+              <div>{this.props.profile.first_name}</div>
+            </div>
+            <div className="card-info">
+              <h4>Age:</h4>
+              <div>{this.props.profile.age}</div>
+            </div>
+            <div className="card-info">
+              <h4>Location:</h4>
+              <div>{this.props.profile.location}</div>
+            </div>
+            <div className="card-info">
+              <h4>Gender:</h4>
+              <div>{this.props.profile.gender} </div>
+            </div>
           </Link>
         );
     }
