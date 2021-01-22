@@ -5,6 +5,5 @@ export const getProfile = (state) => {
         profileId = profile.id
         }
     })
-    // debugger
     return profileId; 
 }
