@@ -25,7 +25,7 @@ const App = () => (
       />
       <Route exact path="/home" component={HomePageContainer} />
       <Route exact path="/newProfile/" component={NewProfile} />
-      <Route exact path="/editProfile" component={EditProfile} />
+      <Route path="/editProfile/:questionId" component={EditProfile} />
       <Route exact path="/search" component={Search} />
       <Route exact path="/editPersonalityQuiz" component={EditPersonality} />
       <Route exact path="/seeProfile/:profileId" component={OtherProfileShow} />

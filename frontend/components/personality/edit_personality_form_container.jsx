@@ -1,7 +1,6 @@
 import {connect} from 'react-redux';
 import EditProfileForm from '../profiles/edit_profile_form';
 import {updateProfile, fetchProfiles} from '../../actions/profile_actions';
-// import {wiRouter} from 'react-router-dom';
 import {getProfile} from '../../reducers/selectors';
 
 

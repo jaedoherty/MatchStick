@@ -9,7 +9,8 @@ class ProfileForm extends React.Component {
             question: this.props.question,
            
         }
-     
+       
+        
         this.handleClick = this.handleClick.bind(this); 
         this.updateArrays = this.updateArrays.bind(this);
         this.handleBack = this.handleBack.bind(this);
@@ -117,7 +118,7 @@ class ProfileForm extends React.Component {
 
 
     render () {
-
+        console.log("state", this.state);
         const questionZero = () => (
             <div className="create-profile">
 
@@ -552,7 +553,7 @@ class ProfileForm extends React.Component {
         }
 
         
-
+        // console.log("match", this.props);
         if (this.state.question === 0) {
             return questionZero();
         } else if (this.state.question === 1) {
@@ -563,7 +564,7 @@ class ProfileForm extends React.Component {
             return questionThree();
         } else if (this.state.question === 4) {
             return questionFour();
-        } else if (this.state.question === 5) {
+        } else if (this.state.question === 5) { 
             return questionFive();
         } else if (this.state.question === 6) {
             return questionSix();

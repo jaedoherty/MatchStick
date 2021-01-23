@@ -10,13 +10,23 @@ class EditProfileForm extends React.Component {
   }
   render() {
     if (!this.props.profile) return null;
-    return (
-      <ProfileForm
-        submit={this.props.submit}
-        profile={this.props.profile}
-        question={this.props.question}
-      />
-    );
+    if (this.props.match.params.question_id) {
+            return (
+              <ProfileForm
+                submit={this.props.submit}
+                profile={tthis.props.match.params.question_id}
+              />
+            ); 
+    } else {
+
+        return (
+          <ProfileForm
+            submit={this.props.submit}
+            profile={this.props.profile}
+            question={this.props.question}
+          />
+        );
+    }
   }
 }
 

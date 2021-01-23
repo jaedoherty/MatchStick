@@ -17,13 +17,14 @@ class ProfileShow extends React.Component {
     }
   }
 
-  handleClick() {
-    return () => this.props.history.push("/editProfile");
+  handleClick(question_id) {
+    return () => this.props.history.push(`/editProfile/${question_id}`);
   }
 
   editPersonality() {
     return () => this.props.history.push("/editPersonalityQuiz");
   }
+
 
   render() {
     const editPersonalityButton = () => {
@@ -64,6 +65,9 @@ class ProfileShow extends React.Component {
                   <p className="field-title">About Me</p>
                   <div className="field-text">
                     <p className="ftxt">{this.props.profile.description} </p>
+                    <button id="edit-quiz" onClick={this.handleClick(11)}>
+                      edit
+                    </button>
                   </div>
                 </div>
 
@@ -157,7 +161,7 @@ class ProfileShow extends React.Component {
                   <p id="line1">COMPLETE YOUR PROFILE</p>
                   <p id="line2">and be seen by more people.</p>
                 </div>
-                <button id="edit-button" onClick={this.handleClick()}>
+                <button id="edit-button" onClick={this.handleClick(5)}>
                   {" "}
                   &#62;
                 </button>
