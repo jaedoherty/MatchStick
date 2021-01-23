@@ -329,7 +329,7 @@ class ProfileForm extends React.Component {
                 <select
                   name="gender"
                   className="dropdown"
-                  onChange={this.handleChange("gender")}
+                  onChange={this.handleChange("gender_search")}
                 >
                   <option
                     className="drop-option"

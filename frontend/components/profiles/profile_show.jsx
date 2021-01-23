@@ -64,18 +64,21 @@ class ProfileShow extends React.Component {
                 <div className="description">
                   <p className="field-title">About Me</p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.description} </p>
-                    <button id="edit-quiz" onClick={this.handleClick(11)}>
-                      edit
-                    </button>
+                    <p className="ftxt">
+                      {this.props.profile.description}{" "}
+                      <button id="edit-quiz" onClick={this.handleClick(11)}>
+                        edit
+                      </button>
+                    </p>
                   </div>
                 </div>
 
                 <div className="description">
                   <p className="field-title">What is your ideal first date?</p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.ideal_date} </p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.ideal_date} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
                 <div className="description">
@@ -83,15 +86,17 @@ class ProfileShow extends React.Component {
                     If you were a Kardashian, which one would you be?
                   </p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.kardashian} </p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.kardashian} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
                 <div className="description">
                   <p className="field-title">What is your go to cocktail?</p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.cocktail} </p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.cocktail} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
                 <div className="description">
@@ -99,8 +104,9 @@ class ProfileShow extends React.Component {
                     How do you feel about pineapple on pizza?
                   </p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.pineapple}</p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.pineapple} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
                 <div className="description">
@@ -108,8 +114,9 @@ class ProfileShow extends React.Component {
                     Which house would the sorting hat place you in?
                   </p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.house}</p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.house} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
                 <div className="description">
@@ -117,8 +124,9 @@ class ProfileShow extends React.Component {
                     What is your favorite Disney movie?
                   </p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.disney}</p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.disney} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
                 <div className="description">
@@ -126,8 +134,9 @@ class ProfileShow extends React.Component {
                     Dogs or cats (and do you have any)?
                   </p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.pets}</p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.pets} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
                 <div className="description">
@@ -135,22 +144,25 @@ class ProfileShow extends React.Component {
                     What is your favorite Ariana Grande song?
                   </p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.ariana}</p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.ariana} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
                 <div className="description">
                   <p className="field-title">What is your favorite Pokémon?</p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.pokemon}</p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.pokemon} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
                 <div className="description">
                   <p className="field-title">What is your astrological sign?</p>
                   <div className="field-text">
-                    <p className="ftxt">{this.props.profile.zodiac}</p>
-                    {editPersonalityButton()}
+                    <p className="ftxt">
+                      {this.props.profile.zodiac} {editPersonalityButton()}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -172,25 +184,41 @@ class ProfileShow extends React.Component {
                   <p>{this.props.profile.gender}</p>
                 </label>
               </div>
-              <div className="profshow" id="gender">
+              <div
+                className="profshow"
+                id="gender"
+                onClick={this.handleClick(6)}
+              >
                 <label>
                   What connections are you looking for?
                   <p>{this.props.profile.connection}</p>
                 </label>
               </div>
-              <div className="profshow" id="gender">
+              <div
+                className="profshow"
+                id="gender"
+                onClick={this.handleClick(7)}
+              >
                 <label>
                   What relationship type are you interested in?
-                  <p>{this.props.profile.connection}</p>
+                  <p>{this.props.profile.monogamy}</p>
                 </label>
               </div>
-              <div className="profshow" id="gender">
+              <div
+                className="profshow"
+                id="gender"
+                onClick={this.handleClick(8)}
+              >
                 <label>
-                  I am looking for...
+                  I am looking for a...
                   <p>{this.props.profile.gender_search}</p>
                 </label>
               </div>
-              <div className="profshow" id="gender">
+              <div
+                className="profshow"
+                id="gender"
+                onClick={this.handleClick(9)}
+              >
                 <label>
                   How old should they be?
                   <p>
