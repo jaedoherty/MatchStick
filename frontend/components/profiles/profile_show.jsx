@@ -27,6 +27,7 @@ class ProfileShow extends React.Component {
 
 
   render() {
+    console.log("props", this.props)
     const editPersonalityButton = () => {
         return (
           <button id="edit-quiz" onClick={this.editPersonality()}>

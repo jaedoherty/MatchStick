@@ -1,6 +1,7 @@
 import React from 'react';
 import PersonalityFormContainer from '../personality/personality_form_container';
 
+
 class ProfileForm extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +21,7 @@ class ProfileForm extends React.Component {
 
 
     update(field) {
-
+    // debugger;
         return ((e) => {
             const profile = { ...this.state.profile };
             profile[field] = e.currentTarget.value;
@@ -52,10 +53,10 @@ class ProfileForm extends React.Component {
 
     passAction () {
         if (this.props.edit) {
-            // console.log("in pass action if", this.props.edit)
+
             return this.props.edit
         } else {
-            // console.log("in pass action if", this.props.create)
+
             return this.props.create
         }
     }
@@ -63,6 +64,7 @@ class ProfileForm extends React.Component {
 
 
     handleChange(field) {
+        
         return (e) => {
             const profile = { ...this.state.profile };
             profile[field] = e.currentTarget.value;
@@ -98,7 +100,7 @@ class ProfileForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        console.log(this.props)
         this.props.submit(this.state.profile).then(this.props.history.push('/home'))
     }
      
@@ -116,9 +118,17 @@ class ProfileForm extends React.Component {
     }
 
 
-
     render () {
-        console.log("state", this.state);
+        console.log("render", this)
+        const editSubmit = () => {
+            if (this.props.type) {
+                return (
+                  <button className="onboarding-button" onClick={this.handleSubmit}>Submit Edit</button>
+                );
+            } else {
+                return null;
+            }
+        }
         const questionZero = () => (
             <div className="create-profile">
 
@@ -271,6 +281,7 @@ class ProfileForm extends React.Component {
                         </select>
                     </div>
                     <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+                    {editSubmit()}
 
                 </div>
             </div>
@@ -279,32 +290,60 @@ class ProfileForm extends React.Component {
 
         const questionSeven = () => {
 
-            return(
+            return (
+              <div className="create-profile">
+                <div className="profile-1" id="page1">
+                  <div className="header-container">
+                    <button className="back-button" onClick={this.handleBack}>
+                      {" "}
+                      &lt;{" "}
+                    </button>
+                  </div>
+                  <span>
+                    <span className="onboarding-header-description">
+                      Relationship type
+                    </span>
+                  </span>
 
-                <div className="create-profile">
-
-                    <div className="profile-1" id="page1">
-                        <div className="header-container">
-
-                            <button className="back-button" onClick={this.handleBack}> &lt; </button>
-                        </div>
-                        <span><span className="onboarding-header-description">Relationship type</span></span>
-
-                        <h3 className="profileDetails-field-prompt">I am...</h3>
-                        <div className="profile-dropdown-2">
-                            <select name="connections" className="dropdown" onChange={this.update("monogamy")}>
-                                <option className="drop-option" value="please_select" selected disabled>Please Select</option>
-                                <option className="drop-option" value="Monogamous">Monogamous</option>
-                                <option className="drop-option" value="Non-monogamous">Non-monogamous</option>
-                                <option className="drop-option" value="Open to monogamy and non-monogamy">Open to monogamy and non-monogamy</option>
-        
-                            </select>
-                        </div>
-                        <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
-
-                    </div>
+                  <h3 className="profileDetails-field-prompt">I am...</h3>
+                  <div className="profile-dropdown-2">
+                    <select
+                      name="connections"
+                      className="dropdown"
+                      onChange={this.update("monogamy")}
+                    >
+                      <option
+                        className="drop-option"
+                        value="please_select"
+                        selected
+                        disabled
+                      >
+                        Please Select
+                      </option>
+                      <option className="drop-option" value="Monogamous">
+                        Monogamous
+                      </option>
+                      <option className="drop-option" value="Non-monogamous">
+                        Non-monogamous
+                      </option>
+                      <option
+                        className="drop-option"
+                        value="Open to monogamy and non-monogamy"
+                      >
+                        Open to monogamy and non-monogamy
+                      </option>
+                    </select>
+                  </div>
+                  <button
+                    className="onboarding-button"
+                    onClick={this.handleClick}
+                  >
+                    NEXT
+                  </button>
+                  {editSubmit()}
                 </div>
-            )
+              </div>
+            );
         }
 
         const questionEight = () => (
@@ -356,6 +395,7 @@ class ProfileForm extends React.Component {
               <button className="onboarding-button" onClick={this.handleClick}>
                 NEXT
               </button>
+              {editSubmit()}
             </div>
           </div>
         );
@@ -365,33 +405,72 @@ class ProfileForm extends React.Component {
             const age = range(18, 99, 1);
 
             return (
-                <div className="create-profile">
+              <div className="create-profile">
+                <div className="profile-1" id="page1">
+                  <div className="header-container">
+                    <button className="back-button" onClick={this.handleBack}>
+                      {" "}
+                      &lt;{" "}
+                    </button>
+                  </div>
+                  <span>
+                    <span className="onboarding-header-description">
+                      Ideal person
+                    </span>
+                  </span>
 
-                    <div className="profile-1" id="page1">
-                        <div className="header-container">
-
-                            <button className="back-button" onClick={this.handleBack}> &lt; </button>
-                        </div>
-                        <span><span className="onboarding-header-description">Ideal person</span></span>
-
-                        <h3 className="profileDetails-field-prompt">How old should they be?</h3>
-                        <div className="profile-dropdown-3" id="age-range">
-                            <select name="minAge" className="dropdown" onChange={this.update("min_age_range")}>
-                                <option className="drop-option" id="minAge" value="minAge" selected disabled>Min Age</option>
-                                {age.map(age => (<option className="dropdown">{age}</option>))}
-                            </select>
-                            <p>—</p>
-                            <select name="maxAge" className="dropdown" onChange={this.update("max_age_range")}>
-                                <option className="drop-option" id="maxAge" value="maxAge" selected disabled>Max Age</option>
-                                {age.map(age => (<option className="dropdown">{age}</option>))}
-                            </select>
-
-                        </div>
-                        <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
-
-                    </div>
+                  <h3 className="profileDetails-field-prompt">
+                    How old should they be?
+                  </h3>
+                  <div className="profile-dropdown-3" id="age-range">
+                    <select
+                      name="minAge"
+                      className="dropdown"
+                      onChange={this.update("min_age_range")}
+                    >
+                      <option
+                        className="drop-option"
+                        id="minAge"
+                        value="minAge"
+                        selected
+                        disabled
+                      >
+                        Min Age
+                      </option>
+                      {age.map((age) => (
+                        <option className="dropdown">{age}</option>
+                      ))}
+                    </select>
+                    <p>—</p>
+                    <select
+                      name="maxAge"
+                      className="dropdown"
+                      onChange={this.update("max_age_range")}
+                    >
+                      <option
+                        className="drop-option"
+                        id="maxAge"
+                        value="maxAge"
+                        selected
+                        disabled
+                      >
+                        Max Age
+                      </option>
+                      {age.map((age) => (
+                        <option className="dropdown">{age}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <button
+                    className="onboarding-button"
+                    onClick={this.handleClick}
+                  >
+                    NEXT
+                  </button>
+                  {editSubmit()}
                 </div>
-            )
+              </div>
+            );
         }
 
         const questionTen = () => (
@@ -430,44 +509,79 @@ class ProfileForm extends React.Component {
                         <textarea className="profile-name-input" id="text-input" onChange={this.update('description')}></textarea>
                     </div>
                     <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+                    {editSubmit()}
 
                 </div>
             </div>
         )
 
         const questionTwelve = () => (
-            <div className="create-profile">
-                <h3>Pick a photo</h3>
-                <div className="choose-img">
-
-                    <button className="smash-img-container" value="bowser" onClick={this.update("img_name")}>
-                        <img className="smash-img" src={window.bowser} />
-                    </button> 
-                    <button className="smash-img-container" value="ice_climbers" onClick={this.update("img_name")}>
-                        <img className="smash-img" src={window.ice_climbers} />
-                    </button> 
-                    <button className="smash-img-container" value="incineroar" onClick={this.update("img_name")}>
-                        <img className="smash-img" src={window.incineroar} />
-                    </button> 
-                    <button className="smash-img-container" value="kirby" onClick={this.update("img_name")}>
-                        <img className="smash-img" src={window.kirby} />
-                    </button> 
-                    <button className="smash-img-container" value="pichu" onClick={this.update("img_name")}>
-                        <img className="smash-img" src={window.pichu} />
-                    </button> 
-                    <button className="smash-img-container" value="mewtwo" onClick={this.update("img_name")}>
-                        <img className="smash-img" src={window.mewtwo} />
-                    </button> 
-                    <button className="smash-img-container" value="peach" onClick={this.update("img_name")}>
-                        <img className="smash-img" src={window.peach} />
-                    </button> 
-                    <button className="smash-img-container" value="yoshi" onClick={this.update("img_name")}>
-                        <img className="smash-img" src={window.yoshi} />
-                    </button> 
-                </div>
-                <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+          <div className="create-profile">
+            <h3>Pick a photo</h3>
+            <div className="choose-img">
+              <button
+                className="smash-img-container"
+                value="bowser"
+                onClick={this.update("img_name")}
+              >
+                <img className="smash-img" src={window.bowser} />
+              </button>
+              <button
+                className="smash-img-container"
+                value="ice_climbers"
+                onClick={this.update("img_name")}
+              >
+                <img className="smash-img" src={window.ice_climbers} />
+              </button>
+              <button
+                className="smash-img-container"
+                value="incineroar"
+                onClick={this.update("img_name")}
+              >
+                <img className="smash-img" src={window.incineroar} />
+              </button>
+              <button
+                className="smash-img-container"
+                value="kirby"
+                onClick={this.update("img_name")}
+              >
+                <img className="smash-img" src={window.kirby} />
+              </button>
+              <button
+                className="smash-img-container"
+                value="pichu"
+                onClick={this.update("img_name")}
+              >
+                <img className="smash-img" src={window.pichu} />
+              </button>
+              <button
+                className="smash-img-container"
+                value="mewtwo"
+                onClick={this.update("img_name")}
+              >
+                <img className="smash-img" src={window.mewtwo} />
+              </button>
+              <button
+                className="smash-img-container"
+                value="peach"
+                onClick={this.update("img_name")}
+              >
+                <img className="smash-img" src={window.peach} />
+              </button>
+              <button
+                className="smash-img-container"
+                value="yoshi"
+                onClick={this.update("img_name")}
+              >
+                <img className="smash-img" src={window.yoshi} />
+              </button>
             </div>
-        )
+            <button className="onboarding-button" onClick={this.handleClick}>
+              NEXT
+            </button>
+            {editSubmit()}
+          </div>
+        );
 
         const questionThirteen = () => (
             <div className="create-profile">

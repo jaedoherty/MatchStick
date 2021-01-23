@@ -8,7 +8,8 @@ const msp = (state) => {
     return ({
         
         profile: state.entities.profiles[getProfile(state)],
-        question: 14 
+        question: 14,
+         
     })
 }
 

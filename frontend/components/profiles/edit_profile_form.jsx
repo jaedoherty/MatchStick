@@ -1,5 +1,6 @@
 import React from "react";
 import ProfileForm from "./profile_form";
+// import withRouter from 'react-router-dom'
 
 class EditProfileForm extends React.Component {
   constructor(props) {
@@ -14,7 +15,9 @@ class EditProfileForm extends React.Component {
             return (
               <ProfileForm
                 submit={this.props.submit}
-                profile={tthis.props.match.params.question_id}
+                profile={this.props.profile}
+                question={this.props.match.params.question_id}
+                type={this.props.type}
               />
             ); 
     } else {
@@ -24,6 +27,7 @@ class EditProfileForm extends React.Component {
             submit={this.props.submit}
             profile={this.props.profile}
             question={this.props.question}
+            type={this.props.type}
           />
         );
     }
