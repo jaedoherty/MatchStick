@@ -1,30 +1,9 @@
-import React from 'react';
+import EditProfileForm from './edit_profile_form';
 import {connect} from 'react-redux';
-import ProfileForm from "./profile_form"
+
 import {fetchProfiles, updateProfile} from '../../actions/profile_actions';
 import {getProfile} from '../../reducers/selectors';
 
-class EditProfileForm extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
-    componentDidMount () {
-        this.props.fetchProfiles();
-    }
-    render () {
-
-        if (!this.props.profile) return null;
-        // console.log(this.props.edit)
-        return (
-            <ProfileForm
-            submit={this.props.submit}
-            profile={this.props.profile} 
-            question={this.props.question}
-            />
-        )
-    }
-};
 
 const msp = (state) => {
     return ({

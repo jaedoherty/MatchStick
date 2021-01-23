@@ -33,10 +33,6 @@ class HomePage extends React.Component {
         }
     }
 
-    handleLike () {
-
-    }
-
     render() {
         if (Object.values(this.props.profiles).length === 0) {
 
@@ -64,9 +60,6 @@ class HomePage extends React.Component {
             let profs = Object.values(profiles())
             
             const profile = profs[this.state.profIndex % profs.length]
-            // console.log(profile)
-            const img = profile.img_name
-            console.log(img)
 
             return (
                 <div id="home-page">
@@ -74,7 +67,7 @@ class HomePage extends React.Component {
                     
                             <div id="profile-info">
                                 <div className="smash-img" id="home-image">
-                                    <img id="resize-smash" src={window.img}/>
+                                    <img id="resize-smash" src={window[profile.img_name]}/>
                                     <div id="basic-info">
                                         <label className="basic-id"> Name
                                         <p className="basic-value">{profile.first_name}</p> 
@@ -106,7 +99,6 @@ class HomePage extends React.Component {
 
                             </div>
                         ) 
-                    {/* })} */}
                 </div>
             )
         }

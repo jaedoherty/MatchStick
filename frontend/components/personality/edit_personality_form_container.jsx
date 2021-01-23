@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import EditProfileForm from '../profiles/edit_form_profile_container';
+import EditProfileForm from '../profiles/edit_profile_form';
 import {updateProfile, fetchProfiles} from '../../actions/profile_actions';
 // import {wiRouter} from 'react-router-dom';
 import {getProfile} from '../../reducers/selectors';
@@ -9,7 +9,7 @@ const msp = (state) => {
     return ({
         
         profile: state.entities.profiles[getProfile(state)],
-        question: 13 
+        question: 14 
     })
 }
 
