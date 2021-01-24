@@ -67,44 +67,52 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                <div id="close-x">
-                    <button onClick={this.props.closeModal} id="closebutton">X</button>
-                </div>
-
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-   
-                    <div className="formType">
-                        {this.props.formType}
-                    </div>
-                    {this.renderErrors()}
-                    <div className="login-form">
-       
-                        <label className="infofield">Username
-           
-                            <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                                className="login-input"
-                            />
-                        </label>
-       
-       
-                        <label className="infofield">Password
-              <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        </label>
-       
-       
-                        <input className="session-submit" type="submit" value={this.props.formType} />
-       
-                        <span onClick={this.demoUser} id="demo-user">  Demo User  </span>
-                    </div>
-                </form>
+          <div className="login-form-container">
+            <div id="close-x">
+              <button onClick={this.props.closeModal} id="closebutton">
+                X
+              </button>
             </div>
+
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              <div className="formType">
+                <img id="logo" src={window.match} /> {this.props.formType} <img id="logo" src={window.match} />
+              </div>
+              {this.renderErrors()}
+              <div className="login-form">
+                <label className="infofield">
+                  Username
+                  <input
+                    type="text"
+                    value={this.state.username}
+                    onChange={this.update("username")}
+                    className="login-input"
+                  />
+                </label>
+
+                <label className="infofield">
+                  Password
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    className="login-input"
+                  />
+                </label>
+
+                <input
+                  className="session-submit"
+                  type="submit"
+                  value={this.props.formType}
+                />
+
+                <span onClick={this.demoUser} id="demo-user">
+                  {" "}
+                  Demo User{" "}
+                </span>
+              </div>
+            </form>
+          </div>
         );
     }
 }

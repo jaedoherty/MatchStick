@@ -3,44 +3,48 @@
     text-align: center;
     background-color: white;
     color:black;
-    // font-size: 30px;
     border-radius: 10px;
-    padding: 10px 40px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
 
 }
 
 .login-form {
-    display: flex;flex-direction: column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .session-submit {
+    width: 238px;
+    display: flex;
+    justify-content: center;
     border: none;
     outline: none;
-    border-radius: 30px;
+    border-radius: 10px;
     color: white;
     background-color: darkorchid; 
     font-size: 20px;
-    padding-top: 15px;
-    padding-bottom:15px; 
-    padding-left: 53px;
-    padding-right: 50px;
-    margin: 10px;
+    padding: 15px 10px;
+    margin: 5px;
     cursor: pointer;
+}
+
+.session-submit:hover {
+    background-color: orchid;
 }
 
 .login-input {
     border: gainsboro solid;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 18px;
     padding: 3%;
 }
 
 .login-input:focus {
     border: gray solid;
-    border-radius: 20px;;
+    border-radius: 10px;
     outline: none;
 }
 
@@ -51,18 +55,21 @@
 }
 
 #closebutton {
-    border: gainsboro solid;;   
+    border: none;  
     background-color: white;
-    border-radius: 50px;
     font-size: 18px;
-    color: gainsboro;
+    font-weight: 700;
+    color: darkorchid;
     cursor: pointer;
 }
 
 .formType {
-    font-style: italic;
+    // font-style: italic;
     font-size: 30px;
     padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .infofield {
@@ -71,16 +78,27 @@
 }
 
 #demo-user {
-    border-radius: 30px;
+    width: 218px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
     color: white;
     background-color: darkorchid; 
     font-size: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px; 
-    padding-left: 43px;
-    padding-right: 43px;
+    padding: 15px 10px;
     margin: 5px;
     cursor: pointer;
+  
 
+
+}
+
+#demo-user:hover {
+    background-color: orchid;
+}
+
+#logo {
+    height: 35px;
+    width: 35px;
 }
 
