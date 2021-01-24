@@ -61,8 +61,18 @@
     font-size: 15px;
     font-weight: bold;
     color: white; 
+    margin: 10px;
 }
 
 .onboarding-button:hover {
     background-color: mediumorchid;
+}
+
+select {
+    padding: 10px; 
+}
+
+#form-buttons {
+    display: flex;
+    flex-direction: column;
 }

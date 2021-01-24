@@ -21,7 +21,7 @@ class ProfileForm extends React.Component {
 
 
     update(field) {
-    // debugger;
+;
         return ((e) => {
             const profile = { ...this.state.profile };
             profile[field] = e.currentTarget.value;
@@ -280,8 +280,11 @@ class ProfileForm extends React.Component {
                             <option className="drop-option" value="Long-term dating">Long-term dating</option>
                         </select>
                     </div>
-                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
-                    {editSubmit()}
+                    <div id="form-buttons">
+
+                        <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
+                        {editSubmit()}
+                    </div>
 
                 </div>
             </div>
@@ -334,13 +337,15 @@ class ProfileForm extends React.Component {
                       </option>
                     </select>
                   </div>
-                  <button
-                    className="onboarding-button"
-                    onClick={this.handleClick}
-                  >
-                    NEXT
-                  </button>
-                  {editSubmit()}
+                  <div id="form-buttons">
+                    <button
+                      className="onboarding-button"
+                      onClick={this.handleClick}
+                    >
+                      NEXT
+                    </button>
+                    {editSubmit()}
+                  </div>
                 </div>
               </div>
             );
@@ -392,10 +397,15 @@ class ProfileForm extends React.Component {
                   </option>
                 </select>
               </div>
-              <button className="onboarding-button" onClick={this.handleClick}>
-                NEXT
-              </button>
-              {editSubmit()}
+              <div id="form-buttons">
+                <button
+                  className="onboarding-button"
+                  onClick={this.handleClick}
+                >
+                  NEXT
+                </button>
+                {editSubmit()}
+              </div>
             </div>
           </div>
         );
@@ -461,13 +471,15 @@ class ProfileForm extends React.Component {
                       ))}
                     </select>
                   </div>
-                  <button
-                    className="onboarding-button"
-                    onClick={this.handleClick}
-                  >
-                    NEXT
-                  </button>
-                  {editSubmit()}
+                  <div id="form-buttons">
+                    <button
+                      className="onboarding-button"
+                      onClick={this.handleClick}
+                    >
+                      NEXT
+                    </button>
+                    {editSubmit()}
+                  </div>
                 </div>
               </div>
             );
@@ -494,26 +506,40 @@ class ProfileForm extends React.Component {
         ) 
 
         const questionEleven = () => (
-            <div className="create-profile">
+          <div className="create-profile">
+            <div className="profile-1" id="page1">
+              <div className="header-container">
+                <button className="back-button" onClick={this.handleBack}>
+                  {" "}
+                  &lt;{" "}
+                </button>
+              </div>
+              <span>
+                <span className="onboarding-header-description">About you</span>
+              </span>
 
-
-                <div className="profile-1" id="page1">
-                    <div className="header-container">
-
-                        <button className="back-button" onClick={this.handleBack}> &lt; </button>
-                    </div>
-                    <span><span className="onboarding-header-description">About you</span></span>
-
-                    <h3 className="profileDetails-field-prompt">Introduce yourself</h3>
-                    <div className="profile-input">
-                        <textarea className="profile-name-input" id="text-input" onChange={this.update('description')}></textarea>
-                    </div>
-                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
-                    {editSubmit()}
-
-                </div>
+              <h3 className="profileDetails-field-prompt">
+                Introduce yourself
+              </h3>
+              <div className="profile-input">
+                <textarea
+                  className="profile-name-input"
+                  id="text-input"
+                  onChange={this.update("description")}
+                ></textarea>
+              </div>
+              <div id="form-buttons">
+                <button
+                  className="onboarding-button"
+                  onClick={this.handleClick}
+                >
+                  NEXT
+                </button>
+                {editSubmit()}
+              </div>
             </div>
-        )
+          </div>
+        );
 
         const questionTwelve = () => (
           <div className="create-profile">
@@ -576,10 +602,12 @@ class ProfileForm extends React.Component {
                 <img className="smash-img" src={window.yoshi} />
               </button>
             </div>
-            <button className="onboarding-button" onClick={this.handleClick}>
-              NEXT
-            </button>
-            {editSubmit()}
+            <div id="form-buttons">
+              <button className="onboarding-button" onClick={this.handleClick}>
+                NEXT
+              </button>
+              {editSubmit()}
+            </div>
           </div>
         );
 

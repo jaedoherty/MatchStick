@@ -18,7 +18,6 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = (dispatch) => {
-    // console.log("update", updateProfile)
     return ({
         submit: (profile) => dispatch(updateProfile(profile)),
         fetchProfiles: (profiles) => dispatch(fetchProfiles(profiles))
