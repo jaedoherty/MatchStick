@@ -25,7 +25,7 @@ class Search extends React.Component {
   }
 
   reset() {
-    
+
   }
 
   render() {
@@ -152,7 +152,7 @@ class Search extends React.Component {
                   ))}
                 </select>
               </div>
-              <button id="reset">Reset Filters</button>
+              {/* <button id="reset">Reset Filters</button> */}
           </div>
           <div id="search-results">
 
