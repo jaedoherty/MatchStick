@@ -46,7 +46,7 @@ class HomePage extends React.Component {
                     const likedIds = Object.keys(this.props.likes)
                     const validIds = [];
                    let that = this; 
-                    ids.forEach(id => {
+                   ids.forEach(id => {
                         if (id !== that.props.profileId && !likedIds.includes(id)) {
                             validIds.push(that.props.profiles[id])
                         }
@@ -63,7 +63,7 @@ class HomePage extends React.Component {
 
             return (
                 <div id="home-page">
-                    <h1 id="home-header">Recommended Just For You</h1>
+                    <h1 id="home-header">Like the profiles you're interested in!</h1>
                     
                             <div id="profile-info">
                                 <div className="smash-img" id="home-image">
