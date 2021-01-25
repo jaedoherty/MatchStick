@@ -1,6 +1,6 @@
 import React from "react";
-import {Link} from 'react-router-dom'
-import ProfileCard from './profile_card'
+import { Link } from "react-router-dom";
+import ProfileCard from "./profile_card";
 
 class Search extends React.Component {
   constructor(props) {
@@ -24,9 +24,7 @@ class Search extends React.Component {
     };
   }
 
-  reset() {
-
-  }
+  reset() {}
 
   render() {
     if (Object.values(this.props.profiles).length === 0) {
@@ -133,48 +131,43 @@ class Search extends React.Component {
                   <option className="dropdown">{age}</option>
                 ))}
               </select>
-
             </div>
-              <div className="profile-dropdown-2" id="search">
-                <h3>Max Age</h3>
+            <div className="profile-dropdown-2" id="search">
+              <h3>Max Age</h3>
 
-                <select
-                  name="maxAge"
-                  className="dropdown"
-                  id="age-dropdown"
-                  onChange={this.update("max_age_range")}
-                >
-                  <option className="drop-option" id="maxAge" value="" selected>
-                    Please Select
-                  </option>
-                  {age.map((age) => (
-                    <option className="dropdown">{age}</option>
-                  ))}
-                </select>
-              </div>
-              {/* <button id="reset">Reset Filters</button> */}
+              <select
+                name="maxAge"
+                className="dropdown"
+                id="age-dropdown"
+                onChange={this.update("max_age_range")}
+              >
+                <option className="drop-option" id="maxAge" value="" selected>
+                  Please Select
+                </option>
+                {age.map((age) => (
+                  <option className="dropdown">{age}</option>
+                ))}
+              </select>
+            </div>
+            {/* <button id="reset">Reset Filters</button> */}
           </div>
           <div id="search-results">
-
-              {Object.values(profiles).map((profile) => {
-                if (
-                  (profile.connection === this.state.connection ||
-                    this.state.connection === "") &&
-                  (profile.monogamy === this.state.monogamy ||
-                    this.state.monogamy === "") &&
-                  (profile.gender === this.state.gender_search ||
-                    this.state.gender_search === "") &&
-                  (profile.age >= this.state.min_age_range ||
-                    this.state.min_age_range === "") &&
-                  (profile.max_age_range <= this.state.max_age_range ||
-                    this.state.max_age_range === "")
-                ) {
-
-                  return (
-                    <ProfileCard profile={profile}/>
-                  );
-                }
-              })}
+            {Object.values(profiles).map((profile) => {
+              if (
+                ((profile.connection === this.state.connection ||
+                  this.state.connection === "") &&
+                (profile.monogamy === this.state.monogamy ||
+                  this.state.monogamy === "") &&
+                (profile.gender === this.state.gender_search ||
+                  this.state.gender_search === "") &&
+                (profile.age >= this.state.min_age_range ||
+                  this.state.min_age_range === "") &&
+                (profile.max_age_range <= this.state.max_age_range ||
+                  this.state.max_age_range === "")) && this.props.currentUserId !== profile.user_id 
+              ) {
+                return <ProfileCard profile={profile} />;
+              }
+            })}
           </div>
         </div>
       );
