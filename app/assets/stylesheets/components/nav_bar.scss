@@ -69,8 +69,9 @@ a:visited {
 #footer {
     display: flex;
     background-color: gainsboro;
-    justify-content: center;
-    padding: 20px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
 }
 
 #footer-link {
@@ -79,5 +80,13 @@ a:visited {
     font-size: 20px;
 }
 
+#git-img {
+    height: 50px;
+    width: 50px;
+}
 
+#linkedin-img {
+    height: 38px;
+    width: 38px;
+}
 

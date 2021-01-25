@@ -40,13 +40,13 @@ class Greeting extends React.Component {
            </nav>
            <div id="link-container">
              <a id="splash-link" href="https://github.com/jaedoherty">
-               GitHub
+               <img id="git-img" src={window.github} />
              </a>
              <a
                id="splash-link"
                href="https://www.linkedin.com/in/jae-doherty/"
              >
-               LinkedIn
+               <img id="linkedin-img" src={window.linkedin} />
              </a>
            </div>
          </div>

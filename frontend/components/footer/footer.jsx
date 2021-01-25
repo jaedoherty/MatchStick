@@ -11,12 +11,15 @@ class Footer extends React.Component {
       return null
     } else {
       return (
-
         <footer id="footer">
-          <a id="footer-link" href="https://github.com/jaedoherty">GitHub</a>
-          <a id="footer-link" href="https://www.linkedin.com/in/jae-doherty/">LinkedIn</a>
+          <a id="footer-link" href="https://github.com/jaedoherty">
+            <img id="git-img" src={window.github} />
+          </a>
+          <a id="footer-link" href="https://www.linkedin.com/in/jae-doherty/">
+            <img id="linkedin-img" src={window.linkedin} />
+          </a>
         </footer>
-      )
+      );
     }
   }
 }
