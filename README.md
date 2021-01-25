@@ -40,6 +40,7 @@ const questionOne = () => (
     </div>
 )
 ```
+
 ```
 // frontend/components/profiles/profile_form.jsx - render function
 
@@ -69,7 +70,6 @@ const msp = (state) => {
 };
 
 const mdp = (dispatch) => {
-    console.log("update", updateProfile)
     return ({
         edit: (profile) => dispatch(updateProfile(profile)),
         fetchProfiles: (profiles) => dispatch(fetchProfiles(profiles))

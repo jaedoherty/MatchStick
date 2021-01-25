@@ -43,7 +43,7 @@ class HomePage extends React.Component {
 
 
                     const ids = Object.keys(this.props.profiles)
-                    console.log("all", ids)
+                  
                     const likedIds = Object.keys(this.props.likes)
                     const validIds = [];
                    let that = this; 
@@ -52,7 +52,7 @@ class HomePage extends React.Component {
                             validIds.push(that.props.profiles[id])
                         }
                     })
-                    console.log(validIds)
+                
                     return validIds
                     
              

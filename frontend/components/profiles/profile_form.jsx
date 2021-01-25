@@ -100,7 +100,7 @@ class ProfileForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.props)
+       
         this.props.submit(this.state.profile).then(this.props.history.push('/home'))
     }
      
@@ -119,7 +119,7 @@ class ProfileForm extends React.Component {
 
 
     render () {
-        console.log("render", this)
+   
         const editSubmit = () => {
             if (this.props.type) {
                 return (
@@ -695,7 +695,7 @@ class ProfileForm extends React.Component {
         }
 
         
-        // console.log("match", this.props);
+      
         if (this.state.question === 0) {
             return questionZero();
         } else if (this.state.question === 1) {
