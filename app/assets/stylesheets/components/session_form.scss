@@ -27,7 +27,7 @@
     background-color: darkorchid; 
     font-size: 20px;
     padding: 15px 10px;
-    margin: 5px;
+    margin: 10px;
     cursor: pointer;
 }
 
@@ -61,6 +61,15 @@
     font-weight: 700;
     color: darkorchid;
     cursor: pointer;
+}
+
+#closebutton:hover {
+    color: orchid;
+}
+#closebutton:focus {
+    color: orchid;
+    border: none;
+    outline: none;
 }
 
 .formType {

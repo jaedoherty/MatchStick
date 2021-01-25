@@ -175,7 +175,7 @@ class ProfileShow extends React.Component {
               </div>
               <div className="profshow" id="gender">
                 <label>
-                  I am looking for...
+                  I am looking for a...
                   <p>{this.props.profile.gender_search}</p>
                 </label>
               </div>
