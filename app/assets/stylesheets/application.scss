@@ -23,8 +23,10 @@ body, html, #root, #bigdiv {
 
 body {
     margin: 0px;
-    // min-width: 90%;
-    // min-height: 90%;
+}
+
+h1 {
+    max-width: 90%
 }
 
 // @import "./reset.scss";

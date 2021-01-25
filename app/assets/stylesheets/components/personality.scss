@@ -1,9 +1,11 @@
 #personality {
     display: flex;
+    flex-wrap: wrap;
     flex-direction:column;
     justify-content: space-around;
     background-color: gainsboro;
-    height: 100vh;
+    min-height: 100%;
+    max-width: 100%;
 }
 
 
@@ -18,8 +20,10 @@
 }
 
 .personality-question {
-    display: grid;
-    grid-gap: 15px; 
+    display: flex;
+    flex-direction: column;
+    // grid-gap: 15px; 
+    margin: 10px;
 }
 
 .personality-input {
@@ -29,6 +33,7 @@
     border: none;
     border-radius: 3px;
     box-shadow: 2px 2px 5px gray;
+    margin: 10px 0px
 }
 
 

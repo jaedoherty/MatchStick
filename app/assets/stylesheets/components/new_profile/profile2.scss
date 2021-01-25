@@ -5,7 +5,8 @@
     border-radius: 3px;
     background-color: white;
     border: gray;
-     box-shadow: 2px 2px 5px gray;
+    box-shadow: 2px 2px 5px gray;
+    margin-right: 40px;
 }
 
 .dropdown:active {
@@ -19,6 +20,8 @@
     outline: gray;
     background-color: white; 
 }
+
+
 
 .drop-option:active {
     background-color: mediumorchid;

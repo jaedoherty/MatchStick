@@ -1,11 +1,14 @@
 #search-container {
     min-height: 86.7%;
     background-color: gainsboro;
+    max-width: 100%;
 }
 
 #search-bar {
+    max-width: 95%;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    // justify-content: space-around;
     align-items: flex-end;
     margin: 20px;
 }
