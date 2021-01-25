@@ -637,7 +637,7 @@ class ProfileForm extends React.Component {
 
             <div id="personality">
 
-                <h2 className="personality-title">Personality Quiz</h2>
+                <h1 className="personality-title">Personality Quiz</h1>
                 <form className="personality-form" onSubmit={this.handleSubmit}>
                     <div className="personality-container">
 
