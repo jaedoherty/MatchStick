@@ -727,7 +727,7 @@ class ProfileForm extends React.Component {
         } else {
             
             return personalityForm();
-        }
+        } 
     }
 }
 
