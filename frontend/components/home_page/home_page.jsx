@@ -43,11 +43,12 @@ class HomePage extends React.Component {
 
 
                     const ids = Object.keys(this.props.profiles)
+                    console.log("all", ids)
                     const likedIds = Object.keys(this.props.likes)
                     const validIds = [];
                    let that = this; 
                    ids.forEach(id => {
-                        if (id !== that.props.profileId && !likedIds.includes(id)) {
+                        if (parseInt(id) !== that.props.profileId && !likedIds.includes(id)) {
                             validIds.push(that.props.profiles[id])
                         }
                     })
