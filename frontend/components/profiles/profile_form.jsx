@@ -121,7 +121,7 @@ class ProfileForm extends React.Component {
     render () {
    
         const editSubmit = () => {
-            if (this.props.type) {
+            if (this.props.type === "edit") {
                 return (
                   <button className="onboarding-button" onClick={this.handleSubmit}>Submit Edit</button>
                 );
@@ -168,31 +168,53 @@ class ProfileForm extends React.Component {
         )
 
         const questionTwo = () => (
-            <div className="create-profile">
+          <div className="create-profile">
+            <div className="profile-1" id="page1">
+              <div className="header-container">
+                <button className="back-button" onClick={this.handleBack}>
+                  {" "}
+                  &lt;{" "}
+                </button>
+              </div>
+              <span>
+                <span className="onboarding-header-description">About you</span>
+              </span>
 
-   
-                <div className="profile-1" id="page1">
-                    <div className="header-container">
-
-                        <button className="back-button" onClick={this.handleBack}> &lt; </button>
-                    </div>
-                    <span><span className="onboarding-header-description">About you</span></span>
-
-                    <h3 className="profileDetails-field-prompt">I am a...</h3>
-                    <div className="profile-dropdown-2">
-                        <select name="gender" className="dropdown" onChange={this.handleChange("gender")}>
-                            <option className="drop-option" value="please_select" selected disabled>Please Select</option>
-                            <option className="drop-option" value="man">Man</option>
-                            <option className="drop-option" value="woman">Woman</option>
-                            <option className="drop-option" value="nonbinary">Nonbinary</option>
-                            <option className="drop-option" value="other">Other</option>
-                        </select>
-                    </div>
-                    <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
-
-                </div>
-            </div> 
-        )
+              <h3 className="profileDetails-field-prompt">I am a...</h3>
+              <div className="profile-dropdown-2">
+                <select
+                  name="gender"
+                  className="dropdown"
+                  defaultValue="please_select"
+                   onChange={this.handleChange("gender")}
+                >
+                  <option
+                    className="drop-option"
+                    value="please_select"
+                    disabled
+                  >
+                    Please Select
+                  </option>
+                  <option className="drop-option" value="man">
+                    Man
+                  </option>
+                  <option className="drop-option" value="woman">
+                    Woman
+                  </option>
+                  <option className="drop-option" value="nonbinary">
+                    Nonbinary
+                  </option>
+                  <option className="drop-option" value="other">
+                    Other
+                  </option>
+                </select>
+              </div>
+              <button className="onboarding-button" onClick={this.handleClick}>
+                NEXT
+              </button>
+            </div>
+          </div>
+        );
 
         const questionThree = () => (
             <div className="create-profile">
@@ -259,36 +281,64 @@ class ProfileForm extends React.Component {
             ) 
 
         const questionSix = () => (
-            <div className="create-profile">
+          <div className="create-profile">
+            <div className="profile-1" id="page1">
+              <div className="header-container">
+                <button className="back-button" onClick={this.handleBack}>
+                  {" "}
+                  &lt;{" "}
+                </button>
+              </div>
+              <span>
+                <span className="onboarding-header-description">
+                  Ideal person
+                </span>
+              </span>
 
-     
-                <div className="profile-1" id="page1">
-                    <div className="header-container">
+              <h3 className="profileDetails-field-prompt">
+                What connections are you looking for?
+              </h3>
 
-                        <button className="back-button" onClick={this.handleBack}> &lt; </button>
-                    </div>
-                    <span><span className="onboarding-header-description">Ideal person</span></span>
-
-                    <h3 className="profileDetails-field-prompt">What connections are you looking for?</h3>
-
-                    <div className="profile-dropdown-2">
-                        <select name="connections" className="dropdown" onChange={this.update("connection")}>
-                            <option className="drop-option" value="please_select" selected disabled>Please Select</option>
-                            <option className="drop-option" value="Hookups">Hookups</option>
-                            <option className="drop-option" value="New friends">New friends</option>
-                            <option className="drop-option" value="Short-term dating">Short-term dating</option>
-                            <option className="drop-option" value="Long-term dating">Long-term dating</option>
-                        </select>
-                    </div>
-                    <div id="form-buttons">
-
-                        <button className="onboarding-button" onClick={this.handleClick}>NEXT</button>
-                        {editSubmit()}
-                    </div>
-
-                </div>
+              <div className="profile-dropdown-2">
+                <select
+                  name="connections"
+                  className="dropdown"
+                  defaultValue="please_select"
+                  onChange={this.update("connection")}
+                >
+                  <option
+                    className="drop-option"
+                    value="please_select"
+                    disabled
+                  >
+                    Please Select
+                  </option>
+                  <option className="drop-option" value="Hookups">
+                    Hookups
+                  </option>
+                  <option className="drop-option" value="New friends">
+                    New friends
+                  </option>
+                  <option className="drop-option" value="Short-term dating">
+                    Short-term dating
+                  </option>
+                  <option className="drop-option" value="Long-term dating">
+                    Long-term dating
+                  </option>
+                </select>
+              </div>
+              <div id="form-buttons">
+                <button
+                  className="onboarding-button"
+                  onClick={this.handleClick}
+                >
+                  NEXT
+                </button>
+                {editSubmit()}
+              </div>
             </div>
-        )
+          </div>
+        );
 
 
         const questionSeven = () => {
@@ -313,12 +363,13 @@ class ProfileForm extends React.Component {
                     <select
                       name="connections"
                       className="dropdown"
+                      defaultValue="please_select"
                       onChange={this.update("monogamy")}
                     >
                       <option
                         className="drop-option"
                         value="please_select"
-                        selected
+                       
                         disabled
                       >
                         Please Select
@@ -372,13 +423,14 @@ class ProfileForm extends React.Component {
               <div className="profile-dropdown-2">
                 <select
                   name="gender"
+                  defaultValue="please_select"
                   className="dropdown"
                   onChange={this.handleChange("gender_search")}
                 >
                   <option
                     className="drop-option"
                     value="please_select"
-                    selected
+                   
                     disabled
                   >
                     Please Select
@@ -434,6 +486,7 @@ class ProfileForm extends React.Component {
                   </h3>
                   <div className="profile-dropdown-3" id="age-range">
                     <select
+                      defaultValue="minAge"
                       name="minAge"
                       className="dropdown"
                       onChange={this.update("min_age_range")}
@@ -442,32 +495,32 @@ class ProfileForm extends React.Component {
                         className="drop-option"
                         id="minAge"
                         value="minAge"
-                        selected
                         disabled
                       >
                         Min Age
                       </option>
                       {age.map((age) => (
-                        <option className="dropdown">{age}</option>
+                        <option className="dropdown" key={age}>{age}</option>
                       ))}
                     </select>
                     <p>—</p>
                     <select
                       name="maxAge"
                       className="dropdown"
+                      defaultValue="maxAge"
                       onChange={this.update("max_age_range")}
                     >
                       <option
                         className="drop-option"
                         id="maxAge"
                         value="maxAge"
-                        selected
+                     
                         disabled
                       >
                         Max Age
                       </option>
                       {age.map((age) => (
-                        <option className="dropdown">{age}</option>
+                        <option className="dropdown" key={age}>{age}</option>
                       ))}
                     </select>
                   </div>

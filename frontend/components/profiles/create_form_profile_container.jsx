@@ -33,7 +33,7 @@ const msp = (state, ownProps) => {
        zodiac: "",
      },
      question: 0,
-     type: ownProps.match.path,
+    type: "create" 
    };
 } 
 

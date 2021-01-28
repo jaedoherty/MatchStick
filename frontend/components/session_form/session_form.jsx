@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
             const user = Object.assign({}, this.state);
             this.props.processForm(user).then(() => { 
                 this.props.closeModal();
-                // debugger
+              
                 this.props.history.push("/newProfile");
             });
             // this.props.closeModal(); 
