@@ -6,7 +6,7 @@ import { getProfile } from '../../reducers/selectors';
 import {withRouter} from 'react-router-dom';
 
 const msp = (state) => {
-    // debugger
+      
     return ({
         user: state.entities.users,
         profiles: state.entities.profiles,
@@ -17,7 +17,7 @@ const msp = (state) => {
 }
 
 const mdp = (dispatch) => {
-    // debugger
+      
     return({
         fetchProfiles: () => dispatch(fetchProfiles()),
         logout: () => dispatch(logout())

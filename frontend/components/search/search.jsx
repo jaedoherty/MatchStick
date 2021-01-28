@@ -46,7 +46,8 @@ class Search extends React.Component {
               <h3>Connection: </h3>
               <select
                 name="connections"
-                className="dropdown" 
+                className="dropdown"
+                id="search-dropdown"
                 onChange={this.update("connection")}
               >
                 <option className="drop-option" value="" selected>
@@ -70,7 +71,8 @@ class Search extends React.Component {
               <h3>Relationship Type</h3>
               <select
                 name="connections"
-                className="dropdown" 
+                className="dropdown"
+                id="search-dropdown"
                 onChange={this.update("monogamy")}
               >
                 <option className="drop-option" value="" selected>
@@ -86,7 +88,7 @@ class Search extends React.Component {
                   className="drop-option"
                   value="Open to monogamy and non-monogamy"
                 >
-                  Open to monogamy and non-monogamy
+                  Both
                 </option>
               </select>
             </div>
@@ -95,7 +97,8 @@ class Search extends React.Component {
               <h3>Gender</h3>
               <select
                 name="connections"
-                className="dropdown" 
+                className="dropdown"
+                id="search-dropdown"
                 onChange={this.update("gender_search")}
               >
                 <option className="drop-option" value="" selected>
@@ -120,15 +123,15 @@ class Search extends React.Component {
 
               <select
                 name="minAge"
-                className="dropdown" 
-                id="age-dropdown"
+                className="dropdown"
+                id="search-dropdown"
                 onChange={this.update("min_age_range")}
               >
                 <option className="drop-option" id="minAge" value="" selected>
                   Please Select
                 </option>
                 {age.map((age) => (
-                  <option className="dropdown" >{age}</option>
+                  <option className="dropdown">{age}</option>
                 ))}
               </select>
             </div>
@@ -137,15 +140,15 @@ class Search extends React.Component {
 
               <select
                 name="maxAge"
-                className="dropdown" 
-                id="age-dropdown"
+                className="dropdown"
+                id="search-dropdown"
                 onChange={this.update("max_age_range")}
               >
                 <option className="drop-option" id="maxAge" value="" selected>
                   Please Select
                 </option>
                 {age.map((age) => (
-                  <option className="dropdown" >{age}</option>
+                  <option className="dropdown">{age}</option>
                 ))}
               </select>
             </div>
@@ -153,7 +156,7 @@ class Search extends React.Component {
           <div id="search-results">
             {Object.values(profiles).map((profile) => {
               if (
-                ((profile.connection === this.state.connection ||
+                (profile.connection === this.state.connection ||
                   this.state.connection === "") &&
                 (profile.monogamy === this.state.monogamy ||
                   this.state.monogamy === "") &&
@@ -162,7 +165,8 @@ class Search extends React.Component {
                 (profile.age >= this.state.min_age_range ||
                   this.state.min_age_range === "") &&
                 (profile.max_age_range <= this.state.max_age_range ||
-                  this.state.max_age_range === "")) && this.props.currentUserId !== profile.user_id 
+                  this.state.max_age_range === "") &&
+                this.props.currentUserId !== profile.user_id
               ) {
                 return <ProfileCard profile={profile} />;
               }

@@ -39,7 +39,7 @@ class PersonalityForm extends React.Component {
 
     //     this.setState({profile: this.updateQuiz()}, () => {
    
-    //         // debugger
+    //           
     //        return this.props.action(this.state.profile).then(this.props.history.push('/home'))
     //     })
     // }

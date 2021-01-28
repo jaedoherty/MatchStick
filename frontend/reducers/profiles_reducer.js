@@ -6,7 +6,7 @@ const profilesReducer = (state = {}, action) => {
         case RECEIVE_PROFILES:
             return action.profiles;
         case RECEIVE_PROFILE:
-            // debugger
+              
             return Object.assign({}, state, {[action.profile.id]: action.profile})
         default:
             return state;
