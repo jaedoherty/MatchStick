@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
             const user = Object.assign({}, this.state);
             this.props.login(user).then(() => { 
                 this.props.closeModal();
-                debugger
+                // debugger
                 this.props.history.push("/home");
             })
              }, 1000);
@@ -44,12 +44,20 @@ class SessionForm extends React.Component {
         e.preventDefault();
         if (this.props.formType === 'Get Started') {
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.history.push("/home"));
-        this.props.closeModal();
+        this.props.processForm(user).then(() => {
+          this.props.closeModal();
+          // debugger
+          this.props.history.push("/home");
+        });
+        // this.props.closeModal();
         } else {
             const user = Object.assign({}, this.state);
-            this.props.processForm(user).then(this.props.history.push("/newProfile"));
-            this.props.closeModal(); 
+            this.props.processForm(user).then(() => { 
+                this.props.closeModal();
+                // debugger
+                this.props.history.push("/newProfile");
+            });
+            // this.props.closeModal(); 
         }
     }
 

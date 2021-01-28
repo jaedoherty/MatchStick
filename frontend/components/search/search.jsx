@@ -46,7 +46,7 @@ class Search extends React.Component {
               <h3>Connection: </h3>
               <select
                 name="connections"
-                className="dropdown"
+                className="dropdown" 
                 onChange={this.update("connection")}
               >
                 <option className="drop-option" value="" selected>
@@ -70,7 +70,7 @@ class Search extends React.Component {
               <h3>Relationship Type</h3>
               <select
                 name="connections"
-                className="dropdown"
+                className="dropdown" 
                 onChange={this.update("monogamy")}
               >
                 <option className="drop-option" value="" selected>
@@ -95,7 +95,7 @@ class Search extends React.Component {
               <h3>Gender</h3>
               <select
                 name="connections"
-                className="dropdown"
+                className="dropdown" 
                 onChange={this.update("gender_search")}
               >
                 <option className="drop-option" value="" selected>
@@ -120,7 +120,7 @@ class Search extends React.Component {
 
               <select
                 name="minAge"
-                className="dropdown"
+                className="dropdown" 
                 id="age-dropdown"
                 onChange={this.update("min_age_range")}
               >
@@ -128,7 +128,7 @@ class Search extends React.Component {
                   Please Select
                 </option>
                 {age.map((age) => (
-                  <option className="dropdown">{age}</option>
+                  <option className="dropdown" >{age}</option>
                 ))}
               </select>
             </div>
@@ -137,7 +137,7 @@ class Search extends React.Component {
 
               <select
                 name="maxAge"
-                className="dropdown"
+                className="dropdown" 
                 id="age-dropdown"
                 onChange={this.update("max_age_range")}
               >
@@ -145,7 +145,7 @@ class Search extends React.Component {
                   Please Select
                 </option>
                 {age.map((age) => (
-                  <option className="dropdown">{age}</option>
+                  <option className="dropdown" >{age}</option>
                 ))}
               </select>
             </div>
