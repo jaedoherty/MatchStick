@@ -9,14 +9,15 @@ a:visited {
 
 #nav-bar {
     padding-bottom: 20px;
+    padding-top: 20px;
     background-color: black;
     color: white;
     font-family: Raleway, sans-serif;
     display: flex;
-    
+    align-items: flex-end; 
     padding-left: 10%;
     // border: 1px solid orange;
-    align-items: center;
+    // align-items: center;
     
 }
 
