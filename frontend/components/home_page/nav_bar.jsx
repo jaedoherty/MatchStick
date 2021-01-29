@@ -42,7 +42,7 @@ class NavBar extends React.Component {
                 </Link>
                 <Link to="/editPersonalityQuiz">
                   <button className="head-button" id="questions">
-                    {" "}
+                    {" "#info}
                     Questions{" "}
                   </button>
                 </Link>
