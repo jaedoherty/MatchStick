@@ -1,7 +1,7 @@
 
 .profile-1 {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    row-gap: 45px;
     align-items: center;
     justify-items: center;
     // grid-gap: 45px;
