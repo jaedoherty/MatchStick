@@ -9,7 +9,7 @@ class ProfileCard extends React.Component {
     render() {
         return (
           <Link to={`seeProfile/${this.props.profile.id}`} id="search-profs">
-            <img id="resize-smash" src={window[this.props.profile.img_name]} />
+            <img className="resize-smash" id="search-img" src={window[this.props.profile.img_name]} />
             <div className="card-info">
               <h4>Name:</h4>
               <div>{this.props.profile.first_name}</div>

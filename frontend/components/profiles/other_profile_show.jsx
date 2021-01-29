@@ -33,7 +33,7 @@ class ProfileShow extends React.Component {
           <div id="info-bar">
             <div id="photo-placeholder">
               <img
-                id="resize-smash"
+                className="resize-smash"
                 src={window[this.props.profile.img_name]}
               />
             </div>

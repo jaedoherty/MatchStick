@@ -68,7 +68,7 @@ class HomePage extends React.Component {
                     
                             <div id="profile-info">
                                 <div className="smash-img" id="home-image">
-                                    <img id="resize-smash" src={window[profile.img_name]}/>
+                                    <img className="resize-smash" id="home-img" src={window[profile.img_name]}/>
                                     <div id="basic-info">
                                         <label className="basic-id"> Name
                                         <p className="basic-value">{profile.first_name}</p> 
